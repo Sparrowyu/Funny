@@ -10,8 +10,6 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.SPUtils;
-import com.jeffmony.videocache.utils.StorageUtils;
-import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.sortinghat.common.base.BaseActivity;
 import com.sortinghat.common.base.RootApplication;
 import com.sortinghat.common.rxbus.RxBus;
@@ -95,8 +93,6 @@ public class SettingActivity extends BaseActivity<LoginViewModel, ActivitySettin
             contentLayoutBinding.tvChannel.setText("" + CommonUtils.getUmChannel(mContext));
         }
 
-        String path = StorageUtils.getIndividualCacheDirectory(RootApplication.getContext()).getAbsolutePath() + File.separator;
-        contentLayoutBinding.tvCache.setText(FileSizeUtil.getFileOrFilesSize(path, 3) + "MB");
 
         contentLayoutBinding.tvVersionCode.setText("V" + RequestInfo.getInstance(mContext).getVersionName());
         if ((DeviceUtils.getModel().contains("2101") && Build.BRAND.equalsIgnoreCase("xiaomi"))) {
@@ -231,7 +227,6 @@ public class SettingActivity extends BaseActivity<LoginViewModel, ActivitySettin
 
             @Override
             public void onDialogSure() {
-                GSYVideoManager.instance().clearAllDefaultCache(SettingActivity.this);
                 CommonUtils.showShort("已清除缓存");
                 contentLayoutBinding.tvCache.setText("0MB");
             }

@@ -20,7 +20,6 @@ import com.sortinghat.funny.bean.HomeVideoImageListBean;
 import com.sortinghat.funny.constant.Constant;
 import com.sortinghat.funny.constant.RxCodeConstant;
 import com.sortinghat.funny.databinding.FragmentMyImgBinding;
-import com.sortinghat.funny.ui.common.PostPreviewActivity;
 import com.sortinghat.funny.util.ConstantUtil;
 import com.sortinghat.funny.viewmodel.MyFragmentViewModel;
 
@@ -99,7 +98,6 @@ public class MyLikeImgFragment extends BaseFragment<MyFragmentViewModel, Fragmen
         contentLayoutBinding.recyclerView.setAdapter(videoOrImageAdapter);
         contentLayoutBinding.recyclerView.setEmptyView(getEmptyView(true));
         contentLayoutBinding.recyclerView.setEmptyViewEnabled(false);
-        contentLayoutBinding.recyclerView.setOnItemClickListener((v, position) -> PostPreviewActivity.starActivity(activity, userIdTag == 0 ? 0 : 1, "MainActivity", homeVideoBeanList, position, tabType, pageNum, likeType, userIdTag, isCanLoadMore));
         contentLayoutBinding.recyclerView.setOnRefreshListener(() -> refreshData());
         contentLayoutBinding.recyclerView.setOnLoadMoreListener(() -> {
             pageNum++;

@@ -28,8 +28,6 @@ import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ServiceUtils;
 import com.facebook.stetho.Stetho;
 import com.google.gson.JsonObject;
-import com.jeffmony.videocache.VideoProxyCacheManager;
-import com.jeffmony.videocache.utils.StorageUtils;
 import com.qq.e.comm.managers.GDTAdSdk;
 import com.sortinghat.common.base.RootApplication;
 import com.sortinghat.common.gmoread.GMAdManagerHolder;
@@ -103,7 +101,6 @@ public class FunnyApplication extends RootApplication {
             LogUtils.getConfig().setLogSwitch(BuildConfig.DEBUG);
             registerActivityLifecycleCallback();
             Stetho.initializeWithDefaults(this);
-            initVideoProxyCacheManager();
             uploadOssService = initOSS(Config.UPLOAD_OSS_ENDPOINT, Config.BUCKET_NAME);
             downloadOssService = initOSS(Config.DOWNLOAD_OSS_ENDPOINT, Config.BUCKET_NAME);
 
@@ -238,22 +235,6 @@ public class FunnyApplication extends RootApplication {
         downloadOssService = null;
         NetworkChangeReceiver.unRegisterReceiver(this);
         super.onTerminate();
-    }
-
-
-    private void initVideoProxyCacheManager() {
-        File saveFile = StorageUtils.getIndividualCacheDirectory(this);
-        if (!saveFile.exists()) {
-            saveFile.mkdirs();
-        }
-
-        VideoProxyCacheManager.Builder builder = new VideoProxyCacheManager.Builder()
-                .setFilePath(saveFile.getAbsolutePath())
-                .setConnTimeOut(60 * 1000)
-                .setReadTimeOut(60 * 1000)
-                .setMaxCacheSize(1 * 1024 * 1024 * 1024);//1g存储上限
-
-        VideoProxyCacheManager.getInstance().initProxyConfig(builder.build());
     }
 
     private OssService initOSS(String endpoint, String bucketName) {

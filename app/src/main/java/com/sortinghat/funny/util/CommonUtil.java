@@ -9,7 +9,6 @@ import android.os.PowerManager;
 import android.text.TextUtils;
 
 import com.blankj.utilcode.util.ThreadUtils;
-import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.sortinghat.funny.FunnyApplication;
 
 import java.io.BufferedReader;
@@ -26,7 +25,6 @@ public class CommonUtil {
             @Override
             public Void doInBackground() {
 //                GlideUtils.clearImageDiskCache(FunnyApplication.getContext());
-                GSYVideoManager.instance().clearAllDefaultCache(FunnyApplication.getContext());
                 return null;
             }
 

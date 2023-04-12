@@ -54,11 +54,6 @@ import com.bytedance.msdk.api.v2.ad.nativeAd.GMViewBinder;
 import com.bytedance.sdk.openadsdk.TTAppDownloadListener;
 import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
 import com.google.gson.JsonObject;
-import com.jeffmony.videocache.VideoProxyCacheManager;
-import com.jeffmony.videocache.common.ProxyMessage;
-import com.jeffmony.videocache.common.VideoParams;
-import com.jeffmony.videocache.utils.LogUtils;
-import com.jeffmony.videocache.utils.VideoParamsUtils;
 import com.kwad.sdk.api.KsDrawAd;
 import com.qq.e.ads.cfg.VideoOption;
 import com.qq.e.ads.nativ.NativeADEventListener;
@@ -66,10 +61,6 @@ import com.qq.e.ads.nativ.NativeADMediaListener;
 import com.qq.e.ads.nativ.NativeUnifiedADData;
 import com.qq.e.comm.constants.AdPatternType;
 import com.qq.e.comm.util.AdError;
-import com.shuyu.gsyvideoplayer.GSYVideoManager;
-import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
-import com.shuyu.gsyvideoplayer.listener.GSYSampleCallBack;
-import com.shuyu.gsyvideoplayer.player.IjkPlayerManager;
 import com.sortinghat.common.adapter.BaseBindingHolder;
 import com.sortinghat.common.rxbus.RxBus;
 import com.sortinghat.common.utils.CommonUtils;
@@ -92,7 +83,6 @@ import com.sortinghat.funny.databinding.ItemHomeGmoreAdBinding;
 import com.sortinghat.funny.databinding.ItemHomeOtherCompleteInfoBinding;
 import com.sortinghat.funny.databinding.ItemHomeVideoBinding;
 import com.sortinghat.funny.thirdparty.video.OnVideoControllerListener;
-import com.sortinghat.funny.thirdparty.video.SampleCoverVideo;
 import com.sortinghat.funny.ui.BottomSheetDialog.BigImgDialog;
 import com.sortinghat.funny.ui.BottomSheetDialog.DownloadVideoDialog;
 import com.sortinghat.funny.ui.BottomSheetDialog.DownloadVideoResultDialog;
@@ -108,13 +98,9 @@ import com.sortinghat.funny.ui.my.MyOtherUserInfoActivity;
 import com.sortinghat.funny.util.AdManager;
 import com.sortinghat.funny.util.CommonUtil;
 import com.sortinghat.funny.util.ConstantUtil;
-import com.sortinghat.funny.util.DownloadSPUtils;
-import com.sortinghat.funny.util.EditUtils;
 import com.sortinghat.funny.util.ImageEditUtils;
 import com.sortinghat.funny.util.ListenerUtils;
 import com.sortinghat.funny.util.MaterialDialogUtil;
-import com.sortinghat.funny.util.PostDownloadManager;
-import com.sortinghat.funny.util.VideoEditUtils;
 import com.sortinghat.funny.util.business.RequestParamUtil;
 import com.sortinghat.funny.utils.ShareLibraryUM;
 import com.sortinghat.funny.view.LikeView;
@@ -130,13 +116,11 @@ import java.util.List;
 import me.jingbin.library.ByRecyclerView;
 import me.jingbin.library.adapter.BaseByRecyclerViewAdapter;
 import me.jingbin.library.adapter.BaseByViewHolder;
-import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
 public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageListBean.ListBean, BaseByViewHolder<HomeVideoImageListBean.ListBean>> {
 
     public static final double BUFFER_MAX_INTERVAL = 15000f;
     private Context mContext;
-    private GSYVideoOptionBuilder gsyVideoOptionBuilder;
     private HomeViewModel viewModel;
     private FragmentManager childFragmentManager;
     private int tab; //1 video, 2 img
@@ -189,7 +173,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
     @Override
     public BaseByViewHolder<HomeVideoImageListBean.ListBean> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (tab == 1) {
-            gsyVideoOptionBuilder = new GSYVideoOptionBuilder();
         }
         if (TYPE_SELECT_VIEW == viewType) {
             return new HomeVideoAdapter.OtherViewHolder(parent, R.layout.item_home_other_complete_info);
@@ -748,141 +731,8 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
                     GlideUtils.loadGifImageFromResource(R.drawable.home_loading, binding.gifHomeLoading);
                 }
                 if (tab == 1) {
-                    if (videoInfo.getContent().getPostType() == 1) {
-                        binding.gsyVideoPlayer.loadCoverImage(videoInfo.getContent() == null ? "" : videoInfo.getContent().getThumb(), videoInfo.getContent().getVideoWidth(), videoInfo.getContent().getVideoHeight(), new ImageRequestListener(binding.gifHomeLoading));
-                        binding.gsyVideoPlayer.getTitleTextView().setVisibility(View.GONE);
-                        binding.gsyVideoPlayer.getBackButton().setVisibility(View.GONE);
-                        binding.gsyVideoPlayer.getFullscreenButton().setVisibility(View.GONE);
-                        binding.gsyVideoPlayer.setVisibility(View.VISIBLE);
-                        binding.mainImage.setVisibility(View.GONE);
-                        String videoUrl = videoInfo.getContent() == null ? "" : videoInfo.getContent().getUrl();
-                        gsyVideoOptionBuilder.setIsTouchWiget(false)
-                                .setUrl(videoUrl)
-                                .setVideoTitle("")
-                                .setCacheWithPlay(!TextUtils.equals("upload", videoInfo.getContent().getProvider()))
-                                .setRotateViewAuto(true)
-                                .setLockLand(true)
-                                .setLooping(true)
-                                .setPlayTag(HomeVideoAdapter.class.getSimpleName())
-                                .setMapHeadData(null)
-                                .setShowFullAnimation(true)
-                                .setNeedLockFull(true)
-                                .setPlayPosition(position)
-                                .setShowDragProgressTextOnSeekBar(true)
-                                .setOnProxyCacheInfoListener((msgWhat, params) -> {
-                                    if (params != null) {
-                                        float percent = VideoParamsUtils.getFloatValue(params, VideoParams.PERCENT);
-                                        if (msgWhat == ProxyMessage.MSG_VIDEO_PROXY_COMPLETED) {
-                                            LogUtils.i("onProxyCacheInfoListener", "-----MSG_VIDEO_PROXY_COMPLETED-----percent-----" + percent);
-                                        }
-
-
-                                        LogUtils.i("onProxyCacheInfoListener", "-----MSG_VIDEO_PROXY_PROGRESS-----percent-----" + percent + "msg：" + msgWhat);
-                                        if (msgWhat == ProxyMessage.MSG_VIDEO_PROXY_RANGE_COMPLETED) {
-                                            IjkPlayerManager playerManager = ((IjkPlayerManager) GSYVideoManager.instance().getCurPlayerManager());
-                                            LogUtils.i("onProxyCacheInfoListener", "-----MSG_VIDEO_PROXY_RANGE_COMPLETED-----percent-----" + percent);
-                                            float bufferInterval = (playerManager.getProxyCachePercent() - playerManager.getPlayPercent() * 1f) * playerManager.getDuration() / 100;
-                                            if (Float.compare(playerManager.getPlayPercent(), 0f) == 0
-                                                    || playerManager.getDuration() == 0
-                                                    || bufferInterval <= BUFFER_MAX_INTERVAL) {
-                                                LogUtils.w("HomeVideoAdapter",
-                                                        "-----MSG_VIDEO_PROXY_RANGE_COMPLETED resumeCacheTask----- duration: " + playerManager.getDuration()
-                                                                + " playPercent:" + playerManager.getPlayPercent()
-                                                                + " cachePercent:" + playerManager.getProxyCachePercent()
-                                                                + " bufferTime:" + bufferInterval);
-                                                ((IjkPlayerManager) GSYVideoManager.instance().getCurPlayerManager()).getLocalProxyVideoControl().resumeLocalProxyTask();
-                                            } else {
-                                                LogUtils.w("HomeVideoAdapter",
-                                                        "-----MSG_VIDEO_PROXY_RANGE_COMPLETED pauseCacheTask----- duration: " + playerManager.getDuration()
-                                                                + " playPercent:" + playerManager.getPlayPercent()
-                                                                + " cachePercent:" + playerManager.getProxyCachePercent()
-                                                                + " bufferTime:" + bufferInterval);
-
-                                            }
-                                        }
-
-                                    }
-                                })
-                                .setGSYVideoProgressListener((progress, secProgress, currentPosition, duration) -> {
-
-                                    IjkPlayerManager playerManager = ((IjkPlayerManager) GSYVideoManager.instance().getCurPlayerManager());
-                                    playerManager.setPlayPercent(progress);
-                                    videoInfo.setDuration(playerManager.getDuration());
-
-                                    float bufferInterval = (playerManager.getProxyCachePercent() - playerManager.getPlayPercent() * 1f) * playerManager.getDuration() / 100;
-                                    LogUtils.w("HomeVideoAdapter",
-                                            "-----VideoProgressListener----- duration: " + playerManager.getDuration()
-                                                    + " playPercent:" + playerManager.getPlayPercent()
-                                                    + " cachePercent:" + playerManager.getProxyCachePercent()
-                                                    + " bufferTime:" + bufferInterval);
-                                    if (bufferInterval <= BUFFER_MAX_INTERVAL && playerManager.getProxyCachePercent() < 100) {
-                                        LogUtils.w("HomeVideoAdapter",
-                                                "-----VideoProgressListener resumeCacheTask----- duration: " + playerManager.getDuration()
-                                                        + " playPercent:" + playerManager.getPlayPercent()
-                                                        + " cachePercent:" + playerManager.getProxyCachePercent()
-                                                        + " bufferTime:" + bufferInterval);
-                                        ((IjkPlayerManager) GSYVideoManager.instance().getCurPlayerManager()).getLocalProxyVideoControl().resumeLocalProxyTask();
-                                    }
-                                })
-                                .setVideoAllCallBack(new GSYSampleCallBack() {
-                                    @Override
-                                    public void onPrepared(String url, Object... objects) {
-                                        super.onPrepared(url, objects);
-                                        LogUtils.w("HomeVideoAdapter", "-----onPrepared  " + url);
-                                    }
-
-                                    @Override
-                                    public void onQuitFullscreen(String url, Object... objects) {
-                                        super.onQuitFullscreen(url, objects);
-                                        //全屏不静音
-                                        GSYVideoManager.instance().setNeedMute(true);
-                                    }
-
-                                    @Override
-                                    public void onPlayError(String url, Object... objects) {
-                                        super.onPlayError(url, objects);
-                                        LogUtils.w("HomeVideoAdapter", "-----onPlayError " + Arrays.deepToString(objects));
-                                    }
-
-                                    @Override
-                                    public void onInfo(int what, int extra) {
-                                        super.onInfo(what, extra);
-                                        LogUtils.w("HomeVideoAdapter", "-----onInfo " + what + " " + extra);
-                                        IjkPlayerManager playerManager = ((IjkPlayerManager) GSYVideoManager.instance().getCurPlayerManager());
-                                        if (what == MediaPlayer.MEDIA_INFO_BUFFERING_START
-                                                || what == IjkMediaPlayer.MEDIA_INFO_VIDEO_DECODED_START) {
-                                            LogUtils.w("HomeVideoAdapter",
-                                                    "onInfo -----resumeCacheTask-----currentPosition-----" + playerManager.getPlayPercent() +
-                                                            " duration:" + playerManager.getDuration() +
-                                                            " cachePercent:" + playerManager.getProxyCachePercent());
-                                            playerManager.getLocalProxyVideoControl().resumeLocalProxyTask();
-                                        } else if (what == MediaPlayer.MEDIA_ERROR_IO) {
-                                            if (BuildConfig.DEBUG) {
-                                                CommonUtils.showShort("playError: " + videoUrl + " " + playerManager.getPlayPercent());
-                                            }
-
-                                            if (playerManager != null && playerManager.getLocalProxyVideoControl() != null) {
-                                                playerManager.getLocalProxyVideoControl().resumeLocalProxyTask();
-                                            }
-                                        }
-                                    }
-
-
-                                    @Override
-                                    public void onEnterFullscreen(String url, Object... objects) {
-                                        super.onEnterFullscreen(url, objects);
-                                        GSYVideoManager.instance().setNeedMute(false);
-                                        binding.gsyVideoPlayer.getCurrentPlayer().getTitleTextView().setText((String) objects[0]);
-                                    }
-                                }).build(binding.gsyVideoPlayer);
-
-                        if (position == 0) {
-                            binding.gsyVideoPlayer.startPlayLogic();
-                        }
-                    }
                 } else {
                     if (videoInfo.getContent().getPostType() != 3) {
-                        binding.gsyVideoPlayer.setVisibility(View.GONE);
                         binding.mainImage.setVisibility(View.VISIBLE);
                         if (videoInfo.getContent() != null) {
                             String imgUrl = videoInfo.getContent().getUrl();
@@ -951,7 +801,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
 
         @Override
         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<GifDrawable> target, boolean isFirstResource) {
-            LogUtils.w("HomeVideoAdapter", GlideUtils.class.getSimpleName() + ":" + model + (e == null ? "" : e.toString()));
             hideLoadingAnimation();
             return false;
         }
@@ -973,34 +822,7 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
 
     private void setListener(ItemHomeVideoBinding binding, HomeVideoImageListBean.ListBean videoInfo, int position) {
         if (tab == 1) {
-            binding.likeview.setOnPlayPauseListener((isShowInfo) -> {
-                HomeVideoFragment.postVideoPlayDurationLastState = 1;
-                if (binding.gsyVideoPlayer.getCurrentState() == SampleCoverVideo.CURRENT_STATE_PLAYING) {
-                    HomeVideoFragment.postVideoPlayDurationLastState = 0;
-                    HomeVideoFragment.postVideoPlayDuration = HomeVideoFragment.postVideoPlayDuration + System.currentTimeMillis() - HomeVideoFragment.postVideoPlayDurationTime;
-                    binding.gsyVideoPlayer.onVideoPause();
-                } else if (binding.gsyVideoPlayer.getCurrentState() == SampleCoverVideo.CURRENT_STATE_PAUSE
-                        || binding.gsyVideoPlayer.getCurrentState() == SampleCoverVideo.CURRENT_STATE_PLAYING_BUFFERING_START) {
-                    HomeVideoFragment.postVideoPlayDurationTime = System.currentTimeMillis();
-                    binding.gsyVideoPlayer.onVideoResume(false);
-                } else {
-                    binding.gsyVideoPlayer.startPlayLogic();
-                }
-            });
-            binding.gsyVideoPlayer.setVideoBufferingProgressListener(percent -> {
-                if (percent > 0) {
-                    GifDrawable gifDrawable = (GifDrawable) binding.gifHomeLoading.getDrawable();
-                    if (gifDrawable != null && gifDrawable.isRunning()) {
-                        gifDrawable.stop();
-                    }
-                    binding.gifHomeLoading.setVisibility(View.GONE);
-                }
-            });
-            binding.gsyVideoPlayer.setVideoSeekBarIsDragListener(isStart -> binding.controller.showSeekBarListener(isStart));
-            binding.gsyVideoPlayer.setVideoPlayCompleteListener(() -> {
-                binding.controller.showShareAnimation(true);
-                binding.controller.showHotComment(videoInfo.getHotComment());
-            });
+
         } else {
             //进入大图
             binding.likeview.setOnPlayPauseListener((boolen) -> {
@@ -1368,7 +1190,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
 
     private void showShareDialog(HomeVideoImageListBean.ListBean videoInfo, int playPosition) {
         if (shareDialog != null && shareDialog.isVisible()) {
-            LogUtils.d("shareDialog", "isShowing");
             return;
         }
         shareDialog = new ShareDialog(false, 1, videoInfo.getContent() != null && videoInfo.getContent().getPostType() != 3);
@@ -1376,7 +1197,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
         shareDialog.setShareDialogListener(new OnShareDialogListener() {
             @Override
             public void onWechatShare() {
-                LogUtils.d("shareDialog", "onWechatShare");
                 share(videoInfo, SHARE_MEDIA.WEIXIN);
                 clickPost(videoInfo, playPosition, "share", 1, tab);
                 shareDialog.dismiss();
@@ -1384,7 +1204,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
 
             @Override
             public void onWechatCircleShare() {
-                LogUtils.d("shareDialog", "onWechatCircleShare");
                 share(videoInfo, SHARE_MEDIA.WEIXIN_CIRCLE);
                 clickPost(videoInfo, playPosition, "share", 2, tab);
                 shareDialog.dismiss();
@@ -1392,7 +1211,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
 
             @Override
             public void onQQShare() {
-                LogUtils.d("shareDialog", "onQQShare");
                 share(videoInfo, SHARE_MEDIA.QQ);
                 clickPost(videoInfo, playPosition, "share", 3, tab);
                 shareDialog.dismiss();
@@ -1400,7 +1218,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
 
             @Override
             public void onQQZoneShare() {
-                LogUtils.d("shareDialog", "onQQZoneShare");
                 share(videoInfo, SHARE_MEDIA.QZONE);
                 clickPost(videoInfo, playPosition, "share", 4, tab);
                 shareDialog.dismiss();
@@ -1427,7 +1244,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
 
     public void showDownloadDialog(final HomeVideoImageListBean.ListBean videoInfo, int playPosition) {
         if (downloadVideoDialog != null && downloadVideoDialog.isVisible()) {
-            LogUtils.d("downloadVideoDialog", "isShowing");
             return;
         }
         downloadVideoDialog = new DownloadVideoDialog();
@@ -1461,78 +1277,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
                 if (videoInfo == null || videoInfo.getContent().getUrl() == null) {
                     return;
                 }
-                String downloadPath = isVideo(videoInfo) ? StorageUtil.generateVideoTempPath() : StorageUtil.generateImageTempPath(videoInfo.getContent().getUrl().contains(".gif"));
-                PostDownloadManager.DownloadListener downloadListener = new PostDownloadManager.DownloadListener() {
-
-                    @Override
-                    public void onProgress(int progress) {
-                        handler.post(() -> {
-                            if (downloadVideoResultDialog != null) {
-                                downloadVideoResultDialog.updateProgress(DownloadVideoResultDialog.PROGRESS_INIT
-                                        + progress * (DownloadVideoResultDialog.PROGRESS_DOWNLOAD_SUCCESS - DownloadVideoResultDialog.PROGRESS_INIT) / 100);
-                            }
-                        });
-
-                    }
-
-                    @Override
-                    public void onFinish(String path) {
-                        handler.post(() -> {
-                            long start = SystemClock.elapsedRealtime();
-                            if (downloadVideoResultDialog != null) {
-                                downloadVideoResultDialog.updateProgress(DownloadVideoResultDialog.PROGRESS_DOWNLOAD_SUCCESS);
-                            }
-                            addWaterMark(videoInfo, path, new VideoEditUtils.EditListener() {
-                                @Override
-                                public void onSuccess(HomeVideoImageListBean.ListBean videoInfo, String path) {
-                                    handler.post(() -> {
-                                        if (downloadVideoResultDialog != null) {
-                                            downloadVideoResultDialog.updateState(DownloadVideoResultDialog.STATE_SUCCESS);
-                                        }
-                                        if (BuildConfig.DEBUG) {
-                                            CommonUtils.showShort(videoInfo.getDuration() + " " + path + " cost:" + (SystemClock.elapsedRealtime() - start));
-                                        }
-                                    });
-
-                                }
-
-                                @Override
-                                public void onFail(HomeVideoImageListBean.ListBean videoInfo, Throwable e) {
-                                    Log.e("HomeVideoAdapter", "addWaterMark", e);
-                                    handler.post(() -> {
-                                        if (downloadVideoResultDialog != null) {
-                                            downloadVideoResultDialog.updateState(DownloadVideoResultDialog.STATE_FAIL);
-                                        }
-                                    });
-
-                                }
-
-                                @Override
-                                public void onProgress(float progress) {
-                                    handler.post(() -> {
-                                        if (downloadVideoResultDialog != null) {
-                                            downloadVideoResultDialog.updateProgress(DownloadVideoResultDialog.PROGRESS_DOWNLOAD_SUCCESS
-                                                    + (int) (progress * DownloadVideoResultDialog.PROGRESS_DOWNLOAD_SUCCESS));
-                                        }
-                                    });
-                                }
-                            });
-                        });
-
-                    }
-
-                    @Override
-                    public void onFail(String errorInfo) {
-                        Log.d("HomeVideoAdapter", "downloadVideo onFail:" + errorInfo);
-                        handler.post(() -> {
-                            if (downloadVideoResultDialog != null) {
-                                downloadVideoResultDialog.updateState(DownloadVideoResultDialog.STATE_FAIL);
-                            }
-                        });
-
-                    }
-                };
-                downloadVideo(videoInfo, downloadPath, true, downloadListener);
 
             }
 
@@ -1541,41 +1285,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
     }
 
     private void downloadVideoNoWaterMark(HomeVideoImageListBean.ListBean videoInfo) {
-        String downloadPath = isVideo(videoInfo) ? StorageUtil.generateVideoSavedPath() : StorageUtil.generateImageSavedPath(isGifImage(videoInfo));
-        final PostDownloadManager.DownloadListener downloadListener = new PostDownloadManager.DownloadListener() {
-            @Override
-            public void onProgress(int progress) {
-                handler.post(() -> {
-                    if (downloadVideoResultDialog != null) {
-                        int init = DownloadVideoResultDialog.PROGRESS_INIT;
-                        downloadVideoResultDialog.updateProgress(DownloadVideoResultDialog.PROGRESS_INIT
-                                + progress * (100 - init) / 100);
-                    }
-                });
-
-            }
-
-            @Override
-            public void onFinish(String path) {
-                StorageUtil.notifyAlbum(mContext, new File(path), isVideo(videoInfo), isGifImage(videoInfo));
-                handler.post(() -> {
-                    if (downloadVideoResultDialog != null) {
-                        downloadVideoResultDialog.updateState(DownloadVideoResultDialog.STATE_SUCCESS);
-                    }
-                });
-            }
-
-            @Override
-            public void onFail(String errorInfo) {
-                Log.d("HomeVideoAdapter", "downloadVideo onFail:" + errorInfo);
-                handler.post(() -> {
-                    if (downloadVideoResultDialog != null) {
-                        downloadVideoResultDialog.updateState(DownloadVideoResultDialog.STATE_FAIL);
-                    }
-                });
-            }
-        };
-        downloadVideo(videoInfo, downloadPath, false, downloadListener);
     }
 
     public void showDownloadResultDialog(HomeVideoImageListBean.ListBean videoInfo, int state,
@@ -1592,86 +1301,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
     }
 
 
-    private void downloadVideo(HomeVideoImageListBean.ListBean videoInfo, String path, boolean addWaterMark, PostDownloadManager.DownloadListener listener) {
-        if (videoInfo == null || videoInfo.getContent().getUrl() == null) {
-            return;
-        }
-        int count = DownloadSPUtils.getDownloadCount(mContext);
-        if (count >= DownloadSPUtils.MAX_COUNT) {
-            CommonUtils.showShort(mContext.getString(R.string.download_count_reach_max));
-            return;
-        } else {
-            DownloadSPUtils.putDownloadCount(mContext, count + 1);
-        }
-        boolean isVideo = isVideo(videoInfo);
-        String url = videoInfo.getContent().getUrl();
-        String finalPath = path;
-        showDownloadResultDialog(videoInfo, DownloadVideoResultDialog.STATE_PROGRESS, new DownloadVideoResultDialog.DownloadVideoResultDialogListener() {
-            @Override
-            public void onRetry(HomeVideoImageListBean.ListBean listBean) {
-                handler.post(() -> downloadVideo(videoInfo, finalPath, addWaterMark, listener));
-            }
-
-            @Override
-            public void goToGallery() {
-                StorageUtil.goToGallery(mContext);
-            }
-
-            @Override
-            public void dismiss() {
-                PostDownloadManager.getInstance().removeListener(videoInfo);
-                if (isVideo) {
-                    VideoEditUtils.cancel();
-                }
-                downloadVideoResultDialog = null;
-            }
-        });
-        if (addWaterMark) {
-            if (isVideo && VideoProxyCacheManager.getInstance().isMp4Completed(url)) {
-                path = VideoProxyCacheManager.getInstance().getMp4CachedPath(url);
-                listener.onFinish(path);
-            } else {
-                PostDownloadManager.getInstance().download(videoInfo, path, listener);
-            }
-        } else {
-            if (isVideo && VideoProxyCacheManager.getInstance().isMp4Completed(url)) {
-                String cachedPath = VideoProxyCacheManager.getInstance().getMp4CachedPath(url);
-                ThreadUtils.executeByIo(new ThreadUtils.SimpleTask<Void>() {
-                    @Override
-                    public Void doInBackground() throws Throwable {
-                        try {
-                            FileUtils.copy(new File(cachedPath), new File(finalPath));
-                            if (listener != null) {
-                                listener.onFinish(finalPath);
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            if (listener != null) {
-                                listener.onFail("download error");
-                            }
-                        }
-                        return null;
-                    }
-
-                    @Override
-                    public void onSuccess(Void result) {
-
-                    }
-                });
-            } else {
-                PostDownloadManager.getInstance().download(videoInfo, path, listener);
-            }
-        }
-
-    }
-
-    private void addWaterMark(HomeVideoImageListBean.ListBean videoInfo, String path, EditUtils.EditListener listener) {
-        if (isVideo(videoInfo)) {
-            VideoEditUtils.addWaterMarkAsync(videoInfo, path, StorageUtil.generateVideoSavedPath(), true, listener);
-        } else if (isImage(videoInfo)) {
-            ImageEditUtils.addWaterMarkAsync(videoInfo, path, StorageUtil.generateImageSavedPath(isGifImage(videoInfo)), listener);
-        }
-    }
 
     public boolean isVideo(HomeVideoImageListBean.ListBean videoInfo) {
         return (videoInfo != null && videoInfo.getContent() != null && videoInfo.getContent().getPostType() == 1);
@@ -2079,8 +1708,6 @@ public class HomeVideoAdapter extends BaseByRecyclerViewAdapter<HomeVideoImageLi
         String sss = "{\"topic_ids\":\"10007\",\"device_id\":\"2ecacdbfd60b83124909f1becd9b430ff\",\"create_time\":1627639552052,\"video_total_time\":106467,\"current_position\":41818,\"end_time\":1627639552052,\"quit_app\":0,\"op_topic_ids\":\"10007\",\"duration\":469491,\"start_time\":1627639082561,\"detail_dur\":0,\"post_id\":497490457088,\"tab\":1,\"user_id\":107316316672,\"play_dur\":467686,\"post_type\":\"video\",\"page\":0,\"position\":1,\"net\":\"wifi\",\"direction\":\"homebutton\"}";
 
         //上报本次播放的视频时长
-        LogUtils.d("gsyPlay--showPoint-", "-json：" + jsonData);
-
         viewModel.setAppUnifyLog(mContext, jsonData.toString(), false).observe((LifecycleOwner) mContext, resultBean -> {
         });
 

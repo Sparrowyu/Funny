@@ -130,7 +130,6 @@
             android:layout_height="fill_parent"
             android:paddingRight="16dp"
             android:scaleType="center"
-            android:src="@drawable/video_enlarge"
             android:visibility="gone" />
 
     </RelativeLayout>
@@ -147,7 +146,6 @@
         android:id="@+id/layout_top"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@drawable/video_title_bg"
         android:gravity="center_vertical">
 
         <ImageView
@@ -157,7 +155,7 @@
             android:paddingLeft="10dp"
             android:visibility="invisible"
             android:scaleType="centerInside"
-            android:src="@drawable/video_back" />
+           />
 
         <TextView
             android:id="@+id/title"
@@ -169,13 +167,6 @@
 
     </LinearLayout>
 
-    <moe.codeest.enviews.ENDownloadView
-        android:id="@+id/loading"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/small_close"
@@ -184,7 +175,6 @@
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:scaleType="centerInside"
-        android:src="@drawable/video_small_close"
         android:visibility="gone" />
 
     <ImageView
@@ -195,7 +185,6 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="50dp"
         android:scaleType="centerInside"
-        android:src="@drawable/unlock"
         android:visibility="gone" />
 
 </RelativeLayout>

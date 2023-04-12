@@ -41,12 +41,6 @@ import com.bytedance.sdk.openadsdk.TTAdNative;
 import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.jeffmony.videocache.common.VideoType;
-import com.jeffmony.videocache.model.VideoCacheInfo;
-import com.jeffmony.videocache.task.Mp4CacheTaskForSortingHat;
-import com.jeffmony.videocache.utils.ProxyCacheUtils;
-import com.jeffmony.videocache.utils.StorageUtils;
-import com.jeffmony.videocache.utils.VideoProxyThreadUtils;
 import com.kwad.sdk.api.KsAdSDK;
 import com.kwad.sdk.api.KsDrawAd;
 import com.kwad.sdk.api.KsLoadManager;
@@ -55,7 +49,6 @@ import com.qq.e.ads.nativ.NativeADUnifiedListener;
 import com.qq.e.ads.nativ.NativeUnifiedAD;
 import com.qq.e.ads.nativ.NativeUnifiedADData;
 import com.qq.e.comm.util.AdError;
-import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.sortinghat.common.adapter.BaseBindingHolder;
 import com.sortinghat.common.gmoread.AppConst;
 import com.sortinghat.common.rxbus.RxBus;
@@ -178,24 +171,7 @@ public class HomeVideoFragment extends BaseHomeMediaFragment<HomeViewModel, Frag
         contentLayoutBinding.gifHomeLoading.setVisibility(View.VISIBLE);
         GlideUtils.loadGifImageFromResource(R.drawable.home_loading, contentLayoutBinding.gifHomeLoading);
         initViewPagerAdapter();
-        RxBus.getDefault().toObservable(RxCodeConstant.NETWORK_CONNECT, Boolean.class)
-                .subscribe(connected -> {
-                    if (connected && (isCurrentQuit && isShowing)) {
-                        RecyclerView.ViewHolder viewHolder = ((RecyclerView) contentLayoutBinding.viewPager.getChildAt(0)).findViewHolderForAdapterPosition(lastPosition);
-                        if (viewHolder != null) {
-                            BaseBindingHolder<HomeVideoImageListBean.ListBean, ItemHomeVideoBinding> bindingViewHolder = (BaseBindingHolder<HomeVideoImageListBean.ListBean, ItemHomeVideoBinding>) viewHolder;
-                            if (showVideoPostType(lastPosition) && bindingViewHolder.binding != null) {
-                                bindingViewHolder.binding.gsyVideoPlayer.setPlayPosition(lastPosition);
-                                if (bindingViewHolder.binding.gsyVideoPlayer.getGSYVideoManager().isPlaying()) {
-                                    bindingViewHolder.binding.gsyVideoPlayer.getGSYVideoManager().start();
-                                } else {
-                                    bindingViewHolder.binding.gsyVideoPlayer.startPlayLogic();
-                                }
-                                mPauseCurrentPosition = 0;
-                            }
-                        }
-                    }
-                });
+
 
     }
 
@@ -238,12 +214,6 @@ public class HomeVideoFragment extends BaseHomeMediaFragment<HomeViewModel, Frag
             noLookPostIdList.clear();
         }
         if (!isLoadingData) {
-            isLoadingData = true;
-            int playPosition = GSYVideoManager.instance().getPlayPosition();
-            if ((playPosition >= 0)) {
-                playInfoNormal(playPosition);
-            }
-            getVideoList(1);
         }
     }
 
@@ -281,85 +251,6 @@ public class HomeVideoFragment extends BaseHomeMediaFragment<HomeViewModel, Frag
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                mCurPos = position;
-                if (mCurPos > 0 && homeVideoAdapter.getData().size() > 0 && mCurPos < homeVideoAdapter.getData().size()) {
-                    ConstantUtil.homeVideoIsAd = homeVideoAdapter.getItemData(mCurPos).getContent().getPostType() == 3;
-                }
-                Log.d("homevideofrag", "pos:" + position);
-                if (!SPUtils.getInstance(Constant.SP_CONFIG_INFO).getBoolean(Constant.USER_VIP_TAG)) {
-                    //VIP免广告
-                    if (isVideoNewAdAB > 1) {
-                        if (isVideoToLoadAd(position)) {
-                            isLoadingAd = true;
-                            loadExpressDrawNativeAd(position);
-                        }
-                    } else {
-                        if (isToLoadAd(position)) {
-                            isLoadingAd = true;
-                            loadExpressDrawNativeAd(position);
-                        }
-                    }
-                }
-//                setExperimentStrategy(position);
-                showGuideLayer(position, contentLayoutBinding.viewPager);
-//                cancelCacheVideoTask(position);
-
-                int playPosition = GSYVideoManager.instance().getPlayPosition();
-                uploadPlay(false);
-                if ((position != playPosition)) {
-                    playInfoNormal(playPosition);
-                }
-
-                if (playPosition >= -1000) {
-//                    uploadPlay(false);
-                    videoStartTime = System.currentTimeMillis();
-                    if (isVideoFromRefresh) {
-                        direction = "homebutton";
-                    } else {
-                        if (position > playPosition) {
-                            direction = "up";
-                        } else if (position < playPosition) {
-                            direction = "down";
-                        }
-                    }
-                    isVideoFromRefresh = false;
-                    boolean lastPositionIsAd = false;
-                    if (lastPosition > 0 && lastPosition < homeVideoAdapter.getData().size()) {
-                        lastPositionIsAd = homeVideoAdapter.getItemData(lastPosition).getContent().getPostType() >= 3;
-                    }
-                    //对应的播放列表TAG
-//                    if (GSYVideoManager.instance().getPlayTag().equals(HomeVideoAdapter.class.getSimpleName()) && (position != playPosition)) {
-                    if ((position != playPosition || lastPositionIsAd)) {
-                        removeHandlerMessage();
-                        mHandler.sendEmptyMessageDelayed(SHARE_ANIMATION_SHOW, SHOW_SHARE_ANIMATION_TIME);
-//                        Log.e("release-home230", "pre:");
-                        mHandler.postDelayed(() -> playPosition(position, false), playDelayMillis);
-                    }
-
-                    if (singleSize != 0) {
-                        //索引大于已加载出来的列表数量,才可以加载方法
-                        if ((position + 1) >= homeVideoAdapter.getData().size() & !isLoadingData) {
-                            if (position >= 0 && homeVideoAdapter.getData().size() > position) {
-                                long post_id = homeVideoAdapter.getItemData(position).getContent().getPostId();
-                                if (noLookPostIdList.size() > 0 && noLookPostIdList.contains(post_id)) {
-                                    noLookPostIdList.remove(post_id);
-                                }
-                            }
-                            isLoadingData = true;
-//                            noLookPostIdList.clear();
-                            requestListDirection = "up";
-                            getVideoList(2);
-                        }
-                    }
-                }
-
-
-                if (position > playPosition) {
-//                    if (position % 2 == 0) {
-                    cacheVideoFile(position);
-//                    }
-                }
-                lastPosition = position;
             }
         });
     }
@@ -368,92 +259,6 @@ public class HomeVideoFragment extends BaseHomeMediaFragment<HomeViewModel, Frag
         if (mHandler != null) {
             mHandler.removeMessages(SHARE_ANIMATION_SHOW);
         }
-    }
-
-    //把预加载的300k存到缓存框架
-    private void saveCacheVideoTask(String url, String savePath, long downloadLength, long fileLength) {
-        if (TextUtils.isEmpty(url)) {
-            return;
-        }
-        VideoCacheInfo videoCacheInfo = new VideoCacheInfo(url);
-        String fileName = url;
-        if (!TextUtils.isEmpty(fileName)) {
-            fileName = fileName.toLowerCase();
-            if (fileName.endsWith(".m3u8")) {
-                //当前是M3U8类型
-                videoCacheInfo.setVideoType(VideoType.M3U8_TYPE);
-            } else {
-                //不是M3U8类型，说明是整视频
-                videoCacheInfo.setVideoType(VideoType.OTHER_TYPE);
-            }
-        }
-
-        File downloadPathFile = new File(savePath);
-        if (downloadPathFile.exists()) {
-            if (downloadLength < 1) {
-                downloadLength = downloadPathFile.length();
-            }
-            videoCacheInfo.setCachedSize(downloadLength);
-            videoCacheInfo.setPercent(downloadLength * 1.0f * 100 / fileLength);
-            videoCacheInfo.setIsCompleted(downloadLength >= fileLength);
-            LinkedHashMap<Long, Long> videoSegMap = new LinkedHashMap<>();
-            videoSegMap.put(0L, downloadLength);
-            videoCacheInfo.setVideoSegMap(videoSegMap);
-        }
-        videoCacheInfo.setTotalSize(fileLength);
-        videoCacheInfo.setMd5(ProxyCacheUtils.computeMD5(url));
-        videoCacheInfo.setSavePath(ProxyCacheUtils.getConfig().getFilePath() + File.separator + videoCacheInfo.getMd5());
-        Log.e("onProxyCacheInfo-home", "downloadLength:" + downloadLength + "\n-url:" + url);
-        VideoProxyThreadUtils.submitRunnableTask(() -> StorageUtils.saveVideoCacheInfo(videoCacheInfo, new File(videoCacheInfo.getSavePath())));
-//        StorageUtils.saveVideoCacheInfo(videoCacheInfo, new File(videoCacheInfo.getSavePath()));
-    }
-
-    //一次预加载下一个，后期可以预加载整个列表
-    @SuppressLint("RestrictedApi")
-    private void cacheVideoFile(int position) {
-        ThreadUtils.executeByCached(new ThreadUtils.SimpleTask<Void>() {
-            @Override
-            public Void doInBackground() {
-                if (position + 1 < homeVideoAdapter.getData().size()) {
-                    HomeVideoImageListBean.ListBean videoInfo = homeVideoAdapter.getItemData(position + 1);
-                    if (videoInfo != null && videoInfo.getContent() != null && videoInfo.getContent().getPostType() == 1) {
-                        if (!TextUtils.isEmpty(videoInfo.getContent().getUrl())) {
-                            String md5 = ProxyCacheUtils.computeMD5(videoInfo.getContent().getUrl());
-
-                            String name = "";
-                            Uri videoUri = Uri.parse(videoInfo.getContent().getUrl());
-                            String fileName = videoUri.getLastPathSegment();
-                            if (!TextUtils.isEmpty(fileName)) {
-                                fileName = fileName.toLowerCase();
-                                if (fileName.endsWith(".m3u8")) {
-                                    //当前是M3U8类型
-                                    name = md5 + StorageUtils.M3U8_SUFFIX;
-                                } else {
-                                    //不是M3U8类型，说明是整视频
-                                    name = md5 + StorageUtils.NON_M3U8_SUFFIX;
-                                }
-                            }
-                            File saveDir = new File(ProxyCacheUtils.getConfig().getFilePath(), md5);
-                            if (!saveDir.exists()) {
-                                saveDir.mkdirs();
-                            }
-//                            File filePath = new File(saveDir.getAbsolutePath(), name);
-                            String path = saveDir.getAbsolutePath() + File.separator + name;
-                            if (!new File(path).exists()) {
-                                asyncGetFileInfo(videoInfo.getContent().getUrl(), videoInfo.getContent().getSize(), path);
-//                                viewModel.downloadFile(videoInfo.getContent().getUrl(), path, null, isSaveSuccessful -> {
-//                                }, throwable -> LogUtils.e(Log.getStackTraceString(throwable)));
-                            }
-                        }
-                    }
-                }
-                return null;
-            }
-
-            @Override
-            public void onSuccess(Void result) {
-            }
-        });
     }
 
     private void asyncGetFileInfo(String url, long fileSize, String path) {
@@ -474,7 +279,6 @@ public class HomeVideoFragment extends BaseHomeMediaFragment<HomeViewModel, Frag
 
             @Override
             public void onSuccess(HeadObjectResult result) {
-                startDownloadVideoFile(result.getMetadata().getContentLength(), objectKey, path, url);
             }
 
             @Override
@@ -485,90 +289,8 @@ public class HomeVideoFragment extends BaseHomeMediaFragment<HomeViewModel, Frag
         });
     }
 
-    private void startDownloadVideoFile(long fileLength, String objectKey, String path, String url) {
-        long downloadLength;
-        //最大下载300k
-        if (fileLength <= Mp4CacheTaskForSortingHat.DEFAULT_FIRST_RANGE_SIZE) {
-            downloadLength = Range.INFINITE;
-        } else {
-            downloadLength = (long) Mp4CacheTaskForSortingHat.DEFAULT_FIRST_RANGE_SIZE;
-        }
-        downloadVideoFile(objectKey, path, downloadLength, fileLength, url);
-    }
 
 
-    private void downloadVideoFile(String objectKey, String path, long downloadLength, long fileLength, String url) {
-
-        OSSAsyncTask<GetObjectResult> task = FunnyApplication.getDownloadOssService().asyncRangeDownloadFile(objectKey, 0, downloadLength, new RequestCallback<GetObjectResult>() {
-            @Override
-            public void updateProgress(int progress) {
-            }
-
-            @Override
-            public void onSuccess(GetObjectResult result) {
-                LogUtils.d("onProxyCacheInfo-home", "re:" + result.getContentLength() + "-path" + path + "-url:" + url);
-                writeFileToDisk(url, path, result.getObjectContent(), downloadLength, fileLength);
-            }
-
-            @Override
-            public void onFailure() {
-                LogUtils.e("onProxyCacheInfo-home", "start-precacheon_failure");//kkk
-            }
-        });
-    }
-
-    private boolean writeFileToDisk(String url, String savePath, InputStream inputStream, long downloadLength, long fileLength) {
-        File file = new File(savePath);
-        if (file.exists()) {
-            LogUtils.e("onProxyCacheInfo-home", "fileExists");//如果已经存在文件，说明已经缓存过了，则不用写入了，避免冲突错误
-            if (inputStream != null) {
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            return false;
-        } else {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        FileOutputStream outputStream = null;
-
-        byte[] buffer = new byte[4096];
-        int len;
-        try {
-            outputStream = new FileOutputStream(file);
-            while ((len = inputStream.read(buffer)) != -1) {
-                outputStream.write(buffer, 0, len);
-            }
-            outputStream.flush();
-            //保存到本地后更新缓存框架的信息
-            saveCacheVideoTask(url, savePath, downloadLength, fileLength);
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        } finally {
-            if (outputStream != null) {
-                try {
-                    outputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (inputStream != null) {
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
 
     @Override
     protected void initData() {
@@ -580,76 +302,6 @@ public class HomeVideoFragment extends BaseHomeMediaFragment<HomeViewModel, Frag
     @SuppressLint("NotifyDataSetChanged")
     private void getVideoListJudgeUserIsLogin(int getDataType) {
 
-        viewModel.getHomeVideoList(getActivity(), 1, noLookPostIdList, requestListDirection).observe(this, resultBean -> {
-            contentLayoutBinding.refreshLayout.setRefreshing(false);
-            isLoadingData = false;
-            if (resultBean != null) {
-                if (resultBean.getCode() == 0) {
-                    long userId = resultBean.getData().getUserId();
-                    if (userId > 0) {
-                        SPUtils.getInstance(Constant.SP_USER_FILE_NAME).put("user_id", userId);
-                        ConstantUtil.setAlias(activity, userId);
-                    }
-                    if (TextUtils.isEmpty(SPUtils.getInstance(Constant.SP_USER_FILE_NAME).getString("authToken"))) {
-                        SPUtils.getInstance(Constant.SP_USER_FILE_NAME).put("authToken", resultBean.getData().getAuthToken());
-                        if (!TextUtils.isEmpty(resultBean.getData().getLongTermToken())) {
-                            SPUtils.getInstance(Constant.SP_USER_FILE_NAME).put("longTermToken", resultBean.getData().getLongTermToken());
-                        }
-                    }
-                    SPUtils.getInstance(Constant.SP_USER_FILE_NAME).put("home_video_request_list", "");
-                    if (getDataType == 1) {
-                        clearListData();
-                    }
-                    noLookPostIdList.clear();
-                    singleSize = 0;
-                    List<HomeVideoImageListBean.ListBean> videoList = resultBean.getData().getList();
-                    if (videoList != null && !videoList.isEmpty()) {
-                        pagePositionList.add(homeVideoAdapter.getData().size() + videoList.size());
-                        singleSize = videoList.size();
-                        //把此次请求的数据写到集合中
-                        for (int i = homeVideoAdapter.getData().isEmpty() ? 1 : 0; i < videoList.size(); i++) {
-                            noLookPostIdList.add(videoList.get(i).getContent().getPostId());
-                        }
-                        if (homeVideoAdapter.getData().isEmpty()) {
-                            GlideUtils.loadImageToCacheFile(activity, videoList.get(0).getContent() == null ? "" : videoList.get(0).getContent().getThumb(), null);
-                            GSYVideoManager.releaseAllVideos();
-                            homeVideoAdapter.setNewData(videoList);
-                            if (contentLayoutBinding.viewPager.getCurrentItem() != 0) {
-                                contentLayoutBinding.viewPager.setCurrentItem(0, false);
-                            } else {
-//                                cacheVideoFile(0);
-                            }
-                        } else {
-                            homeVideoAdapter.addData(videoList);
-                            //如果之前已经请求了广告，则插入新的
-                            if (!adCacheList.isEmpty()) {
-                                for (int adCachei = 0; adCachei < adCacheList.size(); adCachei++) {
-                                    int adPositionCurr = adCacheList.get(adCachei).getContent().getAdPos();
-                                    LogUtils.d(csjAdloadTag, "cache" + adCacheList.size() + "pos:" + adPositionCurr + "size" + homeVideoAdapter.getData().size());
-                                    if (homeVideoAdapter.getData().size() > adPositionCurr) {
-                                        LogUtils.d(csjAdloadTag, "cache" + adCacheList.size());
-                                        homeVideoAdapter.addData(adPositionCurr, adCacheList.get(adCachei));
-                                        adCacheList.remove(adCachei);
-                                    }
-                                }
-                            }
-                        }
-                    } else {
-                        if (homeVideoAdapter.getData().isEmpty()) {
-                            hideLoadingAnimation();
-                            GSYVideoManager.releaseAllVideos();
-                            homeVideoAdapter.notifyDataSetChanged();
-                        }
-                        CommonUtils.showShort("没有更多内容了，请稍后重试");
-                    }
-                } else {
-                    hideLoadingAnimation();
-                    LogUtils.e(resultBean.getMsg());
-                }
-            } else {
-                hideLoadingAnimation();
-            }
-        });
     }
 
     //当userid为-1时，重新调一下登录接口
@@ -715,117 +367,20 @@ public class HomeVideoFragment extends BaseHomeMediaFragment<HomeViewModel, Frag
                 bindingViewHolder.binding.rlHomeDislikeDialog.setVisibility(View.GONE);
                 bindingViewHolder.binding.controller.showControllerInfoToNorman(false);
                 bindingViewHolder.binding.likeview.setShow(true);
-                bindingViewHolder.binding.gsyVideoPlayer.showStartProgress(false);
                 bindingViewHolder.binding.controller.setScrollAlpha(0);
                 bindingViewHolder.binding.controller.showShareAnimation(false);
-                bindingViewHolder.binding.gsyVideoPlayer.onVideoPause();
-            }
-        }
-    }
-
-    //iserror  从冲突后回来，从以前进度播放
-    private void playPosition(int position, boolean isError) {
-        RecyclerView.ViewHolder viewHolder = ((RecyclerView) contentLayoutBinding.viewPager.getChildAt(0)).findViewHolderForAdapterPosition(position);
-        if (viewHolder != null) {
-            BaseBindingHolder<HomeVideoImageListBean.ListBean, ItemHomeVideoBinding> bindingViewHolder = (BaseBindingHolder<HomeVideoImageListBean.ListBean, ItemHomeVideoBinding>) viewHolder;
-            if (showVideoPostType(position) && bindingViewHolder.binding != null) {
-                bindingViewHolder.binding.gsyVideoPlayer.setPlayPosition(position);
-                if (isError) {
-                    bindingViewHolder.binding.gsyVideoPlayer.setSeekOnStart(mPauseCurrentPosition);
-                    bindingViewHolder.binding.gsyVideoPlayer.seekTo(mPauseCurrentPosition);
-                }
-                bindingViewHolder.binding.gsyVideoPlayer.startPlayLogic();
-                mPauseCurrentPosition = 0;
-                bindingViewHolder.binding.rlHomeLikeDialog.setVisibility(View.GONE);
-                bindingViewHolder.binding.likeview.setShow(true);
-                bindingViewHolder.binding.gsyVideoPlayer.showStartProgress(false);
-                bindingViewHolder.binding.rlHomeDislikeDialog.setVisibility(View.GONE);
-                bindingViewHolder.binding.controller.showControllerInfoToNorman(false);
-            } else {
-                GSYVideoManager.onPause();
-            }
-        } else {
-            if (isShareVideo) {
-                isShareVideo = false;
-                startPlayPublishVideo(GSYVideoManager.instance().getPlayPosition() + 1);
-            } else if (albumFile != null) {
-                startPlayPublishVideo(GSYVideoManager.instance().getPlayPosition() + 1);
-                ConstantUtil.isUpdataMyFragmentList = true;
             }
         }
     }
 
     private boolean isShareVideo = false;
 
-    protected void playShareVideo(HomeVideoImageListBean.ListBean videoInfo) {
-        if (contentLayoutBinding.gifHomeLoading != null) {
-            hideLoadingAnimation();
-        }
-        if (homeVideoAdapter.getData().isEmpty()) {
-            homeVideoAdapter.addData(0, videoInfo);
-        } else {
-            //判断当前是否有这个帖子，避免重复帖子多次出现在列表中
-            for (int i = 0; i < homeVideoAdapter.getData().size(); i++) {
-                if (videoInfo.getContent().getPostId() == homeVideoAdapter.getData().get(i).getContent().getPostId()) {
-                    contentLayoutBinding.viewPager.setCurrentItem(i, false);
-                    return;
-                }
-            }
-            isShareVideo = true;
-            homeVideoAdapter.addData(GSYVideoManager.instance().getPlayPosition() + 1, videoInfo);
-            contentLayoutBinding.viewPager.setCurrentItem(GSYVideoManager.instance().getPlayPosition() + 1, false);
-        }
-    }
 
     protected void playPublishVideo(AlbumFile albumFiles) {
         albumFile = albumFiles;
-        addPublishVideo();
     }
 
-    private void addPublishVideo() {
-        HomeVideoImageListBean.ListBean.ContentBean videoContentInfo = new HomeVideoImageListBean.ListBean.ContentBean();
-        videoContentInfo.setCreatedAt(System.currentTimeMillis());
-        videoContentInfo.setAuthorId(SPUtils.getInstance(Constant.SP_USER_FILE_NAME).getLong("user_id"));
-        videoContentInfo.setAvatar(SPUtils.getInstance(Constant.SP_USER_FILE_NAME).getString("user_avatar", ""));
-        videoContentInfo.setNickname(SPUtils.getInstance(Constant.SP_USER_FILE_NAME).getString("user_nike_name", ""));
-        videoContentInfo.setPostId(albumFile.getPostId());
-        videoContentInfo.setPostType(albumFile.getMediaType());
-        videoContentInfo.setUrl(albumFile.getPath());
-        videoContentInfo.setThumb(albumFile.getPath());
-        videoContentInfo.setTitle(albumFile.getPostTitle());
-        videoContentInfo.setTopicIds(albumFile.getTopicIds());
-        videoContentInfo.setTopics(albumFile.getTopicNames());
-        videoContentInfo.setFollowStatus(1);
-        videoContentInfo.setProvider("upload");
-        videoContentInfo.setPendantUrl(CommonUserInfo.userIconImgBox);
-        HomeVideoImageListBean.ListBean videoInfo = new HomeVideoImageListBean.ListBean();
-        videoInfo.setContent(videoContentInfo);
-        int getPlayPosition = GSYVideoManager.instance().getPlayPosition();
-        if (homeVideoAdapter.getData().isEmpty() || GSYVideoManager.instance().getPlayPosition() < 0) {
-            homeVideoAdapter.addData(0, videoInfo);
-        } else {
-            if (getPlayPosition >= 0 && getPlayPosition + 1 < homeVideoAdapter.getData().size()) {
-                homeVideoAdapter.addData(getPlayPosition + 1, videoInfo);
-                contentLayoutBinding.viewPager.setCurrentItem(getPlayPosition + 1, false);
-            }
-        }
-        ConstantUtil.isUpdataMyFragmentList = true;
-    }
 
-    private void startPlayPublishVideo(int playPosition) {
-        ThreadUtils.runOnUiThreadDelayed(() -> {
-            BaseBindingHolder<HomeVideoImageListBean.ListBean, ItemHomeVideoBinding> bindingViewHolder = (BaseBindingHolder<HomeVideoImageListBean.ListBean, ItemHomeVideoBinding>) ((RecyclerView) contentLayoutBinding.viewPager.getChildAt(0)).findViewHolderForAdapterPosition(playPosition);
-            if (showVideoPostType(playPosition) && bindingViewHolder != null && bindingViewHolder.binding != null) {
-                bindingViewHolder.binding.gsyVideoPlayer.setPlayPosition(playPosition);
-                bindingViewHolder.binding.gsyVideoPlayer.startPlayLogic();
-            }
-        }, 800);
-    }
-
-    public void updateExperimentStrategy(String bottomEmotion) {
-        this.bottomEmotion = bottomEmotion;
-        setExperimentStrategy(GSYVideoManager.instance().getPlayPosition());
-    }
 
     private void setExperimentStrategy(int currentPlayPosition) {
         BaseBindingHolder<HomeVideoImageListBean.ListBean, ItemHomeVideoBinding> bindingViewHolder = (BaseBindingHolder<HomeVideoImageListBean.ListBean, ItemHomeVideoBinding>) ((RecyclerView) contentLayoutBinding.viewPager.getChildAt(0)).findViewHolderForAdapterPosition(currentPlayPosition);
@@ -1256,38 +811,7 @@ public class HomeVideoFragment extends BaseHomeMediaFragment<HomeViewModel, Frag
         if (getUserVisibleHint()) {
             //返回可见时更新开始时间
             //如果是当前页面退出，回来计时
-            if (HomeVideoFragment.isCurrentQuit) {
-                long currentTime = System.currentTimeMillis();
-                HomeVideoFragment.videoStartTime = currentTime;
-                postVideoPlayDurationTime = currentTime;
-                if (isShowCommentDialog) {
-                    HomeVideoFragment.startCommentDialogTime = currentTime;
-                }
-                if (homeVideoAdapter.getData().size() > mCurPos) {
-                    if (homeVideoAdapter.getData().get(mCurPos).getContent().getPostType() == 3) {
-                        //广点通广告得有resume
-                        if (null != homeVideoAdapter.getData().get(mCurPos).getContent().getGdtAd()) {
-                            homeVideoAdapter.getData().get(mCurPos).getContent().getGdtAd().resume();
-                        }   //广点通广告得有resume
-                        if (null != homeVideoAdapter.getData().get(mCurPos).getContent().getmGMNativeAd()) {
-                            homeVideoAdapter.getData().get(mCurPos).getContent().getmGMNativeAd().resume();
-                        }
 
-                    } else {
-                        if (GSYVideoManager.instance().listener() != null) {
-                            GSYVideoManager.onResume(false);
-                            HomeVideoFragment.startPlayTime = System.currentTimeMillis();
-                        } else {
-                            //修复退出后台再回来可能出现视频丢失的bug
-                            if (lastPosition >= 0) {
-                                onVideoErrorPlay();
-                                LogUtils.e("gsyPlayerLife-video-frag", "-error:" + lastPosition);
-                            }
-                        }
-                    }
-                }
-
-            }
         }
         SPUtils.getInstance(Constant.SP_USER_FILE_NAME).put("home_video_request_list", "");
     }
@@ -1295,16 +819,13 @@ public class HomeVideoFragment extends BaseHomeMediaFragment<HomeViewModel, Frag
     //视频sdk会出现错误时
     public void onVideoErrorPlay() {
         if (lastPosition >= 0 & isCurrentQuit) {
-            playPosition(lastPosition, true);
         }
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        GSYVideoManager.onPause();
         uploadPlay(true);
-        mPauseCurrentPosition = GSYVideoManager.instance().getCurrentPosition();
         //每次退出时记录一下list，崩溃的时候可能onpause存不了，所以取的时候每次都要清空一下
         SPUtils.getInstance(Constant.SP_USER_FILE_NAME).put("home_video_request_list", new Gson().toJson(noLookPostIdList));
     }
@@ -1312,7 +833,6 @@ public class HomeVideoFragment extends BaseHomeMediaFragment<HomeViewModel, Frag
     @Override
     public void onDestroy() {
         super.onDestroy();
-        GSYVideoManager.releaseAllVideos();
         //在页面结束时 清空队列消息
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);

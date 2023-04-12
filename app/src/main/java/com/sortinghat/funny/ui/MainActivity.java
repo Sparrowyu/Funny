@@ -30,7 +30,6 @@ import com.mob.MobSDK;
 import com.mob.secverify.PreVerifyCallback;
 import com.mob.secverify.SecVerify;
 import com.mob.secverify.common.exception.VerifyException;
-import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.sortinghat.common.base.BaseActivity;
 import com.sortinghat.common.rxbus.RxBus;
 import com.sortinghat.common.utils.CommonUtils;
@@ -347,21 +346,12 @@ public class MainActivity extends BaseActivity<SplashModel, ActivityMainBinding>
                         HomeVideoFragment.videoStartTime = System.currentTimeMillis();
                         HomeVideoFragment.postVideoPlayDurationTime = System.currentTimeMillis();
                         HomeVideoFragment.isCurrentQuit = true;
-                        if (GSYVideoManager.instance().listener() != null) {
-                            //进入其他非视频页
-                            if (!ConstantUtil.homeVideoIsAd) {
-                                GSYVideoManager.onResume(false);
-                                HomeVideoFragment.startPlayTime = System.currentTimeMillis();
-                            }
-                        } else {
-                            //进入个人视频页，回来之后
-                            homeFragment.onVideoErrorPlay();
-                        }
+                        HomeVideoFragment.startPlayTime = System.currentTimeMillis();
+
                     } else {
                         if (position == 0 || position == 1 || position == 4 || (position == 3 && SPUtils.getInstance(Constant.SP_USER_FILE_NAME).getInt("user_status", 0) == 1)) {
                             HomeVideoFragment.isCurrentQuit = false;
                         }
-                        GSYVideoManager.onPause();
                     }
 
                     if (position == 0 && homeFragment.getViewPager().getCurrentItem() == 1) {
@@ -622,7 +612,7 @@ public class MainActivity extends BaseActivity<SplashModel, ActivityMainBinding>
 
         addSubscription(RxBus.getDefault().toObservableSticky(MessageCountBean.class).subscribe(messageCountBean -> {
             if (messageCountBean != null) {
-                int totalMessageCount = messageCountBean.getUserFollow() + messageCountBean.getPostComment() + messageCountBean.getPostLike() + messageCountBean.getCommentLike() + messageCountBean.getApplySys() +  messageCountBean.getSysBroadcast();
+                int totalMessageCount = messageCountBean.getUserFollow() + messageCountBean.getPostComment() + messageCountBean.getPostLike() + messageCountBean.getCommentLike() + messageCountBean.getApplySys() + messageCountBean.getSysBroadcast();
                 if (textBadgeItem != null) {
                     if (totalMessageCount > 0) {
                         if (totalMessageCount > 99) {
@@ -869,7 +859,6 @@ public class MainActivity extends BaseActivity<SplashModel, ActivityMainBinding>
     @Override
     protected void onPause() {
         super.onPause();
-        GSYVideoManager.onPause();
     }
 
 }

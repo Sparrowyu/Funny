@@ -25,7 +25,6 @@ import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ThreadUtils;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.JsonObject;
-import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.sortinghat.common.adapter.FragmentPagerAdapter;
 import com.sortinghat.common.base.BaseActivity;
 import com.sortinghat.common.base.BaseFragment;
@@ -164,22 +163,11 @@ public class HomeFragment extends BaseFragment<PublishViewModel, FragmentHomeBin
                     HomeVideoFragment.videoStartTime = System.currentTimeMillis();
                     HomeVideoFragment.postVideoPlayDurationTime = System.currentTimeMillis();
                     HomeVideoFragment.isCurrentQuit = true;
-                    if (GSYVideoManager.instance().listener() != null) {
-                        if (!ConstantUtil.homeVideoIsAd) {
-                            GSYVideoManager.onResume(false);
-                            HomeVideoFragment.startPlayTime = System.currentTimeMillis();
-                        }
-                    } else {
-                        onVideoErrorPlay();
-                    }
+
                     HomeImageTextFragment.isCurrentQuit = false;
                     ((HomeImageTextFragment) fragmentList.get(1)).uploadPlay(true);
                 } else {
                     HomeImageTextFragment.imgStartTime = System.currentTimeMillis();
-                    HomeVideoFragment.isCurrentQuit = false;
-                    GSYVideoManager.onPause();
-                    HomeImageTextFragment.isCurrentQuit = true;
-                    ((HomeVideoFragment) fragmentList.get(0)).uploadPlay(true);
                 }
                 logOutOrInRefreshVideo();
             }
@@ -207,7 +195,6 @@ public class HomeFragment extends BaseFragment<PublishViewModel, FragmentHomeBin
     }
 
     public void updateExperimentStrategy(String bottomEmotion) {
-        ((HomeVideoFragment) fragmentList.get(0)).updateExperimentStrategy(bottomEmotion);
         ((HomeImageTextFragment) fragmentList.get(1)).updateExperimentStrategy(bottomEmotion);
     }
 
@@ -431,7 +418,6 @@ public class HomeFragment extends BaseFragment<PublishViewModel, FragmentHomeBin
                             if (getViewPager().getCurrentItem() != 0) {
                                 getViewPager().setCurrentItem(0);
                             }
-                            ((HomeVideoFragment) fragmentList.get(0)).playShareVideo(videoInfo);
                         } else {
                             if (getViewPager().getCurrentItem() != 1) {
                                 if (((HomeImageTextFragment) fragmentList.get(1)).isInitData()) {

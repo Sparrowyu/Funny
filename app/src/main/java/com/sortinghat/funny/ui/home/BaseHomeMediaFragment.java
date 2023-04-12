@@ -31,7 +31,6 @@ import com.blankj.utilcode.util.ThreadUtils;
 import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bytedance.sdk.openadsdk.TTAdNative;
 import com.google.gson.JsonObject;
-import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.sortinghat.common.adapter.BaseBindingHolder;
 import com.sortinghat.common.base.BaseActivity;
 import com.sortinghat.common.base.BaseFragment;
@@ -880,14 +879,7 @@ public class BaseHomeMediaFragment<VM extends AndroidViewModel, SV extends ViewD
     }
 
     private void setVideoPlayOrPause(boolean isSetPause) {
-        if (tabType == 1 && GSYVideoManager.instance().listener() != null) {
-            if (isSetPause) {
-                GSYVideoManager.onPause();
-            } else {
-                GSYVideoManager.onResume(false);
-            }
 
-        }
     }
 
     //type 收集话题 ：userLikeTopic 收集年龄性别信息：information
@@ -930,8 +922,6 @@ public class BaseHomeMediaFragment<VM extends AndroidViewModel, SV extends ViewD
             long currentPosition = 0;
             long video_total_time = 0;
             if (tabType == 1) {
-                currentPosition = GSYVideoManager.instance().getCurrentPosition();
-                video_total_time = GSYVideoManager.instance().getDuration();
             }
             long endTime = System.currentTimeMillis();
             if (startCommentDialogTime != 0) {

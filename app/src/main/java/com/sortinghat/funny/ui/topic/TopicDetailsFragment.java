@@ -16,7 +16,6 @@ import com.sortinghat.funny.R;
 import com.sortinghat.funny.adapter.TopicRelationPostAdapter;
 import com.sortinghat.funny.bean.HomeVideoImageListBean;
 import com.sortinghat.funny.databinding.FragmentTopicDetailsBinding;
-import com.sortinghat.funny.ui.common.TopicPostPreviewActivity;
 import com.sortinghat.funny.util.business.RequestParamUtil;
 import com.sortinghat.funny.viewmodel.TopicViewModel;
 
@@ -71,7 +70,6 @@ public class TopicDetailsFragment extends BasePullDownRefreshFragment<TopicViewM
 
     @Override
     protected void setListener() {
-        contentLayoutBinding.recyclerView.setOnItemClickListener((v, position) -> TopicPostPreviewActivity.starActivity("TopicDetailsFragment", topicTab,3, 0, topicId, topicName, topicRelationPostAdapter.getData(), position, viewModel.getPageNumber()));
 
         if (!TextUtils.isEmpty(topicId)) {
             contentLayoutBinding.recyclerView.setOnRefreshListener(() -> {

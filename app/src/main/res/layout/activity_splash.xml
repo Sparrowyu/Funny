@@ -21,7 +21,6 @@
             android:layout_height="match_parent"
             android:layout_above="@id/iv_logo_bg" />
 
-
     </RelativeLayout>
 
 
