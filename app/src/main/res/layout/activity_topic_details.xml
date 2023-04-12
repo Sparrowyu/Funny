@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/RootLayout"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/rl_topic_details_top_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp110"
+            android:paddingBottom="@dimen/dp10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back_top"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp48"
+                android:background="@drawable/selector_click_background"
+                android:paddingLeft="@dimen/dp15"
+                android:paddingRight="@dimen/dp15"
+                android:src="@drawable/ic_back_black_arrow" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <TextView
+                    android:id="@+id/tv_topic_name"
+                    style="@style/MiddleTextBlack"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:text="沙雕"
+                    android:textColor="@color/color_333333"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_topic_browse_number"
+                    style="@style/StandardTextBlack"
+                    android:layout_marginTop="@dimen/dp2"
+                    android:text="28亿次浏览"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/tv_topic_name"
+                    app:layout_constraintTop_toBottomOf="@id/tv_topic_name" />
+
+                <TextView
+                    android:id="@+id/tv_like_topic"
+                    style="@style/StandardTextWhite"
+                    android:layout_marginEnd="@dimen/dp15"
+                    android:layout_toStartOf="@id/tv_shield_topic"
+                    android:background="@drawable/shape_orange_bg_with_corner"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dp72"
+                    android:minHeight="@dimen/dp28"
+                    android:text="@string/like"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_shield_topic"
+                    style="@style/StandardTextWhite"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dp15"
+                    android:background="@drawable/shape_orange_bg_with_corner"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dp72"
+                    android:minHeight="@dimen/dp28"
+                    android:text="@string/shield"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@id/tab_layout"
+            style="@style/TabLayoutStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_topic_details_top_view"
+            app:tabMode="scrollable" />
+
+        <View
+            android:id="@+id/v_bottom_divider_line"
+            style="@style/HorizontalDividerLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+
+        <com.sortinghat.funny.view.ViewPagerFixed
+            android:id="@id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_bottom_divider_line"
+            app:layout_constraintVertical_weight="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

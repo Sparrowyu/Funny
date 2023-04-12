@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@id/item_view"
+        style="@style/ItemLayout"
+        android:layout_width="match_parent"
+        android:paddingTop="@dimen/dp10"
+        android:paddingBottom="@dimen/dp10">
+
+        <CheckBox
+            android:id="@+id/ck_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp16"
+            android:button="@null"
+            android:checked="false"
+            android:drawableLeft="@drawable/report_check_bg"
+            android:drawablePadding="@dimen/dp5"
+            android:paddingLeft="0dp"
+            android:text=""
+            android:textColor="@color/color_666666"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</layout>

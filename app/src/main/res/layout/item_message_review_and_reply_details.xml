@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/ItemLayout"
+        android:paddingStart="@dimen/dp15"
+        android:paddingTop="@dimen/dp12"
+        android:paddingEnd="@dimen/dp15"
+        android:paddingBottom="@dimen/dp12">
+
+        <RelativeLayout
+            android:id="@+id/rl_user_icon"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.sortinghat.funny.view.CircleImageView
+                android:id="@+id/iv_user_icon"
+                style="@style/my_user_icon"
+                android:layout_width="@dimen/dp48"
+                android:layout_height="@dimen/dp48" />
+
+            <ImageView
+                android:id="@+id/iv_box_user_icon"
+                style="@style/my_user_icon_box"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_reviewer_or_replier_nick_name"
+            style="@style/MiddleTextBlack"
+            android:layout_marginStart="@dimen/dp5"
+            android:text="杜明珠"
+            android:textColor="@color/color_333333"
+            app:layout_constraintStart_toEndOf="@id/rl_user_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_review_or_reply_content"
+            style="@style/StandardTextBlack"
+            android:layout_marginTop="@dimen/dp5"
+            android:text="这里是评论内容"
+            android:textColor="@color/color_333333"
+            app:layout_constraintStart_toStartOf="@id/tv_reviewer_or_replier_nick_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_reviewer_or_replier_nick_name" />
+
+        <TextView
+            android:id="@+id/tv_review_or_reply_your_works"
+            style="@style/StandardTextBlack"
+            android:layout_marginTop="@dimen/dp5"
+            android:text="评论了你的作品"
+            android:textColor="@color/color_999999"
+            app:layout_constraintStart_toStartOf="@id/tv_review_or_reply_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_review_or_reply_content" />
+
+        <TextView
+            android:id="@+id/tv_review_or_reply_time"
+            style="@style/StandardTextBlack"
+            android:layout_marginStart="@dimen/dp12"
+            android:layout_marginTop="@dimen/dp5"
+            android:text="2天前"
+            android:textColor="@color/color_999999"
+            app:layout_constraintStart_toEndOf="@id/tv_review_or_reply_your_works"
+            app:layout_constraintTop_toBottomOf="@+id/tv_review_or_reply_content" />
+
+        <ImageView
+            android:id="@+id/iv_review_or_reply_works_cover_image"
+            android:layout_width="@dimen/dp48"
+            android:layout_height="@dimen/dp48"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

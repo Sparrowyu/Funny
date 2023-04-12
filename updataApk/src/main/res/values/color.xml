@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="cy_plugin_back_dault">#3C9E10</color>
+    <color name="cy_plugin_back_press">#28343f</color>
+    <color name="cy_plugin_item_fontcolor">#949494</color>
+    
+    <color name="cy_plugin_gray">#D1D1D1</color>
+    <color name="cy_plugin_white">#FFFFFF</color>
+    <color name="cy_plugin_dark">#808080</color>
+    <color name="cy_plugin_dialog">#666666</color>
+    <color name="dialog_background">#00000000</color>
+    <color name="close_background">#66000000</color>
+
+    <color name="transparency">#00ffffff</color>
+    <color name="arc_progress_finished_color">#D8D8D8</color>
+    <color name="arc_progress_unfinished_color">#36AE5D</color>
+
+</resources>

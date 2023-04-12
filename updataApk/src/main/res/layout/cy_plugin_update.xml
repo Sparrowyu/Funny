@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/cy_plugin_notification_bg"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/cy_plugin_notifiimage"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerInside"
+         />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignBottom="@+id/cy_plugin_notifiimage"
+        android:layout_alignTop="@+id/cy_plugin_notifiimage"
+        android:layout_toRightOf="@+id/cy_plugin_notifiimage"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+         >
+
+        <TextView
+            android:id="@+id/cy_plugin_notifititle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textColor="#FF000000"
+            android:gravity="top"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_above="@+id/cy_plugin_nofipb"
+            android:textSize="16sp" />
+
+        <ProgressBar
+            android:id="@+id/cy_plugin_nofipb"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_vertical|bottom"
+            android:maxHeight="10dip"
+            android:paddingBottom="10dp"
+            android:minHeight="10dip"
+            android:progressDrawable="@drawable/cy_plugin_progressbar" />
+    </RelativeLayout>
+
+</RelativeLayout>

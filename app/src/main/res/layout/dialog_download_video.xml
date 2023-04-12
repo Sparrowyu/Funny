@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:background="@drawable/dialog_bottom_bg"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/dialog_download_title"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/standard_text_size"
+            tools:ignore="UnusedAttribute" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_d7d7d7" />
+        <TextView
+            android:id="@+id/tv_download"
+            style="@style/MiddleTextBlack"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:layout_gravity="center_horizontal"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/download_watermark"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/text_size_15"
+            tools:ignore="UnusedAttribute" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_d7d7d7" />
+
+        <TextView
+            android:id="@+id/tv_download_no_watermark"
+            style="@style/MiddleTextBlack"
+            android:layout_height="@dimen/dp60"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/download_ad"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/text_size_15" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp10"
+            android:background="@color/color_f5f5f5" />
+
+        <TextView
+            android:id="@+id/dialog_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/middle_text_size"
+            tools:ignore="UnusedAttribute" />
+    </LinearLayout>
+
+</layout>

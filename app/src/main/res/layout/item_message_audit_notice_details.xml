@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.sortinghat.funny.bean.AuditNoticeMessageBean" />
+
+        <import type="com.blankj.utilcode.util.TimeUtils" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        style="@style/ItemLayout"
+        android:layout_marginStart="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_marginEnd="@dimen/dp15"
+        app:cardCornerRadius="@dimen/dp10">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp15"
+            android:paddingTop="@dimen/dp12"
+            android:paddingEnd="@dimen/dp15"
+            android:paddingBottom="@dimen/dp12">
+
+            <TextView
+                android:id="@+id/tv_audit_notice_title"
+                style="@style/MiddleTextBlack"
+                android:text="@{bean.content.title}"
+                android:textColor="@color/color_333333"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_audit_notice_create_date"
+                style="@style/StandardTextBlack"
+                android:layout_marginTop="@dimen/dp5"
+                android:text='@{TimeUtils.millis2String(bean.crateAt,"yyyy-MM-dd")}'
+                android:textColor="@color/color_999999"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_audit_notice_title" />
+
+            <TextView
+                android:id="@+id/tv_audit_notice_content"
+                style="@style/StandardTextBlack"
+                android:layout_marginTop="@dimen/dp10"
+                android:text="@{bean.content.applyReason}"
+                android:textColor="@color/color_333333"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_audit_notice_create_date" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

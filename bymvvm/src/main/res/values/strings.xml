@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="by_string_loading">加载中…</string>
+    <string name="by_string_try_load">加载失败，请点击屏幕重试</string>
+    <string name="by_string_empty">暂无数据</string>
+    <string name="by_string_comment_empty">此时不评，更待何时？</string>
+
+    <string name="by_web_string_loading">加载中…</string>
+    <string name="by_web_string_click_load">点击重新加载</string>
+
+    <string name="select_image_or_video">选择图片或视频</string>
+
+</resources>

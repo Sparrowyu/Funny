@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="41dp"
+    android:layout_height="41dp"
+    android:layout_toLeftOf="@+id/index_image_setup" >
+
+    <ImageView
+        android:id="@+id/cy_plugin_share_recommd"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/cy_plugin_recommend_default" />
+
+    <ImageView
+        android:id="@+id/cy_plugin_share_reddotimg"
+        android:layout_width="9.5dp"
+        android:layout_height="11dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/cy_plugin_reddot" />
+
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@id/item_view"
+        style="@style/ItemLayout">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/top_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/home_fragment_bottom_gradient_shape" />
+
+        <TextView
+            android:id="@+id/tv_video_num"
+            style="@style/SmallTextWhite"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp5"
+            android:layout_marginBottom="@dimen/dp5"
+            android:drawablePadding="@dimen/dp2"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_video_tag"
+            style="@style/SmallTextWhite"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp5"
+            android:layout_marginBottom="@dimen/dp5"
+            android:paddingBottom="@dimen/dp5"
+            android:drawableLeft="@mipmap/apply_reject_tag"
+            android:drawablePadding="@dimen/dp2"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/my_post_play_num"
+            style="@style/SmallTextWhite"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp5"
+            android:layout_marginBottom="@dimen/dp5"
+            android:paddingBottom="@dimen/dp5"
+            android:drawableLeft="@mipmap/my_play_num"
+            android:drawablePadding="@dimen/dp1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</layout>

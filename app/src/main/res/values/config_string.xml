@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="um_appkey">60deb38526a57f101843d62b</string>
+    <string name="um_secret">8ac2489dc3aa6bde7c965cd8d140b350</string>
+    <string name="um_channel_id">none</string>
+
+    <string name="mi_appkey">5331999236172</string>
+    <string name="mi_secret">jPElTiNSksmTH3DnXgHopA==</string>
+    <string name="mi_id">2882303761519992172</string>
+
+    <string name="oppo_appkey">b80e6a6b4e844e2ca6fdb5e98049b745</string>
+    <string name="oppo_secret">d438536e62ef4942a710517654f4f75d</string>
+
+    <string name="vivo_appkey">8602736d4566db0f7ceb79182e14ab93</string>
+    <string name="vivo_secret">e6910fba-8eae-4264-873d-ae9910ccfe00</string>
+    <string name="vivo_id">105508045</string>
+
+    <string name="huawei_secret">3980acf75b4fb7e59908d1a4be6f7c240553d419ff394cd7e902f453d1372cf2</string>
+    <string name="huawei_id">104680999</string>
+
+    <!--微信-->
+    <string name="weixin_appid">wx4fe9e8736512f1c3</string>
+    <string name="weixin_appsecret">5bf991cd690298f28d8f6f6e3a79d769</string>
+
+    <!--QQ-->
+    <string name="qq_appid">101962939</string>
+    <string name="qq_key">aefe7c8a400f0d0666f181ce3614c6e6</string>
+    <string name="qq_appid_umeng">tencent101962939</string>
+
+    <!--秒验模板短信id-->
+    <string name="sms_temp_code">12900727</string>
+
+    <!--穿山甲AD-->
+    <string name="ttad_appid">5235165</string><!--穿山甲ttad_appid-->
+    <string name="ttad_home_video_id">947573174</string><!--首页draw视频-->
+    <string name="ttad_home_video_other_id">947551481</string><!--首页draw视频对照-->
+    <string name="ttad_home_img_id">947390875</string><!--首页图文信息流广告-->
+    <string name="ttad_splash_id">887646695</string><!--开屏广告-->
+    <string name="ttad_task_reward_video_id">947640828</string><!--激励视频-->
+      <!--广点通AD-->
+    <string name="gdtad_appid">1200366625</string><!--穿山甲ttad_appid-->
+    <string name="gdtad_home_video_id">8042993187491350</string><!--首页draw视频-->
+    <string name="gdtad_home_video_other_id"></string><!--首页draw视频对照-->
+    <string name="gdtad_home_img_id"></string><!--首页图文信息流广告-->
+    <string name="gdtad_splash_id">7092589496240213</string><!--开屏广告-->
+    <string name="gdtad_task_reward_video_id"></string><!--激励视频-->
+    <!--快手AD-->
+    <string name="ksad_appid">844100001</string><!--穿山甲ttad_appid-->
+    <string name="ksad_home_video_id">8441000001</string><!--首页draw视频-->
+    <string name="ksad_home_video_other_id"></string><!--首页draw视频对照-->
+    <string name="ksad_home_img_id"></string><!--首页图文信息流广告-->
+    <string name="ksad_splash_id">8441000002</string><!--开屏广告-->
+    <string name="ksad_task_reward_video_id"></string><!--激励视频-->
+
+</resources>

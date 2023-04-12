@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sortinghat.fymUpdate">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <application>
+        <service
+            android:name="com.sortinghat.fymUpdate.updateapp.DownloadNewService"
+            android:exported="false" />
+    </application>
+
+</manifest>

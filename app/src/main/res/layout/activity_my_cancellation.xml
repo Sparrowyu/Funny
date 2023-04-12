@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/cancel_first_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dp16"
+            android:visibility="visible">
+
+            <TextView
+                style="@style/LargeTextBlack"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp60"
+                android:text="请阅读并同意注销须知"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/tv_first_notify"
+                style="@style/SmallTextBlack"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp20"
+                android:text="我已阅读并同意《搞笑星球帐号注销须知》"
+                android:textColor="@color/color_d7d7d7"
+                android:textSize="12sp"
+                android:theme="@style/MyCheckBox" />
+
+            <TextView
+                android:id="@+id/tv_first"
+                style="@style/my_gray_bt"
+                android:layout_marginTop="@dimen/dp20"
+                android:text="下一步" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cancel_second_getcode_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dp16"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/LargeTextBlack"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp30"
+                android:text="身份验证"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cancel_second_phone_string"
+                style="@style/Base333StandardText"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp20"
+                android:gravity="center"
+                android:text="为了保障您的账户安全\n请输入手机号和验证码"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginTop="@dimen/dp36">
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    style="@style/my_editText"
+                    android:layout_centerVertical="true"
+                    android:hint="请输入手机号"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:maxLines="1" />
+
+                <ImageView
+                    android:id="@+id/edit_phone_clear_img"
+                    style="@style/IvEditClose" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/dp1"
+                android:background="@color/color_d7d7d7" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/dp10">
+
+                <EditText
+                    android:id="@+id/et_sms_code"
+                    style="@style/my_editText"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp20"
+                    android:layout_toLeftOf="@+id/tv_get_sms_code"
+                    android:hint="请输入验证码"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:maxLines="1" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="@dimen/dp21"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:layout_toLeftOf="@+id/tv_get_sms_code"
+                    android:background="@color/color_d7d7d7" />
+
+                <TextView
+                    android:id="@+id/tv_get_sms_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:text="获取验证码"
+                    android:textColor="@color/color_d7d7d7"
+                    android:textSize="@dimen/standard_text_size"
+                    tools:ignore="UnusedAttribute" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/dp1"
+                android:background="@color/color_d7d7d7" />
+
+            <TextView
+                android:id="@+id/tv_cancel_sure"
+                style="@style/my_gray_bt"
+                android:layout_marginTop="@dimen/dp20"
+                android:text="注销" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cancel_third__page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dp16"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/LargeTextBlack"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp30"
+                android:text="申请已提交"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/Base333StandardText"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp20"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.1"
+                android:text="工作人员若审核通过，您的账号在15天后注销，如需放弃，15天内再次登录可根据提示放弃注销。"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

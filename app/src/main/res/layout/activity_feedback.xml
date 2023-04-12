@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/complete_chose_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp16"
+            android:background="@drawable/shape_gray_bg_with_corner"
+            android:minHeight="158dp">
+
+            <EditText
+                android:id="@+id/et_sign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_gray_bg_with_corner"
+                android:gravity="start"
+                android:hint="请填写你的反馈意见，我会努力做的更好"
+                android:maxLength="120"
+                android:maxLines="10"
+                android:minHeight="158dp"
+                android:padding="@dimen/dp10"
+                android:textColor="@color/color_333333"
+                android:textColorHint="@color/color_d7d7d7"
+                android:textCursorDrawable="@drawable/edittext_cursor_normal"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/StandardTextBlack"
+            android:layout_marginLeft="@dimen/dp16"
+            android:text="最多120个汉字"
+            android:textColor="@color/color_d7d7d7" />
+
+
+        <LinearLayout
+            android:id="@+id/dialog_choice_gender_dialog_ll"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_margin="@dimen/dp16"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                style="@style/Base333MiddleText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/click_e7_corner4_bt_bg"
+                android:gravity="center"
+                android:text="取消"
+                android:textStyle="bold"
+                tools:ignore="UnusedAttribute" />
+
+
+            <TextView
+                android:id="@+id/tv_sure"
+                style="@style/Base333MiddleText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp50"
+                android:layout_weight="1"
+                android:background="@drawable/click_e7_corner4_bt_bg"
+                android:gravity="center"
+                android:text="提交"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp120"
+                    android:layout_height="@dimen/dp120"
+                    android:src="@mipmap/img_feedbacck_wx" />
+
+                <TextView
+                    android:id="@+id/tv_feedback_wx"
+                    style="@style/MiddleTextBlack"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:foreground="?android:selectableItemBackground"
+                    android:text="微信：GXXQ818"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="UnusedAttribute" />
+
+                <TextView
+                    android:id="@+id/tv_feedback_wx_copy"
+                    style="@style/MiddleTextBlack"
+                    android:foreground="?android:selectableItemBackground"
+                    android:padding="@dimen/dp10"
+                    android:text="点击复制"
+                    android:textColor="#4EC1FF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="UnusedAttribute" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp120"
+                    android:layout_height="@dimen/dp120"
+                    android:src="@mipmap/img_feedbacck_qq" />
+
+                <TextView
+                    android:id="@+id/tv_feedback_qq"
+                    style="@style/MiddleTextBlack"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:foreground="?android:selectableItemBackground"
+                    android:text="QQ群：675082738"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="UnusedAttribute" />
+
+                <TextView
+                    android:id="@+id/tv_feedback_qq_copy"
+                    style="@style/MiddleTextBlack"
+                    android:foreground="?android:selectableItemBackground"
+                    android:padding="@dimen/dp10"
+                    android:text="点击复制"
+                    android:textColor="#4EC1FF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="UnusedAttribute" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

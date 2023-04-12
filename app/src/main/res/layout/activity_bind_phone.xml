@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        style="@style/RootLayout"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp38"
+        android:paddingRight="@dimen/dp38">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Base333MiddleText"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp90"
+                android:gravity="center_horizontal"
+                android:text="根据相关规定，互联网账号绑定手机号\n才能发帖和评论" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginTop="@dimen/dp36">
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    style="@style/my_editText"
+                    android:layout_centerVertical="true"
+                    android:hint="请输入手机号"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:maxLines="1" />
+
+                <ImageView
+                    android:id="@+id/edit_phone_clear_img"
+                    style="@style/IvEditClose" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/dp1"
+                android:background="@color/color_d7d7d7" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/dp10">
+
+                <EditText
+                    android:id="@+id/et_sms_code"
+                    style="@style/my_editText"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp20"
+                    android:layout_toLeftOf="@+id/tv_get_sms_code"
+                    android:hint="请输入验证码"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:maxLines="1" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="@dimen/dp21"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:layout_toLeftOf="@+id/tv_get_sms_code"
+                    android:background="@color/color_d7d7d7" />
+
+                <TextView
+                    android:id="@+id/tv_get_sms_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:text="获取验证码"
+                    android:textColor="@color/color_d7d7d7"
+                    android:textSize="@dimen/standard_text_size"
+                    tools:ignore="UnusedAttribute" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_d7d7d7" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10">
+
+                <CheckBox
+                    android:id="@+id/login_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/MyCheckBox" />
+
+                <TextView
+                    android:id="@+id/tv_privacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp5"
+                    android:layout_toRightOf="@+id/login_checkbox"
+                    android:text="已阅读并同意《用户协议》和《隐私政策》"
+                    android:textColor="@color/color_d7d7d7"
+                    android:textSize="@dimen/small_text_size" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_login"
+                style="@style/my_gray_bt"
+                android:layout_marginTop="@dimen/dp30"
+                android:text="绑定" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

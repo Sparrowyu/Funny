@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/notification_main"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:maxHeight='@dimen/dp100'
+    android:minWidth="64dp"
+    android:paddingLeft="@dimen/dp15"
+    android:paddingBottom="@dimen/dp5">
+
+    <ImageView
+        android:id="@+id/notification_large_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="@dimen/dp10"
+        android:scaleType="fitXY"
+        android:src="@mipmap/icon" />
+
+    <TextView
+        android:id="@+id/notification_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_toRightOf="@+id/notification_large_icon"
+        android:text="搞笑星球"
+        android:textColor="@color/black"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/notification_time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="11dp"
+        android:layout_toRightOf="@+id/notification_name"
+        android:maxLines="1"
+        android:text="刚刚"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/notification_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notification_name"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="@dimen/dp80"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="标题"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/notification_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notification_title"
+        android:layout_marginRight="@dimen/dp80"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text=""
+        android:textColor="@color/color_666666"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/notification_small_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/notification_name"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="15dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/icon" />
+
+</RelativeLayout>

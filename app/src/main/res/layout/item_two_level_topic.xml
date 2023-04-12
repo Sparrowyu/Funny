@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tv_two_level_topic_name"
+        style="@style/MiddleTextBlack"
+        android:paddingStart="@dimen/dp15"
+        android:paddingTop="@dimen/dp10"
+        android:paddingEnd="@dimen/dp15"
+        android:paddingBottom="@dimen/dp10"
+        android:textColor="@color/color_333333" />
+
+</layout>

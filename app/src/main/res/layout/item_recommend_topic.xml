@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tv_recommend_topic_name"
+        style="@style/StandardTextBlack"
+        android:padding="@dimen/dp8"
+        android:textColor="@color/color_666666" />
+
+</layout>

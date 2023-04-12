@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/ContentLayout"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/dp5">
+
+        <ImageView
+            android:id="@+id/iv_like_or_unlike_type"
+            android:layout_width="@dimen/dp60"
+            android:layout_height="@dimen/dp60" />
+
+        <TextView
+            android:id="@+id/tv_like_or_unlike_type_name"
+            style="@style/SmallerTextBlack"
+            android:layout_marginTop="@dimen/dp5"
+            android:textColor="@color/color_999999" />
+
+    </LinearLayout>
+
+</layout>

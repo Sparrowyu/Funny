@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:id="@+id/item_post_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <com.sortinghat.funny.thirdparty.video.SampleCoverVideo
+            android:id="@+id/gsy_video_player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/main_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="6dp"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/gif_home_loading"
+            style="@style/MiddleTextWhite"
+            android:layout_width="@dimen/dp60"
+            android:layout_height="@dimen/dp30"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <com.sortinghat.funny.view.LikeView
+            android:id="@+id/likeview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp50" />
+
+        <com.sortinghat.funny.view.ControllerView
+            android:id="@+id/controller"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_guide_animate_image_and_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent60"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_guide_animate_image"
+                android:layout_width="@dimen/dp80"
+                android:layout_height="@dimen/dp80"
+                android:layout_marginBottom="@dimen/dp200"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_guide_text"
+                style="@style/MiddleTextWhite"
+                android:layout_marginTop="@dimen/dp25"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_guide_animate_image" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_home_like_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_dialog"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp120"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:background="@drawable/home_like_dialog_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Base333StandardText"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:text="赞出真实感受，让AI系统更懂你的点。"
+                    android:textSize="@dimen/small_text_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/like_layout1"
+                        style="@style/dialog_like_ll">
+
+                        <ImageView
+                            android:id="@+id/like_img1"
+                            style="@style/dialog_like_img" />
+
+                        <TextView
+                            android:id="@+id/like_tx1"
+                            style="@style/dialog_like_tx"
+                            android:text="以后看" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/like_layout2"
+                        style="@style/dialog_like_ll">
+
+                        <ImageView
+                            android:id="@+id/like_img2"
+                            style="@style/dialog_like_img" />
+
+                        <TextView
+                            android:id="@+id/like_tx2"
+                            style="@style/dialog_like_tx"
+                            android:text="触动内心" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/like_layout3"
+                        style="@style/dialog_like_ll">
+
+                        <ImageView
+                            android:id="@+id/like_img3"
+                            style="@style/dialog_like_img" />
+
+                        <TextView
+                            android:id="@+id/like_tx3"
+                            style="@style/dialog_like_tx"
+                            android:text="感动哭了" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/like_layout4"
+                        style="@style/dialog_like_ll">
+
+                        <ImageView
+                            android:id="@+id/like_img4"
+                            style="@style/dialog_like_img" />
+
+                        <TextView
+                            android:id="@+id/like_tx4"
+                            style="@style/dialog_like_tx"
+                            android:text="特别爱看" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/like_layout5"
+                        style="@style/dialog_like_ll">
+
+                        <ImageView
+                            android:id="@+id/like_img5"
+                            style="@style/dialog_like_img" />
+
+                        <TextView
+                            android:id="@+id/like_tx5"
+                            style="@style/dialog_like_tx"
+                            android:text="笑出声" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_home_dislike_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_dialog"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_marginBottom="@dimen/dp260"
+                android:background="@drawable/shape_white_bg_with_corner"
+                android:minHeight="@dimen/dp160"
+                android:paddingLeft="@dimen/dp10"
+                android:paddingRight="@dimen/dp10"
+                android:paddingBottom="@dimen/dp5">
+
+                <LinearLayout
+                    android:id="@+id/dislike_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="@dimen/dp85"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp20">
+
+                    <LinearLayout
+                        android:id="@+id/dislike_layout1"
+                        style="@style/dialog_like_ll"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/dislike_img1"
+                            style="@style/dialog_like_img" />
+
+                        <TextView
+                            android:id="@+id/dislike_tx1"
+                            style="@style/dialog_dislike_tx"
+                            android:text="屏蔽这个话题" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dislike_layout2"
+                        style="@style/dialog_like_ll"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/dislike_img2"
+                            style="@style/dialog_like_img" />
+
+                        <TextView
+                            android:id="@+id/dislike_tx2"
+                            style="@style/dialog_dislike_tx"
+                            android:text="屏蔽作者" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dislike_layout3"
+                        style="@style/dialog_like_ll">
+
+                        <ImageView
+                            android:id="@+id/dislike_img3"
+                            style="@style/dialog_like_img" />
+
+                        <TextView
+                            android:id="@+id/dislike_tx3"
+                            style="@style/dialog_dislike_tx"
+                            android:text="不爱看" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dislike_edit_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dislike_ll"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:minHeight="@dimen/dp40">
+
+                    <EditText
+                        android:id="@+id/dislike_edit"
+                        style="@style/my_editText"
+                        android:background="@drawable/shape_gray_bg_with_corner"
+                        android:hint="图片已经不能表达我的想法"
+                        android:maxLength="50"
+                        android:minHeight="@dimen/dp40"
+                        android:paddingLeft="@dimen/dp5"
+                        android:paddingRight="@dimen/dp30" />
+
+                    <ImageView
+                        android:id="@+id/dislike_send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp10"
+                        android:padding="@dimen/dp1"
+                        android:src="@mipmap/dislike_send"
+                        android:text="发送"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/dislike_feedback"
+                    style="@style/BaseText"
+                    android:layout_below="@+id/dislike_edit_rl"
+                    android:layout_marginLeft="-5dp"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:foreground="?android:selectableItemBackground"
+                    android:padding="@dimen/dp5"
+                    android:text="意见反馈QQ群：675082738"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15sp"
+                    tools:ignore="UnusedAttribute" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+</layout>

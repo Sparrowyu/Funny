@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="page_bg">#F5F5F5</color>
+    <color name="title_bar_bg">#F1F1F1</color>
+    <color name="divider_line">#D8D8D8</color>
+
+    <!--item的水波纹颜色-->
+    <color name="itemBackground">#DD7D7D7D</color>
+    <!--item的5.0以下版本选择器颜色-->
+    <color name="itemLowBackground">#D9D9D9</color>
+    <color name="tab_indicator_selected">#333333</color>
+
+    <!--透明色-->
+    <color name="transparent">#00000000</color>
+    <color name="transparent60">#66000000</color>
+    <!--半透明-->
+    <color name="ban_transparent">#80000000</color>
+
+    <!--一些三方库更改的配置属性，非明确不能改-->
+    <color name="style_color">#4dffffff</color>
+    <color name="style_second_color">#4dffffff</color>
+    <!--一些三方库-->
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="light_orange">#FF632E</color>
+    <color name="light_orange_fbc">#80F26C3F</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_f5f5f5">#F5F5F5</color>
+    <color name="color_d7d7d7">#D7D7D7</color>
+    <color name="color_e7e7e7">#E7E7E7</color>
+
+    <color name="color_tab_fff">#99ffffff</color>
+    <color name="color_home_title">#ccffffff</color>
+
+    <color name="bt_red">#FF5454</color>
+    <color name="bt_red_fbc">#60FF5454</color>
+    <color name="home_like_dialog_color">#99ffffff</color>
+    <color name="color_faa573">#FAA573</color>
+
+    <color name="color_dialog">#99000000</color>
+    <color name="bottom_white_start">#00000000</color>
+    <color name="bottom_white_end">#33000000</color>
+
+    <color name="textShadowColor">#33000000</color>
+    <color name="color_301308">#301308</color>
+
+    <color name="my_top_img_bg">#40000000</color>
+    <color name="my_top_img_bg_end">#33000000</color>
+
+    <color name="home_bottom_tx">#AAAAAA</color>
+    <color name="home_bottom_other_tx">#333333</color>
+
+    <color name="color_fe6a37">#fe6a37</color>
+    <color name="color_f46c35">#f46c35</color>
+    <color name="color_B44D2A">#B44D2A</color>
+    <color name="color_E6957B">#E6957B</color>
+    <color name="color_FF5A5A">#FF5A5A</color>
+    <color name="color_CACACA">#CACACA</color>
+    <color name="color_FFCCAE">#FFCCAE</color>
+    <color name="color_FE7337">#FE7337</color>
+    <color name="color_FE6937">#fe6937</color>
+    <color name="color_FF632E">#FF632E</color>
+</resources>

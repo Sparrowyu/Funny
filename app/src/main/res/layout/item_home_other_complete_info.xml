@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/complete_bg1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/dialog_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/dp16"
+            android:background="@drawable/complete_in_bg"
+            android:orientation="vertical"
+            android:padding="@dimen/dp16">
+
+            <TextView
+                style="@style/LargeTextWhite"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingBottom="@dimen/dp16"
+                android:text="完善资料后，可以看到你喜欢的内容。乱选会给你推荐不爱看的内容"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <com.sortinghat.funny.view.MyRadioGroup
+                android:id="@+id/radioGroup_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton_male"
+                    style="@style/complete_info_radio_button"
+                    android:text="男" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_female"
+                    style="@style/complete_info_radio_button"
+                    android:layout_marginLeft="@dimen/dp40"
+                    android:text="女" />
+            </com.sortinghat.funny.view.MyRadioGroup>
+
+            <TextView
+                android:id="@+id/tx_age"
+                style="@style/MiddleTextWhite"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/dp20"
+                android:paddingRight="@dimen/dp30"
+                android:text="请选择年龄范围"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.sortinghat.funny.view.MyRadioGroup
+                android:id="@+id/radioGroup_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton_age1"
+                    style="@style/complete_info_radio_button"
+                    android:text="07-12" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_age2"
+                    style="@style/complete_info_radio_button"
+                    android:layout_marginLeft="@dimen/dp40"
+                    android:text="13-17" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_age3"
+                    style="@style/complete_info_radio_button"
+                    android:text="18-24" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_age4"
+                    style="@style/complete_info_radio_button"
+                    android:layout_marginLeft="@dimen/dp40"
+                    android:text="25-30" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_age5"
+                    style="@style/complete_info_radio_button"
+                    android:text="31-40" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_age6"
+                    style="@style/complete_info_radio_button"
+                    android:layout_marginLeft="@dimen/dp40"
+                    android:text="40岁以上" />
+
+            </com.sortinghat.funny.view.MyRadioGroup>
+
+            <TextView
+                style="@style/StandardTextBlack"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp30"
+                android:text="以上资料仅用于推荐,不显示到其他位置"
+                android:textColor="#FFD556" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <TextView
+                    android:id="@+id/item_bt"
+                    style="@style/StandardTextWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp44"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/dp25"
+                    android:layout_marginRight="@dimen/dp25"
+                    android:background="@drawable/click_can_orange_bt_bg"
+                    android:gravity="center"
+                    android:text="完成"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp45"
+            android:layout_below="@+id/dialog_content">
+
+            <TextView
+                style="@style/StandardTextWhite"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/dp20"
+                android:text="上滑继续看帖"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

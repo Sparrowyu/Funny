@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        style="@style/RootLayout"
+        android:background="@color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp50">
+
+                <LinearLayout
+                    android:id="@+id/edit_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:selectableItemBackground"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp25"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        android:id="@+id/apply_edit_text"
+                        style="@style/SmallTextBlack"
+                        android:layout_marginTop="@dimen/dp8"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingMultiplier="1.1"
+                        android:text="完善个人资料，可以获得更多粉丝\n和更多让你笑出声的内容哦～"
+                        android:textColor="@color/color_333333" />
+
+                    <LinearLayout
+                        android:id="@+id/apply_reject_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/dp16"
+                        android:paddingRight="@dimen/dp16"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/MiddleTextBlack"
+                            android:layout_marginTop="@dimen/dp8"
+                            android:text="审核资料不通过"
+                            android:textColor="@color/light_orange"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/StandardTextBlack"
+                            android:layout_marginTop="@dimen/dp2"
+                            android:text="很遗憾，您编辑的资料不符合社区规范，建议您修改后再次提交审核，如有异议，可以通过微信申诉：GXXQ818"
+                            android:textColor="@color/light_orange" />
+                    </LinearLayout>
+
+                    <com.sortinghat.funny.view.CircleImageView
+                        android:id="@+id/iv_icon"
+                        android:layout_width="@dimen/dp80"
+                        android:layout_height="@dimen/dp80"
+                        android:layout_marginTop="@dimen/dp25"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/user_icon_default" />
+
+                    <TextView
+                        android:id="@+id/icon_reject_tx"
+                        style="@style/MiddleTextBlack"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:text="点击更换头像"
+                        android:textColor="@color/color_d7d7d7" />
+
+                </LinearLayout>
+
+                <View style="@style/divider_view_higher_line" />
+
+                <RelativeLayout
+                    android:id="@+id/edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp60"
+                    android:foreground="?android:selectableItemBackground"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        style="@style/setting_view_tx"
+                        android:text="昵称" />
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        style="@style/my_edit_view_right_tx"
+                        android:layout_alignParentRight="false"
+                        android:layout_marginRight="@dimen/dp12"
+                        android:layout_toLeftOf="@+id/user_name_reject"
+                        android:text="起一个有趣的名字" />
+
+                    <TextView
+                        android:id="@+id/user_name_reject"
+                        style="@style/my_edit_view_right_tx"
+                        android:text=""
+                        android:textColor="#ff0000" />
+
+                    <ImageView style="@style/setting_view_right_return" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/edit_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp60"
+                    android:foreground="?android:selectableItemBackground"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        style="@style/setting_view_tx"
+                        android:text="星球居民ID" />
+
+                    <TextView
+                        android:id="@+id/tv_id"
+                        style="@style/my_edit_view_right_tx"
+                        android:text=""
+                        android:textColor="@color/color_333333" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/edit_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp60"
+                    android:foreground="?android:selectableItemBackground"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        style="@style/setting_view_tx"
+                        android:text="手机号" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        style="@style/my_edit_view_right_tx"
+                        android:text="点击绑定" />
+
+                    <ImageView
+                        android:id="@+id/iv_phone"
+                        style="@style/setting_view_right_return" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/edit_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp60"
+                    android:foreground="?android:selectableItemBackground"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        style="@style/setting_view_tx"
+                        android:text="性别" />
+
+                    <TextView
+                        android:id="@+id/tv_sex"
+                        style="@style/my_edit_view_right_tx"
+                        android:text="一次填写机会" />
+
+                    <ImageView
+                        android:id="@+id/iv_sex"
+                        style="@style/setting_view_right_return" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/edit_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp60"
+                    android:foreground="?android:selectableItemBackground"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        style="@style/setting_view_tx"
+                        android:text="生日" />
+
+
+                    <TextView
+                        android:id="@+id/tv_birthday"
+                        style="@style/my_edit_view_right_tx"
+                        android:text="可选择不显示" />
+
+                    <ImageView style="@style/setting_view_right_return" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/edit_sign"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp60"
+                    android:foreground="?android:selectableItemBackground"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        style="@style/setting_view_tx"
+                        android:text="签名" />
+
+                    <TextView
+                        android:id="@+id/tv_slogan"
+                        style="@style/my_edit_view_right_tx"
+                        android:layout_alignParentRight="false"
+                        android:layout_marginLeft="@dimen/dp50"
+                        android:layout_marginRight="@dimen/dp12"
+                        android:layout_toLeftOf="@+id/tv_slogan_reject"
+                        android:maxLength="50"
+                        android:text="请填写个性签名" />
+
+                    <TextView
+                        android:id="@+id/tv_slogan_reject"
+                        style="@style/my_edit_view_right_tx"
+                        android:text=""
+                        android:textColor="#ff0000" />
+
+
+                    <ImageView style="@style/setting_view_right_return" />
+                </RelativeLayout>
+
+                <View style="@style/divider_view_higher_line" />
+
+                <RelativeLayout
+                    android:id="@+id/edit_school"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp60"
+                    android:foreground="?android:selectableItemBackground"
+                    android:visibility="gone"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        style="@style/setting_view_tx"
+                        android:text="学校" />
+
+
+                    <TextView
+                        style="@style/my_edit_view_right_tx"
+                        android:text="请选择学校" />
+
+                    <ImageView style="@style/setting_view_right_return" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/edit_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp60"
+                    android:foreground="?android:selectableItemBackground"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        style="@style/setting_view_tx"
+                        android:text="城市" />
+
+
+                    <TextView
+                        android:id="@+id/tv_city"
+                        style="@style/my_edit_view_right_tx"
+                        android:text="请选择你的城市" />
+
+                    <ImageView style="@style/setting_view_right_return" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/edit_work"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp60"
+                    android:foreground="?android:selectableItemBackground"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        style="@style/setting_view_tx"
+                        android:text="职务" />
+
+                    <TextView
+                        android:id="@+id/tv_professional"
+                        style="@style/my_edit_view_right_tx"
+                        android:layout_marginLeft="@dimen/dp50"
+                        android:text="请选择职业" />
+
+                    <ImageView style="@style/setting_view_right_return" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+</layout>

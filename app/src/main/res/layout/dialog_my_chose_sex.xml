@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp200"
+        android:background="@drawable/dialog_bottom_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/boy"
+            style="@style/Base333MiddleText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            tools:ignore="UnusedAttribute"
+            android:foreground="?android:selectableItemBackground"
+            android:text="男"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_d7d7d7" />
+
+        <TextView
+
+           android:id="@+id/girl"
+            style="@style/Base333MiddleText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:layout_gravity="center_horizontal"
+            android:foreground="?android:selectableItemBackground"
+            tools:ignore="UnusedAttribute"
+            android:gravity="center"
+            android:text="女"
+
+           />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp10"
+            android:background="@color/color_f5f5f5" />
+
+        <TextView
+            android:id="@+id/dialog_cancel"
+            style="@style/Base333MiddleText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:text="取消"
+            tools:ignore="UnusedAttribute" />
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:id="@+id/banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.zhpan.bannerview.BannerViewPager
+                android:id="@+id/banner_view"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"/>
+
+            <ImageView
+                android:id="@+id/iv_metaverse_top_cover_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/metaverse_top_cover_image"
+                android:scaleType="fitXY"
+                android:visibility="visible"/>
+        </FrameLayout>
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@id/tab_layout"
+            style="@style/TabLayoutStyle" />
+
+        <com.sortinghat.funny.view.ViewPagerFixed
+            android:id="@id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        style="@style/ContentLayout"
+        android:layout_marginTop="@dimen/dp10">
+
+        <ImageView
+            android:id="@+id/iv_topic_post_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tv_topic_name"
+            style="@style/StandardTextBlack"
+            android:layout_below="@id/iv_topic_post_image"
+            android:layout_marginTop="@dimen/dp5"
+            android:textColor="@color/color_333333"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</layout>

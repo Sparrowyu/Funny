@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.cardview.widget.CardView
+        style="@style/ItemLayout"
+        android:layout_marginStart="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_marginEnd="@dimen/dp15"
+        app:cardCornerRadius="@dimen/dp10">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp15"
+            android:paddingTop="@dimen/dp12"
+            android:paddingEnd="@dimen/dp15">
+
+            <TextView
+                android:id="@+id/tv_audit_notice_title"
+                style="@style/MiddleTextBlack"
+                android:textColor="@color/color_333333"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_audit_notice_create_date"
+                style="@style/StandardTextBlack"
+                android:layout_marginTop="@dimen/dp5"
+                android:textColor="@color/color_999999"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_audit_notice_title" />
+
+            <TextView
+                android:id="@+id/tv_audit_notice_content"
+                style="@style/StandardTextBlack"
+                android:layout_marginTop="@dimen/dp10"
+                android:textColor="@color/color_333333"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_audit_notice_create_date" />
+
+            <View
+                android:id="@+id/line_detail"
+                style="@style/divider_view_line"
+                android:layout_marginTop="@dimen/dp10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_audit_notice_content" />
+
+            <RelativeLayout
+                android:id="@+id/tv_detail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line_detail"
+                tools:ignore="UnusedAttribute">
+
+                <TextView
+                    style="@style/setting_view_tx"
+                    android:layout_marginLeft="@dimen/dp1"
+                    android:text="查看详情"
+                    android:textColor="@color/color_999999"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    style="@style/setting_view_right_return"
+                    android:layout_marginRight="@dimen/dp1"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

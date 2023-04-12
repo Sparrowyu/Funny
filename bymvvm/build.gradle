@@ -1,0 +1,200 @@
+apply plugin: 'com.android.library'
+//msdk
+def M_SDK_VERSION = "3.3.1"
+def M_SDK_VERSION_FIX = ".1"
+//pangle
+def PANGLE_SDK_VERSION = "4.4.0.2"
+def PANGLE_ADAPTER_VERSION = ".0"
+//gdt
+def GDT_SDK_VERSION = "4.460.1330"
+def GDT_ADAPTER_VERSION = ".0"
+//ks
+def KS_SDK_VERSION = "3.3.21"
+def KS_ADAPTER_VERSION = ".0"
+//baidu
+def BAIDU_SDK_VERSION = "9.202"
+def BAIDU_ADAPTER_VERSION = ".0"
+//mintegral
+def MINTEGRAL_SDK_VERSION = "15.8.07"
+def MINTEGRAL_ADAPTER_VERSION = ".2"
+//admob
+def ADMOB_SDK_VERSION = "17.2.0"
+def ADMOB_ADAPTER_VERSION = ".19"
+//unity
+def UNITY_SDK_VERSION = "4.0.0"
+def UNITY_ADAPTER_VERSION = ".2"
+//sigmob
+def SIGMOB_SDK_VERSION = "3.5.6"
+def SIGMOB_ADAPTER_VERSION = ".1"
+//klevin
+def KLEVIN_SDK_VERSION = "2.5.1.2"
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField 'String', 'FUNNY_BASE_URL', '"http://39.107.224.111:8899/api/"'
+            buildConfigField 'String', 'FUNNY_BASE_TASK_URL', '"http://39.107.224.111:8855/task/"'
+            buildConfigField 'String', 'FUNNY_UPLOAD_FILE_URL', '"http://39.107.224.111:8877/data/"'
+            buildConfigField 'String', 'FUNNY_UNIFY_LOG_URL', '"http://39.107.224.111:8605/logkit/"'
+        }
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+            buildConfigField 'String', 'FUNNY_BASE_URL', '"https://server.sortinghat.cn/api/"'
+            buildConfigField 'String', 'FUNNY_BASE_TASK_URL', '"https://server.sortinghat.cn/task/"'
+            buildConfigField 'String', 'FUNNY_UPLOAD_FILE_URL', '"https://server.sortinghat.cn/data/"'
+            buildConfigField 'String', 'FUNNY_UNIFY_LOG_URL', '"https://unifylog1.gaoxiaoxingqiu.com/logkit/"'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    //https://github.com/ReactiveX/RxJava/issues/4445
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //add cookie
+    implementation files('libs/commons-lang-2.6.jar')
+    api files('libs/kssdk-ad-3.3.22.1-publishRelease-98539ec02.aar')
+    api files('libs/oaid_sdk_1.0.22.aar')
+
+    //基础库
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api 'androidx.appcompat:appcompat:1.2.0'
+    api 'com.google.android.material:material:1.3.0'
+    api 'androidx.constraintlayout:constraintlayout:2.0.2'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'androidx.viewpager2:viewpager2:1.0.0'
+    api 'androidx.cardview:cardview:1.0.0'
+    api 'androidx.multidex:multidex:2.0.1'
+
+    //网络请求
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
+    implementation 'com.squareup.okio:okio:2.8.0'
+
+    //json解析
+    api 'com.google.code.gson:gson:2.8.6'
+
+    //rxJava用于链式调用
+    api "io.reactivex.rxjava2:rxjava:2.2.19"
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api "io.reactivex.rxjava3:rxjava:3.0.4"
+    api 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
+    //Google LiveData和ViewModel组件
+    api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    api 'androidx.lifecycle:lifecycle-reactivestreams:2.2.0'
+
+    //util
+    api 'com.blankj:utilcodex:1.30.6'
+
+    //权限管理
+    api 'com.github.tbruyelle:rxpermissions:0.12'
+
+    //底部导航
+    //api 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
+
+    //dialog
+    api 'com.afollestad.material-dialogs:core:0.9.6.0'
+
+    //RecyclerView
+    api 'com.github.youlookwhat:ByRecyclerView:1.1.6'
+
+    def GLIDE_VERSION = "4.12.0"
+    //Glide
+    api "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
+    api "com.github.bumptech.glide:okhttp3-integration:${GLIDE_VERSION}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${GLIDE_VERSION}"
+    // webpdecoder，加载webp动图
+    implementation "com.github.zjupure:webpdecoder:2.0.${GLIDE_VERSION}"
+
+    //高斯模糊和圆角等
+    api 'jp.wasabeef:glide-transformations:4.3.0'
+
+    //Room
+    implementation 'androidx.room:room-runtime:2.4.0-alpha03'
+    annotationProcessor 'androidx.room:room-compiler:2.4.0-alpha03'
+    implementation 'androidx.room:room-rxjava2:2.4.0-alpha03'
+    //implementation 'androidx.paging:paging-runtime:2.1.2'
+    testImplementation "androidx.room:room-testing:2.4.0-alpha03"
+
+    //Stetho
+    api 'com.facebook.stetho:stetho:1.6.0'
+    api 'com.facebook.stetho:stetho-okhttp3:1.6.0'
+    api 'com.facebook.stetho:stetho-js-rhino:1.6.0'
+
+    //友盟统计SDK，下面各SDK根据宿主App是否使用相关业务按需引入
+    api 'com.umeng.umsdk:common:9.4.4'// 必选
+    api 'com.umeng.umsdk:asms:1.4.1'// 必选
+    api 'com.umeng.umsdk:apm:1.3.1' // 错误分析升级为独立SDK，看crash数据请一定集成，可选
+    api 'com.umeng.umsdk:link:1.1.0'//集成智能超链SDK，必选
+
+    //友盟Push依赖
+    api 'com.umeng.umsdk:push:6.4.4'
+    api 'com.umeng.umsdk:xiaomi-umengaccs:1.2.6'
+    implementation 'com.umeng.umsdk:xiaomi-push:4.8.1'
+    api 'com.umeng.umsdk:oppo-umengaccs:1.0.7-fix'
+    implementation 'com.umeng.umsdk:oppo-push:2.1.0'
+    api 'com.umeng.umsdk:vivo-umengaccs:1.1.5'
+    implementation 'com.umeng.umsdk:vivo-push:3.0.0.3'
+    api 'com.umeng.umsdk:huawei-umengaccs:1.3.5'
+    api 'com.huawei.hms:push:5.3.0.304'
+
+    api "com.pangle.cn:ads-sdk-pro:${PANGLE_SDK_VERSION}"
+    api "com.qq.e.union:union:${GDT_SDK_VERSION}" // 普通版本
+
+    //GroMoreSDk
+
+    //GroMore_sdk
+    api "com.gromore.cn:gromore-sdk:${M_SDK_VERSION}${M_SDK_VERSION_FIX}"  //groMore sdk
+    api "com.gromore.cn:gromore-test-tools:${M_SDK_VERSION}${M_SDK_VERSION_FIX}"
+
+    //groMore 测试工具
+    //Baidu
+    api files('libs/Baidu_MobAds_SDK_v9.202.aar')
+    api files('libs/windAd-3.5.6.aar')
+//    implementation(name: "Baidu_MobAds_SDK_v${BAIDU_SDK_VERSION}", ext: 'aar')
+    //sigmob
+//    implementation(name: "windAd-${SIGMOB_SDK_VERSION}", ext: 'aar')
+
+    //GroMore_sdk adapter
+    api "com.gromore.cn:gdt-adapter:${GDT_SDK_VERSION}${GDT_ADAPTER_VERSION}"
+    api "com.gromore.cn:baidu-adapter:${BAIDU_SDK_VERSION}${BAIDU_ADAPTER_VERSION}"
+    api "com.gromore.cn:sigmob-adapter:${SIGMOB_SDK_VERSION}${SIGMOB_ADAPTER_VERSION}"
+    api "com.gromore.cn:pangle-adapter:${PANGLE_SDK_VERSION}${PANGLE_ADAPTER_VERSION}"
+
+    //GroMoreSDk
+
+}

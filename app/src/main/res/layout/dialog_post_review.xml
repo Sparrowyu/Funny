@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@drawable/dialog_bottom_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp10">
+
+                <RelativeLayout
+                    android:id="@+id/rl_user_icon"
+                    android:layout_width="@dimen/dp48"
+                    android:layout_height="@dimen/dp48"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_post_create_date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/rl_post_owner_and_nick_name">
+
+                    <com.sortinghat.funny.view.CircleImageView
+                        android:id="@+id/iv_user_icon"
+                        style="@style/my_user_icon"
+                        android:layout_width="@dimen/dp32"
+                        android:layout_height="@dimen/dp32" />
+
+                    <ImageView
+                        android:id="@+id/iv_box_user_icon"
+                        style="@style/my_user_icon_box"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_post_owner_and_nick_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp2"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp15"
+                    android:gravity="left"
+                    app:layout_constraintEnd_toStartOf="@id/tv_review_follow"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@id/rl_user_icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlHardcoded">
+
+                    <TextView
+                        android:id="@+id/tv_post_owner_nick_name"
+                        style="@style/StandardTextBlack"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/dp8"
+                        android:layout_toStartOf="@id/tv_post_owner"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/color_333333" />
+
+                    <TextView
+                        android:id="@+id/tv_post_owner"
+                        style="@style/SmallerTextWhite"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/shape_light_red_bg_with_corner2"
+                        android:drawablePadding="@dimen/dp2"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dp5"
+                        android:paddingTop="@dimen/dp2"
+                        android:paddingEnd="@dimen/dp5"
+                        android:paddingBottom="@dimen/dp2"
+                        android:text="@string/owner"
+                        app:drawableStartCompat="@mipmap/ic_post_owner" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_post_create_date"
+                    style="@style/SmallTextBlack"
+                    android:layout_marginTop="@dimen/dp2"
+                    android:text="2021-05-21"
+                    android:textColor="@color/color_999999"
+                    app:layout_constraintStart_toStartOf="@id/rl_post_owner_and_nick_name"
+                    app:layout_constraintTop_toBottomOf="@id/rl_post_owner_and_nick_name" />
+
+                <TextView
+                    android:id="@+id/tv_review_follow"
+                    style="@style/StandardTextWhite"
+                    android:layout_width="@dimen/dp72"
+                    android:background="@drawable/shape_orange_bg_with_corner"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dp5"
+                    android:paddingBottom="@dimen/dp5"
+                    android:text="@string/follow"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_post_create_date"
+                    app:layout_constraintEnd_toStartOf="@id/iv_close_review_dialog"
+                    app:layout_constraintTop_toTopOf="@id/rl_post_owner_and_nick_name" />
+
+                <ImageView
+                    android:id="@+id/iv_close_review_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/dp15"
+                    android:paddingTop="@dimen/dp10"
+                    android:paddingEnd="@dimen/dp15"
+                    android:paddingBottom="@dimen/dp10"
+                    android:src="@mipmap/ic_close_dialog"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_post_create_date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/rl_post_owner_and_nick_name" />
+
+                <TextView
+                    android:id="@+id/tv_post_title"
+                    style="@style/StandardTextBlack"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp15"
+                    android:text="日出东方催人醒，不及晚霞懂我心。辞别在无相见日，终是一人渡春秋。"
+                    android:textColor="@color/color_333333"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="@id/tv_post_create_date"
+                    app:layout_constraintTop_toBottomOf="@id/tv_post_create_date" />
+
+                <TextView
+                    android:id="@+id/tv_post_like"
+                    style="@style/SmallTextWhite"
+                    android:drawablePadding="@dimen/dp5"
+                    android:gravity="center"
+                    android:padding="@dimen/dp10"
+                    android:textColor="@color/color_999999"
+                    android:visibility="gone"
+                    app:drawableEndCompat="@mipmap/review_like_normal"
+                    app:layout_constraintEnd_toStartOf="@id/iv_post_dislike"
+                    app:layout_constraintTop_toBottomOf="@id/tv_post_title" />
+
+                <ImageView
+                    android:id="@+id/iv_post_dislike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/dp20"
+                    android:paddingTop="@dimen/dp10"
+                    android:paddingEnd="@dimen/dp20"
+                    android:paddingBottom="@dimen/dp10"
+                    android:src="@mipmap/review_dislike_normal"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_post_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                style="@style/HorizontalDividerLinePageBg"
+                android:layout_height="@dimen/dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp15"
+                android:layout_marginBottom="@dimen/dp10">
+
+                <TextView
+                    style="@style/StandardTextBlack"
+                    android:text="@string/review"
+                    android:textColor="@color/color_333333" />
+
+                <TextView
+                    android:id="@+id/tv_post_review_number"
+                    style="@style/StandardTextBlack"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/color_999999"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <View style="@style/HorizontalDividerLine" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <me.jingbin.library.ByRecyclerView
+                    android:id="@id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingTop="@dimen/dp8"
+                    android:paddingBottom="@dimen/dp8"
+                    tools:itemCount="1"
+                    tools:layoutManager="LinearLayoutManager"
+                    tools:listitem="@layout/item_post_review" />
+
+                <com.sortinghat.common.view.CommonEmptyView
+                    android:id="@id/ll_empty_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/ll_common_input_box"
+            layout="@layout/include_common_input_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</layout>

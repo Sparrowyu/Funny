@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/MiddleTextBlack"
+            android:lineSpacingMultiplier="1.1"
+            android:paddingLeft="@dimen/dp16"
+            android:paddingTop="@dimen/dp16"
+            android:paddingRight="@dimen/dp16"
+            android:paddingBottom="@dimen/dp1"
+            android:text="请选择要屏蔽的话题，屏蔽的话题相关帖子不再给你推荐，屏蔽后可以到兴趣中解除屏蔽。" />
+
+        <me.jingbin.library.ByRecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</layout>

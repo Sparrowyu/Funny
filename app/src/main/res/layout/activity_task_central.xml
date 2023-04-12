@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="#fff5e3"
+        android:orientation="vertical">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbarlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff5e3"
+                android:elevation="0dp"
+                app:layout_behavior=".util.AppbarZoomBehavior">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff5e3"
+                    app:contentScrim="@color/transparent"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <RelativeLayout
+                        android:id="@+id/header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/ivBg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/task_central_top_gradient_shape"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minHeight="@dimen/dp100">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_user_icon"
+                                    android:layout_width="84dp"
+                                    android:layout_height="84dp"
+                                    android:layout_centerVertical="true">
+
+                                    <ImageView
+                                        android:id="@+id/iv_user_icon"
+                                        style="@style/my_user_icon" />
+
+                                    <ImageView
+                                        android:id="@+id/iv_box_user_icon"
+                                        style="@style/my_user_icon_box" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/item_gold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp28"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/dp16"
+                                    android:layout_toLeftOf="@+id/rl_task_sign_day"
+                                    android:background="@drawable/common_click_corner50_white_bg"
+                                    android:minWidth="80dp"
+                                    android:paddingLeft="@dimen/dp10"
+                                    android:paddingRight="@dimen/dp16">
+
+                                    <ImageView
+                                        android:id="@+id/img_gold"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:src="@mipmap/task_gold_small" />
+
+                                    <TextView
+                                        android:id="@+id/tv_star_count"
+                                        style="@style/MiddleTextWhite"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/dp4"
+                                        android:layout_toRightOf="@+id/img_gold"
+                                        android:gravity="center"
+                                        android:minWidth="60dp"
+                                        android:text="0"
+                                        android:textColor="@color/color_f46c35"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/rl_task_sign_day"
+                                    android:layout_width="100dp"
+                                    android:layout_height="28dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/dp16"
+                                    android:background="@drawable/common_click_corner50_white_bg"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        style="@style/StandardTextBlack"
+                                        android:text="已连签"
+                                        android:textColor="@color/color_f46c35" />
+
+                                    <TextView
+                                        android:id="@+id/tv_task_sign_day"
+                                        style="@style/StandardTextBlack"
+                                        android:layout_marginTop="-2dp"
+                                        android:text="1"
+                                        android:textColor="@color/color_f46c35"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        style="@style/StandardTextBlack"
+                                        android:text="天"
+                                        android:textColor="@color/color_f46c35" />
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp16"
+                                android:layout_marginRight="@dimen/dp16"
+                                android:layout_marginBottom="@dimen/dp16"
+                                android:background="@drawable/dialog_common_bg"
+                                android:minHeight="@dimen/dp200"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/StandardTextBlack"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@mipmap/task_sign_top1"
+                                    android:gravity="center"
+                                    android:text="每日签到"
+                                    android:textColor="#ff9710"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/dp16"
+                                    android:minHeight="@dimen/dp20"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <RelativeLayout
+                                            android:id="@+id/task_tomorrow1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:visibility="invisible">
+
+                                            <include layout="@layout/layout_task_sign_top_tomorrow" />
+                                        </RelativeLayout>
+
+                                        <ImageView
+                                            android:id="@+id/img_day1"
+                                            android:layout_width="@dimen/dp35"
+                                            android:layout_height="@dimen/dp35"
+                                            android:layout_marginTop="-5dp"
+                                            android:src="@mipmap/task_gold" />
+
+                                        <TextView
+                                            android:id="@+id/tv_gold1"
+                                            style="@style/SmallTextBlack"
+                                            android:text="+60"
+                                            android:textColor="@color/color_666666" />
+
+                                        <TextView
+                                            style="@style/SmallTextBlack"
+                                            android:text="周一"
+                                            android:textColor="@color/color_666666" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <RelativeLayout
+                                            android:id="@+id/task_tomorrow2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:visibility="invisible">
+
+                                            <include layout="@layout/layout_task_sign_top_tomorrow" />
+                                        </RelativeLayout>
+
+                                        <ImageView
+                                            android:id="@+id/img_day2"
+                                            style="@style/task_sign_gold" />
+
+                                        <TextView
+                                            android:id="@+id/tv_gold2"
+                                            style="@style/SmallTextBlack"
+                                            android:text="+30"
+                                            android:textColor="@color/color_666666" />
+
+                                        <TextView
+                                            style="@style/SmallTextBlack"
+                                            android:text="周二"
+                                            android:textColor="@color/color_666666" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <RelativeLayout
+                                            android:id="@+id/task_tomorrow3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:visibility="invisible">
+
+                                            <include layout="@layout/layout_task_sign_top_tomorrow" />
+                                        </RelativeLayout>
+
+                                        <ImageView
+                                            android:id="@+id/img_day3"
+                                            style="@style/task_sign_gold" />
+
+                                        <TextView
+                                            android:id="@+id/tv_gold3"
+                                            style="@style/SmallTextBlack"
+                                            android:text="+40"
+                                            android:textColor="@color/color_666666" />
+
+                                        <TextView
+                                            style="@style/SmallTextBlack"
+                                            android:text="周三"
+                                            android:textColor="@color/color_666666" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <RelativeLayout
+                                            android:id="@+id/task_tomorrow4"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:visibility="invisible">
+
+                                            <include layout="@layout/layout_task_sign_top_tomorrow" />
+                                        </RelativeLayout>
+
+                                        <ImageView
+                                            android:id="@+id/img_day4"
+                                            style="@style/task_sign_gold" />
+
+                                        <TextView
+                                            android:id="@+id/tv_gold4"
+                                            style="@style/SmallTextBlack"
+                                            android:text="+30"
+                                            android:textColor="@color/color_666666" />
+
+                                        <TextView
+
+                                            style="@style/SmallTextBlack"
+                                            android:text="周四"
+                                            android:textColor="@color/color_666666" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <RelativeLayout
+                                            android:id="@+id/task_tomorrow5"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:visibility="invisible">
+
+                                            <include layout="@layout/layout_task_sign_top_tomorrow" />
+                                        </RelativeLayout>
+
+                                        <ImageView
+                                            android:id="@+id/img_day5"
+                                            style="@style/task_sign_gold" />
+
+                                        <TextView
+                                            android:id="@+id/tv_gold5"
+                                            style="@style/SmallTextBlack"
+                                            android:text="+40"
+                                            android:textColor="@color/color_666666" />
+
+                                        <TextView
+                                            style="@style/SmallTextBlack"
+                                            android:text="周五"
+                                            android:textColor="@color/color_666666" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <RelativeLayout
+                                            android:id="@+id/task_tomorrow6"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:visibility="invisible">
+
+                                            <include layout="@layout/layout_task_sign_top_tomorrow" />
+                                        </RelativeLayout>
+
+                                        <ImageView
+                                            android:id="@+id/img_day6"
+                                            style="@style/task_sign_gold" />
+
+                                        <TextView
+                                            android:id="@+id/tv_gold6"
+                                            style="@style/SmallTextBlack"
+                                            android:text="+50"
+                                            android:textColor="@color/color_666666" />
+
+                                        <TextView
+                                            style="@style/SmallTextBlack"
+                                            android:text="周六"
+                                            android:textColor="@color/color_666666" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <RelativeLayout
+                                            android:id="@+id/task_tomorrow7"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:visibility="invisible">
+
+                                            <include layout="@layout/layout_task_sign_top_tomorrow" />
+                                        </RelativeLayout>
+
+                                        <ImageView
+                                            android:id="@+id/img_day7"
+                                            style="@style/task_sign_gold" />
+
+                                        <TextView
+                                            android:id="@+id/tv_gold7"
+                                            style="@style/SmallTextBlack"
+                                            android:text="+50"
+                                            android:textColor="@color/color_666666" />
+
+                                        <TextView
+                                            style="@style/SmallTextBlack"
+                                            android:text="周日"
+                                            android:textColor="@color/color_666666" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/sign_bt"
+                                    style="@style/LargeTextWhite"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="44dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_margin="@dimen/dp16"
+                                    android:layout_marginTop="@dimen/dp10"
+                                    android:background="@drawable/click_f5f5f5_corner50_bt_bg"
+                                    android:enabled="false"
+                                    android:gravity="center"
+                                    android:text="立即签到"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        app:layout_collapseMode="pin">
+
+                        <RelativeLayout
+                            android:id="@+id/layout_toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_name"
+                                style="@style/LargeTextBlack"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="@dimen/dp2"
+                                android:text=""
+                                android:textColor="@color/black" />
+
+                            <ImageView
+                                android:id="@+id/iv_set_more"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginRight="@dimen/dp16"
+                                android:src="@mipmap/mine_more_black"
+                                android:visibility="visible" />
+
+                        </RelativeLayout>
+                    </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@id/tab_layout"
+                    style="@style/TabLayoutStyle"
+                    android:layout_height="@dimen/dp45"
+                    android:layout_marginLeft="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginRight="@dimen/dp16"
+                    android:background="@drawable/dialog_top_corner_bg"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="@color/color_333333"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabMode="fixed"
+                    app:tabPaddingEnd="0dp"
+                    app:tabPaddingStart="0dp"
+                    app:tabSelectedTextColor="@color/color_333333"
+                    app:tabTextColor="@color/color_999999" />
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <com.sortinghat.funny.view.ViewPagerFixed
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp16"
+                android:layout_marginRight="@dimen/dp16"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
+
+</layout>

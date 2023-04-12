@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            style="@style/RootLayout"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp50">
+
+            <me.jingbin.library.ByRecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/dp200" />
+
+
+            <EditText
+                android:id="@+id/report_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp16"
+                android:layout_marginRight="@dimen/dp16"
+                android:background="@drawable/shape_gray_bg_with_corner"
+                android:hint="其他原因"
+                android:gravity="start"
+                android:maxLength="50"
+                android:minHeight="@dimen/dp60"
+                android:padding="@dimen/dp10"
+                android:textColor="@color/color_333333"
+                android:textColorHint="@color/color_d7d7d7"
+                android:textCursorDrawable="@drawable/edittext_cursor_normal"
+                android:textSize="15sp" />
+
+            <TextView
+                style="@style/StandardTextBlack"
+                android:layout_marginLeft="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp12"
+                android:text="最多50个汉字"
+                android:textColor="@color/color_d7d7d7" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/mood_report_bg1"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/mood_report_bg1"
+                android:paddingTop="@dimen/dp30"
+                android:paddingBottom="@dimen/dp140">
+
+                <RelativeLayout
+                    android:id="@+id/rl_view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp20"
+                    android:layout_marginTop="@dimen/dp50"
+                    android:layout_marginRight="@dimen/dp20"
+                    android:background="@drawable/dialog_common_bg"
+                    android:minHeight="300dp">
+
+                    <TextView
+                        android:id="@+id/report_name"
+                        style="@style/Base333StandardText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="54dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_horizontal"
+                        android:text="心情报告"
+                        android:textColor="@color/color_333333"
+                        android:textSize="21sp" />
+
+                    <LinearLayout
+                        android:id="@+id/report_view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/report_name"
+                        android:layout_marginLeft="@dimen/dp20"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_marginRight="@dimen/dp20"
+                        android:background="#cce1f4"
+                        android:minHeight="100dp"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/dp20"
+                        android:paddingTop="@dimen/dp10"
+                        android:paddingRight="@dimen/dp20">
+
+                        <TextView
+                            android:id="@+id/report_title"
+                            style="@style/Base333StandardText"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal"
+                            android:text="今天是你成为笑星人的第天，\n在这段时间你累计(次)："
+                            android:textColor="#ff0b385c"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:background="@drawable/report_content_bg1"
+                            android:padding="@dimen/dp2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/report_content_bg2"
+                                android:minHeight="@dimen/dp100"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical"
+                                    android:paddingTop="@dimen/dp10">
+
+                                    <ImageView
+                                        android:layout_width="31dp"
+                                        android:layout_height="31dp"
+                                        android:src="@mipmap/mood_report_icon3" />
+
+                                    <TextView
+                                        style="@style/Base333StandardText"
+                                        android:layout_gravity="center_horizontal"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center_horizontal"
+                                        android:text="感动哭了"
+                                        android:textColor="#ff0b385c"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/mood_tx1"
+                                        style="@style/Base333StandardText"
+                                        android:layout_gravity="center_horizontal"
+                                        android:layout_marginTop="@dimen/dp5"
+                                        android:gravity="center_horizontal"
+                                        android:text="0"
+                                        android:textColor="#ff3aa4ff"
+                                        android:textSize="20sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical"
+                                    android:paddingTop="@dimen/dp10">
+
+                                    <ImageView
+                                        android:layout_width="31dp"
+                                        android:layout_height="31dp"
+                                        android:src="@mipmap/mood_report_icon2" />
+
+                                    <TextView
+                                        style="@style/Base333StandardText"
+                                        android:layout_gravity="center_horizontal"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center_horizontal"
+                                        android:text="笑出声"
+                                        android:textColor="#ff0b385c"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/mood_tx2"
+                                        style="@style/Base333StandardText"
+                                        android:layout_gravity="center_horizontal"
+                                        android:layout_marginTop="@dimen/dp5"
+                                        android:gravity="center_horizontal"
+                                        android:text="0"
+                                        android:textColor="#ff3aa4ff"
+                                        android:textSize="20sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical"
+                                    android:paddingTop="@dimen/dp10">
+
+                                    <ImageView
+                                        android:layout_width="31dp"
+                                        android:layout_height="31dp"
+                                        android:src="@mipmap/mood_report_icon1" />
+
+                                    <TextView
+                                        style="@style/Base333StandardText"
+                                        android:layout_gravity="center_horizontal"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center_horizontal"
+                                        android:text="触动内心"
+                                        android:textColor="#ff0b385c"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/mood_tx3"
+                                        style="@style/Base333StandardText"
+                                        android:layout_gravity="center_horizontal"
+                                        android:layout_marginTop="@dimen/dp5"
+                                        android:gravity="center_horizontal"
+                                        android:text="0"
+                                        android:textColor="#ff3aa4ff"
+                                        android:textSize="20sp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/report_content"
+                            style="@style/Base333StandardText"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_marginBottom="@dimen/dp30"
+                            android:text="当看到让你笑出声、感动哭了、触动内心的帖子时，记着点赞，把心情记录下来哦。"
+                            android:textColor="#ff0b385c"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/report_view3"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_below="@+id/report_view2"
+                        android:layout_marginLeft="@dimen/dp40"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_marginRight="@dimen/dp40"
+                        android:background="@drawable/report_dotted_line" />
+
+                    <RelativeLayout
+                        android:id="@+id/report_view4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/report_view3"
+                        android:layout_marginLeft="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_marginRight="@dimen/dp30"
+                        android:layout_marginBottom="@dimen/dp10">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/mood_report_small2" />
+
+                        <TextView
+                            android:id="@+id/app_name1"
+                            style="@style/Base333StandardText"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/dp20"
+                            android:layout_marginRight="70dp"
+                            android:gravity="center_horizontal"
+                            android:text="搞笑星球"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            style="@style/Base333StandardText"
+                            android:layout_below="@+id/app_name1"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/dp5"
+                            android:layout_marginRight="70dp"
+                            android:gravity="center_horizontal"
+                            android:text="笑出sheng的地方"
+                            android:textSize="11sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dp57"
+                            android:layout_height="@dimen/dp57"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:src="@mipmap/mood_report_code_img" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp10"
+                        android:layout_marginTop="8dp"
+                        android:src="@mipmap/mood_report_small1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/report_view3"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="-65dp"
+                        android:layout_marginRight="@dimen/dp10"
+                        android:src="@mipmap/mood_report_small3" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_user_icon"
+                    android:layout_width="106dp"
+                    android:layout_height="106dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="4dp"
+                    android:visibility="visible">
+
+                    <View
+                        android:id="@+id/ivHeadBg"
+                        android:layout_width="78dp"
+                        android:layout_height="78dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/home_head_white_bg"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/iv_user_icon"
+                        style="@style/my_user_icon"
+                        android:layout_width="74dp"
+                        android:layout_height="74dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_box_user_icon"
+                        style="@style/my_user_icon_box"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_view"
+                android:layout_marginTop="-105dp"
+                android:visibility="gone"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/report_compare_bt"
+                    style="@style/MiddleTextWhite"
+                    android:layout_width="133dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/report_common_bg"
+                    android:gravity="center"
+                    android:text="与我相同"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/share_top_ll"
+                android:layout_below="@+id/rl_view"
+                android:layout_marginTop="-105dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minHeight="@dimen/dp90"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/report_save_bt"
+                    style="@style/dialog_mood_share_tx"
+                    android:drawableTop="@mipmap/icon_download"
+                    android:text="保存"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/share_wechat"
+                    style="@style/dialog_mood_share_tx"
+                    android:drawableTop="@mipmap/icon_wechat"
+                    android:text="微信"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/share_wechat_circle"
+                    style="@style/dialog_mood_share_tx"
+                    android:drawableTop="@mipmap/icon_wechat_circle"
+                    android:text="朋友圈"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/share_qq"
+                    style="@style/dialog_mood_share_tx"
+                    android:drawableTop="@mipmap/icon_qq"
+                    android:text="QQ" />
+
+                <TextView
+                    android:id="@+id/share_qq_zone"
+                    style="@style/dialog_mood_share_tx"
+                    android:drawableTop="@mipmap/icon_qq_zone"
+                    android:text="QQ空间" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</layout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout style="@style/RootLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/ll_bottom_button"
+            android:background="@color/white"
+            android:paddingTop="@dimen/dp10">
+
+            <EditText
+                android:id="@+id/et_post_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/rl_add_topic"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginEnd="@dimen/dp20"
+                android:layout_marginBottom="@dimen/dp5"
+                android:layout_toStartOf="@id/iv_post_cover_image"
+                android:background="@null"
+                android:gravity="start"
+                android:hint="@string/post_title_hint"
+                android:maxLength="90"
+                android:textColor="@color/color_333333"
+                android:textColorHint="@color/color_999999"
+                android:textCursorDrawable="@drawable/edittext_cursor_normal"
+                android:textSize="@dimen/standard_text_size" />
+
+            <RelativeLayout
+                android:id="@+id/rl_add_topic"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp30"
+                android:layout_alignBottom="@id/iv_post_cover_image"
+                android:layout_marginStart="@dimen/dp15"
+                android:background="@drawable/shape_orange_bg_with_angle"
+                android:paddingStart="@dimen/dp10"
+                android:paddingEnd="@dimen/dp10">
+
+                <TextView
+                    style="@style/StandardTextWhite"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="@dimen/dp4"
+                    android:text="@string/add_topic"
+                    app:drawableStartCompat="@mipmap/ic_topic" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_post_cover_image"
+                android:layout_width="@dimen/dp110"
+                android:layout_height="@dimen/dp110"
+                android:scaleType="centerCrop"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dp15"
+                android:src="@drawable/image_defalut_big" />
+
+            <me.jingbin.library.ByRecyclerView
+                android:id="@+id/rv_recommend_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_post_cover_image"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dp8"
+                android:paddingEnd="@dimen/dp8"
+                app:layoutManager="LinearLayoutManager"
+                tools:itemCount="7"
+                tools:listitem="@layout/item_recommend_topic" />
+
+            <me.jingbin.library.ByRecyclerView
+                android:id="@+id/rv_search_topic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/rv_recommend_topic"
+                tools:layoutManager="LinearLayoutManager"
+                tools:listitem="@layout/item_two_level_topic" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_bottom_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/dp15"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_save_manuscript"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp45"
+                android:layout_weight="1"
+                android:background="@drawable/shape_page_bg_gray_border"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/MiddleTextWhite"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="@dimen/dp4"
+                    android:text="@string/manuscript"
+                    android:textColor="@color/color_666666"
+                    app:drawableStartCompat="@mipmap/ic_manuscript" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_pulish_post"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp45"
+                android:layout_weight="1"
+                android:background="@drawable/shape_orange_bg_with_angle">
+
+                <TextView
+                    style="@style/MiddleTextWhite"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="@dimen/dp4"
+                    android:text="@string/publish"
+                    app:drawableStartCompat="@mipmap/ic_pulish" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

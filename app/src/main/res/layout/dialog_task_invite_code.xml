@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialog_cancel"
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp30"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="@dimen/dp65"
+            android:layout_marginRight="@dimen/dp10"
+            android:background="@mipmap/invite_code_dialog_cancel"
+            android:padding="@dimen/dp5" />
+
+        <RelativeLayout
+            android:layout_width="275dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp10">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/invite_dialog_top_bg"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp20"
+                android:paddingRight="@dimen/dp20"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:id="@+id/updata_dialog_version"
+                    style="@style/LargeTextBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:includeFontPadding="false"
+                    android:text="请输入邀请码" />
+
+                <EditText
+                    android:id="@+id/et_invite_code"
+                    style="@style/my_editText"
+                    android:layout_height="@dimen/dp32"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:background="@drawable/invite_code_dialog_inpute_bg"
+                    android:hint="请输入邀请"
+                    android:inputType="textVisiblePassword"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:textColorHint="@color/color_FFCCAE" />
+
+                <TextView
+                    android:id="@+id/dialog_sure"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp44"
+                    android:layout_marginTop="25dp"
+                    android:background="@mipmap/task_sure_bt"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="确定"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

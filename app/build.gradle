@@ -1,0 +1,117 @@
+plugins {
+    id 'com.android.application'
+    id 'com.huawei.agconnect'
+}
+apply plugin: 'kotlin-android'
+apply from: '../config/sign.gradle'
+apply plugin: 'com.mob.sdk'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.sortinghat.funny"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 160
+        versionName "1.6.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    dexOptions {
+        javaMaxHeapSize "8g"
+    }
+
+    //输出文件格式
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${"funny-v" + variant.versionName + "-" + releaseTime() + "-"}${variant.buildType.name}.apk"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    //https://github.com/ReactiveX/RxJava/issues/4445
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+            jni.srcDirs = []    //disable automatic ndk-build
+        }
+    }
+}
+MobSDK {
+    appKey "33bdcc2b9f9b4"
+    appSecret "07b989228e6c469f3090606b532344cc"
+    spEdition "FP"
+    SecVerify {}
+    SMSSDK {}
+    permissions {
+        exclude "android.permission.RECEIVE_SMS", "android.permission.READ_SMS", "android.permission.READ_CONTACTS"
+    }
+}
+
+static def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("GMT+08:00"))
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+    implementation project(path: ':bymvvm')
+    implementation project(path: ':shareLibrary')
+    implementation project(path: ':bottom-navigation-bar')
+    implementation project(path: ':updataApk')
+    implementation project(path: ':gsyVideoPlayer')
+
+    //视频库
+//    implementation 'com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer:v8.1.6-jitpack'
+    //动画处理
+    implementation 'com.airbnb.android:lottie:3.7.0'
+    implementation 'com.github.crazyandcoder:citypicker:6.0.2'
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0'
+    //阿里云存储
+    implementation 'com.aliyun.dpa:oss-android-sdk:2.9.5'
+    //华为
+    implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
+
+    implementation 'com.github.microshow:RxFFmpeg:4.9.0-lite'
+
+    implementation 'com.github.zhpanvip:bannerviewpager:3.5.5'
+    implementation 'com.github.zhpanvip:viewpagerindicator:1.2.1'
+
+}

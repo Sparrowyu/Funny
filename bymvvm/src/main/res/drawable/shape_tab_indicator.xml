@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <item android:gravity="center">
+
+        <shape>
+
+            <size
+                android:width="@dimen/dp30"
+                android:height="@dimen/dp2" />
+
+            <corners android:radius="@dimen/dp2" />
+
+            <solid android:color="@color/tab_indicator_selected" />
+
+        </shape>
+
+    </item>
+
+</layer-list>

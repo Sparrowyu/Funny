@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/dp8"
+        android:paddingBottom="@dimen/dp50">
+
+        <me.jingbin.library.ByRecyclerView
+            android:id="@id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            tools:itemCount="3"
+            tools:layoutManager="GridLayoutManager"
+            tools:listitem="@layout/item_video_or_image"
+            tools:spanCount="3" />
+
+    </LinearLayout>
+
+</layout>

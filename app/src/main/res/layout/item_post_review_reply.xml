@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/ItemLayout"
+        android:background="@drawable/ripple_item_white_bg"
+        android:paddingBottom="@dimen/dp8">
+
+        <com.sortinghat.funny.view.CircleImageView
+            android:id="@+id/iv_review_replier_head_portrait"
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp8"
+            android:src="@mipmap/user_icon_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_review_replier_nick_name"
+            style="@style/SmallTextBlack"
+            android:layout_marginStart="@dimen/dp8"
+            android:text="大白梨"
+            android:textColor="@color/color_999999"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_review_replier_head_portrait"
+            app:layout_constraintStart_toEndOf="@id/iv_review_replier_head_portrait"
+            app:layout_constraintTop_toTopOf="@id/iv_review_replier_head_portrait" />
+
+        <TextView
+            android:id="@+id/tv_post_owner"
+            style="@style/SmallerTextWhite"
+            android:layout_marginStart="@dimen/dp5"
+            android:background="@drawable/shape_light_red_bg_with_corner2"
+            android:gravity="center"
+            android:paddingStart="@dimen/dp5"
+            android:paddingTop="@dimen/dp2"
+            android:paddingEnd="@dimen/dp5"
+            android:paddingBottom="@dimen/dp2"
+            android:text="@string/owner"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tv_review_replier_nick_name"
+            app:layout_constraintStart_toEndOf="@id/tv_review_replier_nick_name"
+            app:layout_constraintTop_toTopOf="@id/tv_review_replier_nick_name" />
+
+        <ImageView
+            android:id="@+id/iv_review_reply_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp5"
+            android:src="@mipmap/ic_review_reply"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tv_review_replier_nick_name"
+            app:layout_constraintStart_toEndOf="@id/tv_review_replier_nick_name"
+            app:layout_constraintTop_toTopOf="@id/tv_review_replier_nick_name" />
+
+        <TextView
+            android:id="@+id/tv_review_reviewer_nick_name"
+            style="@style/SmallTextBlack"
+            android:layout_marginStart="@dimen/dp5"
+            android:text="大白梨"
+            android:textColor="@color/color_999999"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tv_review_replier_nick_name"
+            app:layout_constraintStart_toEndOf="@id/iv_review_reply_icon"
+            app:layout_constraintTop_toTopOf="@id/tv_review_replier_nick_name" />
+
+        <TextView
+            android:id="@+id/tv_review_reply_like"
+            style="@style/SmallTextWhite"
+            android:layout_marginEnd="@dimen/dp20"
+            android:drawablePadding="@dimen/dp5"
+            android:gravity="center"
+            android:paddingStart="@dimen/dp8"
+            android:paddingTop="@dimen/dp8"
+            android:paddingEnd="@dimen/dp8"
+            android:paddingBottom="@dimen/dp2"
+            android:textColor="@color/color_999999"
+            app:drawableEndCompat="@mipmap/review_like_normal"
+            app:layout_constraintEnd_toStartOf="@id/iv_review_reply_dislike"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_review_reply_dislike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp8"
+            android:paddingStart="@dimen/dp8"
+            android:paddingTop="@dimen/dp8"
+            android:paddingEnd="@dimen/dp8"
+            android:paddingBottom="@dimen/dp2"
+            android:src="@mipmap/review_dislike_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_review_reply_content"
+            style="@style/StandardTextBlack"
+            android:layout_width="0dp"
+            android:layout_marginEnd="@dimen/dp15"
+            android:text="长的好看就算了，还这么会演戏。"
+            android:textColor="@color/color_333333"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/tv_review_replier_nick_name"
+            app:layout_constraintTop_toBottomOf="@id/iv_review_reply_dislike" />
+
+        <TextView
+            android:id="@+id/tv_review_reply_date"
+            style="@style/SmallTextBlack"
+            android:layout_marginTop="@dimen/dp5"
+            android:text="2021-05-21"
+            android:textColor="@color/color_999999"
+            app:layout_constraintStart_toStartOf="@id/tv_review_reply_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_review_reply_content" />
+
+        <TextView
+            android:id="@+id/tv_review_reply"
+            style="@style/SmallTextBlack"
+            android:paddingStart="@dimen/dp15"
+            android:paddingTop="@dimen/dp5"
+            android:paddingEnd="@dimen/dp15"
+            android:text="回复"
+            android:textColor="@color/color_999999"
+            app:layout_constraintStart_toEndOf="@id/tv_review_reply_date"
+            app:layout_constraintTop_toBottomOf="@id/tv_review_reply_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

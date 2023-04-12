@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cy_plugin_nophoto">暂无图片</string>
+    <string name="cy_plugin_action_settings">设置</string>
+    <string name="cy_plugin_xlistview_header_hint_normal">下拉刷新</string>
+    <string name="cy_plugin_xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="cy_plugin_xlistview_header_hint_title">刚刚</string>
+    <string name="cy_plugin_xlistview_header_hint_loading">正在加载&#8230;</string>
+    <string name="cy_plugin_xlistview_header_last_time">上次更新时间：</string>
+    <string name="cy_plugin_xlistview_footer_hint_normal">查看更多</string>
+    <string name="cy_plugin_xlistview_footer_hint_end">已加载到底部</string>
+    <string name="cy_plugin_xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="cy_plugin_install">安装</string> 
+    <string name="cy_plugin_pause">暂停</string>
+    <string name="cy_plugin_wait">等待</string>
+    <string name="cy_plugin_continue">继续</string>
+    <string name="cy_plugin_open">打开</string>
+    <string name="cy_plugin_update">发现新版本</string>
+    <string name="cy_plugin_retry">重试</string>
+    <string name="cy_plugin_download">下载</string>
+     <string name="cy_plugin_nonetwork">当前没有可用网络,请检查您的网络设置</string>
+     
+    <string name="cy_plugin_loading">数据加载中&#8230;</string>
+    <string name="cy_plugin_downloaded">下载完成</string>
+    
+    <string name="cy_plugin_setup_name_language_china">中文(简体)</string>
+    <string name="cy_plugin_setup_name_language_china_tw">中文(繁體)</string>
+    <string name="cy_plugin_setup_name_language_English">English</string>
+    <string name="cy_plugin_setup_name_language_ar">أربيك</string>
+    <string name="cy_plugin_setup_name_language_id">Indonesia</string>
+    <string name="cy_plugin_setup_name_language_pt">português</string>
+    <string name="cy_plugin_setup_name_language_vi">Việt</string>
+    <string name="cy_plugin_setup_name_language_ru">русский</string>
+    
+        <string name="no_connection_text">点击重新加载</string>
+        
+        <string name="cy_plugin_list_loading_text">数据正在加载……</string>
+        
+        
+   <string name="cy_plugin_update_dialog_ok">现在安装</string>
+     <string name="cy_plugin_update_dialog_cancle">等待WIFI时下载</string>
+    <string name="cy_plugin_update_dialog_contenttip">有新版本，是否更新?</string>
+    <string name="cy_plugin_update_noti_loading">正在极速下载最新版本</string>
+    <string name ="cy_plugin_noinstalltip">建议安装Google play 商店</string>
+     <string name="cy_plugin_nonetworktip">网络不给力,查看下吧</string>
+     <string name="cy_plugin_update_message">您使用的已经是最新版本了！</string>
+    
+</resources>

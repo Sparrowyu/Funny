@@ -1,0 +1,69 @@
+<resources>
+
+    <string name="app_name">搞笑星球</string>
+
+    <!--温馨提示-->
+    <string name="privacy_protocol_detail">《用户协议》及《隐私政策》将向您说明\n\n1、为帮助你浏览推荐、发布内容、交流沟通、注册账号，我们可能会收集联络方式、位置、音视频等敏感信息，你有权拒绝或撤回授权。 \n\n2、未经你同意，我们不会从第三方获取、共享或对外提供你的信息。《隐私政策》中关于个人设备信息的使用说明和第三方SDK类服务商搜集使用说明。\n\n3、你可以访问、更正、删除你的个人信息，我们也提供注销、投诉方式。\n</string>
+    <string name="privacy_protocol_detail_click">详情请查看《用户协议》《隐私政策》</string>
+    <string name="privacy_protocol_dis_detail">搞笑星球会将您的信息用于提供服务，我们将保障您的信息安全和隐私，请同意后使用。\n</string>
+    <string name="privacy_protocol_dis_detail_click">若您不同意，很遗憾我们无法为您提供服务。您可通过阅读《用户协议》和《隐私政策》了解相关服务</string>
+    <string name="privacy_cancellation_detail_click">我已阅读并同意《搞笑星球帐号注销须知》</string>
+    <string name="login_agree_click">请阅读服务协议和隐私政策后勾选同意</string>
+
+    <string name="home_page">首页</string>
+    <string name="topic">话题</string>
+    <string name="metaverse">兴趣</string>
+    <string name="message">消息</string>
+    <string name="me">我</string>
+
+    <!--公共的-->
+    <string name="network_connect_fail_prompt">网络连接失败，请检查您的网络设置</string>
+    <string name="more">更多</string>
+
+    <!--首页-评论-->
+    <string name="follow">关注</string>
+    <string name="review">评论</string>
+    <string name="owner">楼主</string>
+    <string name="post_review_hint">大笔一挥，神评在手</string>
+
+    <!--话题-->
+    <string name="shield">屏蔽</string>
+    <string name="like">喜欢</string>
+
+    <!--消息-->
+    <string name="fans">粉丝</string>
+    <string name="review_and_reply">评论与回复</string>
+    <string name="praise">赞</string>
+    <string name="system_notice">系统通知</string>
+    <string name="audit_notice">审核通知</string>
+    <string name="topic_optimize_remind">话题优化提醒</string>
+    <string name="follow_you">关注了你</string>
+
+    <string name="back_off_follow">回关</string>
+    <string name="already_followed">已关注</string>
+    <string name="each_other_follow">互相关注</string>
+
+    <string name="praise_your_works">赞了你的作品</string>
+
+    <!--发布-->
+    <string name="album_all_videos_images">所有视频/图片</string>
+    <string name="album_all_videos">所有视频</string>
+    <string name="album_all_images">所有图片</string>
+
+    <string name="post_title_hint">写标题并搭配2~3个准确相关的话题、不带水印，帖子更容易火～</string>
+    <string name="add_topic">添加话题</string>
+    <string name="manuscript">草稿</string>
+    <string name="publish">发布</string>
+
+    <string name="dialog_download_title">请选择文件样式</string>
+    <string name="download_ad">无水印(需看广告)</string>
+    <string name="download_vip">无水印(VIP独享)</string>
+    <string name="download_watermark">含水印</string>
+    <string name="downloading">正在下载</string>
+    <string name="save">保存</string>
+    <string name="save_fail">保存失败</string>
+    <string name="save_success">保存成功</string>
+    <string name="go_to_album">去相册查看</string>
+    <string name="retry">重试</string>
+    <string name="download_count_reach_max">已超过今日最大下载次数</string>
+</resources>

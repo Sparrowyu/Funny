@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/dp16"
+        android:paddingBottom="@dimen/dp50">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp12">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp48"
+                        android:layout_height="@dimen/dp48"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/icon" />
+
+                    <TextView
+                        android:id="@+id/task_item_title1"
+                        style="@style/MiddleTextBlack"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp60"
+                        android:layout_marginTop="@dimen/dp2"
+                        android:text="观看时长"
+                        android:textColor="@color/color_B44D2A" />
+
+                    <TextView
+                        style="@style/StandardTextBlack"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/task_item_title1"
+                        android:layout_marginLeft="@dimen/dp60"
+                        android:layout_marginTop="@dimen/dp2"
+                        android:layout_marginRight="@dimen/dp90"
+                        android:lineSpacingMultiplier="0.8"
+                        android:text="每累计刷帖时长>10分钟，可获得10星币，每天最多完成3次。"
+                        android:textColor="@color/color_E6957B" />
+
+                    <TextView
+                        style="@style/StandardTextWhite"
+                        android:layout_width="@dimen/dp72"
+                        android:layout_height="@dimen/dp32"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/dp12"
+                        android:background="@drawable/click_can_orange_bt_bg"
+                        android:gravity="center"
+                        android:text="10" />
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/StandardTextBlack"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:text="今日任务"
+                    android:textColor="@color/color_B44D2A" />
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+</layout>

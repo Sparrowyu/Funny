@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_common_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialog_content"
+            style="@style/Base333MiddleText"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:minHeight="@dimen/dp140"
+            android:padding="@dimen/dp16"
+            android:text=""
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp45"
+            android:layout_below="@+id/dialog_content">
+
+            <View style="@style/divider_view_line" />
+
+            <LinearLayout
+                android:id="@+id/dialog_choice_gender_dialog_ll"
+                android:layout_width="match_parent"
+                android:layout_height="44.5dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    style="@style/Base333MiddleText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:foreground="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:text="取消"
+                    android:textColor="@color/color_999999"
+                    android:textStyle="bold"
+                    tools:ignore="UnusedAttribute" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_d7d7d7" />
+
+                <TextView
+                    android:id="@+id/tv_sure"
+                    style="@style/Base333MiddleText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:foreground="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:text="确定"
+                    android:textStyle="bold"
+                    tools:ignore="UnusedAttribute" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

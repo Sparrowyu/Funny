@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        style="@style/ItemLayout"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_post_review_item_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_item_white_bg"
+            android:paddingBottom="@dimen/dp8">
+
+            <RelativeLayout
+                android:id="@+id/rl_user_icon"
+                android:layout_width="@dimen/dp48"
+                android:layout_height="@dimen/dp48"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.sortinghat.funny.view.CircleImageView
+                    android:id="@+id/iv_user_icon"
+                    style="@style/my_user_icon"
+                    android:layout_width="@dimen/dp32"
+                    android:layout_height="@dimen/dp32" />
+
+                <ImageView
+                    android:id="@+id/iv_box_user_icon"
+                    style="@style/my_user_icon_box" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_post_reviewer_nick_name"
+                style="@style/SmallTextBlack"
+                android:layout_marginStart="@dimen/dp2"
+                android:layout_marginTop="@dimen/dp8"
+                android:text="大白梨"
+                android:textColor="@color/color_999999"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/rl_user_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_post_owner"
+                style="@style/SmallerTextWhite"
+                android:layout_marginStart="@dimen/dp5"
+                android:background="@drawable/shape_light_red_bg_with_corner2"
+                android:gravity="center"
+                android:paddingStart="@dimen/dp5"
+                android:paddingTop="@dimen/dp2"
+                android:paddingEnd="@dimen/dp5"
+                android:paddingBottom="@dimen/dp2"
+                android:text="@string/owner"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_post_reviewer_nick_name"
+                app:layout_constraintStart_toEndOf="@id/tv_post_reviewer_nick_name"
+                app:layout_constraintTop_toTopOf="@id/tv_post_reviewer_nick_name" />
+
+            <TextView
+                android:id="@+id/tv_post_review_like"
+                style="@style/SmallTextWhite"
+                android:layout_marginEnd="@dimen/dp20"
+                android:drawablePadding="@dimen/dp5"
+                android:gravity="center"
+                android:paddingStart="@dimen/dp8"
+                android:paddingTop="@dimen/dp5"
+                android:paddingEnd="@dimen/dp8"
+                android:paddingBottom="@dimen/dp2"
+                android:textColor="@color/color_999999"
+                app:drawableEndCompat="@mipmap/review_like_normal"
+                app:layout_constraintEnd_toStartOf="@id/iv_post_review_dislike"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_post_review_dislike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp8"
+                android:paddingStart="@dimen/dp8"
+                android:paddingTop="@dimen/dp5"
+                android:paddingEnd="@dimen/dp8"
+                android:paddingBottom="@dimen/dp2"
+                android:src="@mipmap/review_dislike_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_post_review_content"
+                style="@style/StandardTextBlack"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/dp15"
+                android:text="长的好看就算了，还这么会演戏。"
+                android:textColor="@color/color_333333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="@id/tv_post_reviewer_nick_name"
+                app:layout_constraintTop_toBottomOf="@id/iv_post_review_dislike" />
+
+            <TextView
+                android:id="@+id/tv_post_review_date"
+                style="@style/SmallTextBlack"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginBottom="@dimen/dp8"
+                android:text="2021-05-21"
+                android:textColor="@color/color_999999"
+                app:layout_constraintStart_toStartOf="@id/tv_post_review_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_post_review_content" />
+
+            <TextView
+                android:id="@+id/tv_post_review_reply"
+                style="@style/SmallTextBlack"
+                android:layout_marginBottom="@dimen/dp8"
+                android:paddingStart="@dimen/dp15"
+                android:paddingTop="@dimen/dp5"
+                android:paddingEnd="@dimen/dp15"
+                android:text="回复"
+                android:textColor="@color/color_999999"
+                app:layout_constraintStart_toEndOf="@id/tv_post_review_date"
+                app:layout_constraintTop_toBottomOf="@id/tv_post_review_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <me.jingbin.library.ByRecyclerView
+            android:id="@id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp57"
+            android:visibility="gone"
+            tools:itemCount="1"
+            tools:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_post_review_reply" />
+
+        <TextView
+            android:id="@+id/tv_unfold_post_review_reply"
+            style="@style/SmallTextBlack"
+            android:layout_marginStart="@dimen/dp57"
+            android:drawablePadding="@dimen/dp2"
+            android:gravity="center"
+            android:paddingEnd="@dimen/dp8"
+            android:paddingBottom="@dimen/dp8"
+            android:text="展开2条回复"
+            android:textColor="@color/color_999999"
+            android:visibility="gone"
+            app:drawableEndCompat="@mipmap/review_down_arrow"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,936 @@
+{
+  "code": 0,
+  "msg": null,
+  "data": [
+    {
+      "appName": "瑞幸咖啡",
+      "appId": 0,
+      "appPackageName": "com.lucky.luckyclient",
+      "appTag": "白领"
+    },
+    {
+      "appName": "星巴克",
+      "appId": 1,
+      "appPackageName": "com.starbucks.cn",
+      "appTag": "白领"
+    },
+    {
+      "appName": "懂车帝",
+      "appId": 2,
+      "appPackageName": "com.ss.android.auto",
+      "appTag": "男性"
+    },
+    {
+      "appName": "汽车之家",
+      "appId": 3,
+      "appPackageName": "com.cubic.autohome",
+      "appTag": "男性"
+    },
+    {
+      "appName": "瓜子二手车",
+      "appId": 4,
+      "appPackageName": "com.ganji.android.haoche_c",
+      "appTag": "男性"
+    },
+    {
+      "appName": "途虎养车",
+      "appId": 5,
+      "appPackageName": "cn.TuHu.android",
+      "appTag": "男性"
+    },
+    {
+      "appName": "易车",
+      "appId": 6,
+      "appPackageName": "com.yiche.autoeasy",
+      "appTag": "男性"
+    },
+    {
+      "appName": "人人车二手车",
+      "appId": 7,
+      "appPackageName": "com.renrenche.carapp",
+      "appTag": "男性"
+    },
+    {
+      "appName": "美柚",
+      "appId": 8,
+      "appPackageName": "com.lingan.seeyou",
+      "appTag": "女性"
+    },
+    {
+      "appName": "Keep",
+      "appId": 9,
+      "appPackageName": "com.gotokeep.keep",
+      "appTag": "青年"
+    },
+    {
+      "appName": "直播吧",
+      "appId": 10,
+      "appPackageName": "android.zhibo8",
+      "appTag": "男性"
+    },
+    {
+      "appName": "天天跳绳",
+      "appId": 11,
+      "appPackageName": "com.gkid.crazyrope",
+      "appTag": "孩子、父母"
+    },
+    {
+      "appName": "咕咚",
+      "appId": 12,
+      "appPackageName": "com.codoon.gps",
+      "appTag": "中青年"
+    },
+    {
+      "appName": "大姨妈",
+      "appId": 13,
+      "appPackageName": "com.yoloho.dayima",
+      "appTag": "女性"
+    },
+    {
+      "appName": "运动世界校园",
+      "appId": 14,
+      "appPackageName": "com.zjwh.android_wh_physicalfitness",
+      "appTag": "大学生"
+    },
+    {
+      "appName": "步道乐跑",
+      "appId": 15,
+      "appPackageName": "com.lptiyu.tanke",
+      "appTag": "大学生"
+    },
+    {
+      "appName": "东方财富",
+      "appId": 16,
+      "appPackageName": "com.eastmoney.android.berlin",
+      "appTag": "男性、少量女性"
+    },
+    {
+      "appName": "天天基金",
+      "appId": 17,
+      "appPackageName": "com.eastmoney.android.fund",
+      "appTag": "男性、少量女性"
+    },
+    {
+      "appName": "国信金太阳",
+      "appId": 18,
+      "appPackageName": "com.guosen.android",
+      "appTag": "男性、少量女性"
+    },
+    {
+      "appName": "平安证券",
+      "appId": 19,
+      "appPackageName": "com.hundsun.winner.pazq",
+      "appTag": "男性、少量女性"
+    },
+    {
+      "appName": "度小满金融",
+      "appId": 20,
+      "appPackageName": "com.duxiaoman.wallet",
+      "appTag": "男性、少量女性"
+    },
+    {
+      "appName": "东方财富期货",
+      "appId": 21,
+      "appPackageName": "com.eastmoney.app.qhsjkh",
+      "appTag": "男性、少量女性"
+    },
+    {
+      "appName": "富途牛牛",
+      "appId": 22,
+      "appPackageName": "cn.futu.trader",
+      "appTag": "男性、少量女性"
+    },
+    {
+      "appName": "腾讯自选股",
+      "appId": 23,
+      "appPackageName": "com.tencent.portfolio",
+      "appTag": "男性、少量女性"
+    },
+    {
+      "appName": "大智慧",
+      "appId": 24,
+      "appPackageName": "com.android.dazhihui",
+      "appTag": "男性、少量女性"
+    },
+    {
+      "appName": "叫叫",
+      "appId": 25,
+      "appPackageName": "com.shusheng.JoJoRead",
+      "appTag": "儿童、父母"
+    },
+    {
+      "appName": "凯叔讲故事",
+      "appId": 26,
+      "appPackageName": "com.ks.kaishustory",
+      "appTag": "儿童、父母"
+    },
+    {
+      "appName": "叫叫绘本",
+      "appId": 27,
+      "appPackageName": "com.jojoread.huiben",
+      "appTag": "儿童、父母"
+    },
+    {
+      "appName": "宝宝树孕育",
+      "appId": 28,
+      "appPackageName": "com.babytree.apps.pregnancy",
+      "appTag": "孕妇"
+    },
+    {
+      "appName": "宝宝巴士世界",
+      "appId": 29,
+      "appPackageName": "com.sinyee.babybus.world",
+      "appTag": "儿童、父母"
+    },
+    {
+      "appName": "汉字大冒险",
+      "appId": 30,
+      "appPackageName": "com.jojoread.JoJoSherlock",
+      "appTag": "儿童、父母"
+    },
+    {
+      "appName": "洪恩识字",
+      "appId": 31,
+      "appPackageName": "com.hongen.app.word",
+      "appTag": "儿童、父母"
+    },
+    {
+      "appName": "宝宝巴士",
+      "appId": 32,
+      "appPackageName": "com.sinyee.babybus.recommendapp",
+      "appTag": "儿童、父母"
+    },
+    {
+      "appName": "儿歌多多",
+      "appId": 33,
+      "appPackageName": "com.duoduo.child.story",
+      "appTag": "儿童、父母"
+    },
+    {
+      "appName": "班级优化大师",
+      "appId": 34,
+      "appPackageName": "com.seewo.easicare.pro",
+      "appTag": "中小学老师用"
+    },
+    {
+      "appName": "洪恩拼音",
+      "appId": 35,
+      "appPackageName": "com.ihuman.pinyin",
+      "appTag": "儿童、父母"
+    },
+    {
+      "appName": "猎聘",
+      "appId": 36,
+      "appPackageName": "com.lietou.mishu",
+      "appTag": "白领"
+    },
+    {
+      "appName": "BOSS直聘",
+      "appId": 37,
+      "appPackageName": "com.hpbr.bosszhipin",
+      "appTag": "白领"
+    },
+    {
+      "appName": "前程无忧51job(高薪名企好工作)",
+      "appId": 38,
+      "appPackageName": "com.job.android",
+      "appTag": "白领"
+    },
+    {
+      "appName": "企查查",
+      "appId": 39,
+      "appPackageName": "com.android.icredit",
+      "appTag": "白领"
+    },
+    {
+      "appName": "脉脉",
+      "appId": 40,
+      "appPackageName": "com.taou.maimai",
+      "appTag": "白领"
+    },
+    {
+      "appName": "天眼查",
+      "appId": 41,
+      "appPackageName": "com.tianyancha.skyeye",
+      "appTag": "白领"
+    },
+    {
+      "appName": "牛客",
+      "appId": 42,
+      "appPackageName": "com.nowcoder.app.florida",
+      "appTag": "白领"
+    },
+    {
+      "appName": "店长直聘",
+      "appId": 43,
+      "appPackageName": "com.hpbr.directhires",
+      "appTag": "蓝领"
+    },
+    {
+      "appName": "鱼泡网",
+      "appId": 44,
+      "appPackageName": "io.dcloud.H576E6CC7",
+      "appTag": "乡镇男性"
+    },
+    {
+      "appName": "唯品会",
+      "appId": 45,
+      "appPackageName": "com.achievo.vipshop",
+      "appTag": "女性、男性少"
+    },
+    {
+      "appName": "京喜",
+      "appId": 46,
+      "appPackageName": "com.jd.pingou",
+      "appTag": "男性、女性少"
+    },
+    {
+      "appName": "去哪儿旅行",
+      "appId": 47,
+      "appPackageName": "com.Qunar",
+      "appTag": "收入不高白领"
+    },
+    {
+      "appName": "马蜂窝旅游",
+      "appId": 48,
+      "appPackageName": "com.mfw.roadbook",
+      "appTag": "收入不高白领"
+    },
+    {
+      "appName": "携程旅行",
+      "appId": 49,
+      "appPackageName": "ctrip.android.view",
+      "appTag": "富有白领"
+    },
+    {
+      "appName": "华住会",
+      "appId": 50,
+      "appPackageName": "com.htinns",
+      "appTag": "白领"
+    },
+    {
+      "appName": "美团酒店商家",
+      "appId": 51,
+      "appPackageName": "com.sankuai.mhotel",
+      "appTag": "白领"
+    },
+    {
+      "appName": "爱彼迎",
+      "appId": 52,
+      "appPackageName": "com.airbnb.android",
+      "appTag": "白领"
+    },
+    {
+      "appName": "携程商旅",
+      "appId": 53,
+      "appPackageName": "com.ctrip.ct",
+      "appTag": "白领"
+    },
+    {
+      "appName": "花小猪司机端",
+      "appId": 54,
+      "appPackageName": "com.huaxiaozhu.driver",
+      "appTag": "男青年"
+    },
+    {
+      "appName": "货拉拉司机版",
+      "appId": 55,
+      "appPackageName": "com.lalamove.huolala.driver",
+      "appTag": "男青年"
+    },
+    {
+      "appName": "快狗打车司机版",
+      "appId": 56,
+      "appPackageName": "com.cxyw.suyun.ui",
+      "appTag": "男青年"
+    },
+    {
+      "appName": "车来了",
+      "appId": 57,
+      "appPackageName": "com.ygkj.chelaile.standard",
+      "appTag": "乘坐公交"
+    },
+    {
+      "appName": "运满满司机",
+      "appId": 58,
+      "appPackageName": "com.xiwei.logistics",
+      "appTag": "男青年"
+    },
+    {
+      "appName": "货车帮司机",
+      "appId": 59,
+      "appPackageName": "com.wlqq",
+      "appTag": "男青年"
+    },
+    {
+      "appName": "航旅纵横",
+      "appId": 60,
+      "appPackageName": "com.umetrip.android.msky.app",
+      "appTag": "白领"
+    },
+    {
+      "appName": "飞常准",
+      "appId": 61,
+      "appPackageName": "vz.com",
+      "appTag": "白领"
+    },
+    {
+      "appName": "美图秀秀",
+      "appId": 62,
+      "appPackageName": "com.mt.mtxx.mtxx",
+      "appTag": "女性"
+    },
+    {
+      "appName": "B612咔叽",
+      "appId": 63,
+      "appPackageName": "com.campmobile.snowcamera",
+      "appTag": "年轻女性"
+    },
+    {
+      "appName": "水印相机",
+      "appId": 64,
+      "appPackageName": "com.tencent.zebra",
+      "appTag": "工作、日常"
+    },
+    {
+      "appName": "美颜相机",
+      "appId": 65,
+      "appPackageName": "com.meitu.meiyancamera",
+      "appTag": "年轻女性"
+    },
+    {
+      "appName": "今日头条",
+      "appId": 66,
+      "appPackageName": "com.ss.android.article.news",
+      "appTag": "男性"
+    },
+    {
+      "appName": "今日头条极速版 ",
+      "appId": 67,
+      "appPackageName": "com.ss.android.article.lite",
+      "appTag": "男性"
+    },
+    {
+      "appName": "腾讯新闻",
+      "appId": 68,
+      "appPackageName": "com.tencent.news",
+      "appTag": "男性"
+    },
+    {
+      "appName": "搜狐新闻",
+      "appId": 69,
+      "appPackageName": " com.sohu.newsclient",
+      "appTag": "男性"
+    },
+    {
+      "appName": "新浪新闻",
+      "appId": 70,
+      "appPackageName": "com.sina.news",
+      "appTag": "男性"
+    },
+    {
+      "appName": "网易新闻 ",
+      "appId": 71,
+      "appPackageName": "com.netease.newsreader.activity",
+      "appTag": "男性"
+    },
+    {
+      "appName": "快看",
+      "appId": 72,
+      "appPackageName": "com.kuaikan.comic",
+      "appTag": "青少年"
+    },
+    {
+      "appName": "腾讯体育",
+      "appId": 73,
+      "appPackageName": "com.tencent.qqsports",
+      "appTag": "男性"
+    },
+    {
+      "appName": "百度大字版",
+      "appId": 74,
+      "appPackageName": "com.baidu.searchbox.tomas",
+      "appTag": "老年"
+    },
+    {
+      "appName": "腾讯动漫",
+      "appId": 75,
+      "appPackageName": "com.qq.ac.android",
+      "appTag": "青少年"
+    },
+    {
+      "appName": "懂球帝 ",
+      "appId": 76,
+      "appPackageName": "com.dongqiudi.news",
+      "appTag": "男性"
+    },
+    {
+      "appName": "咚漫漫画",
+      "appId": 77,
+      "appPackageName": "com.naver.linewebtoon.cn",
+      "appTag": "青少年"
+    },
+    {
+      "appName": "喜马拉雅儿童",
+      "appId": 78,
+      "appPackageName": "com.ximalaya.ting.kid",
+      "appTag": "儿童"
+    },
+    {
+      "appName": "看漫",
+      "appId": 79,
+      "appPackageName": "com.wbxm.icartoon",
+      "appTag": "年轻人"
+    },
+    {
+      "appName": "自如",
+      "appId": 80,
+      "appPackageName": "com.ziroom.ziroomcustomer",
+      "appTag": "年轻人"
+    },
+    {
+      "appName": "作业帮",
+      "appId": 81,
+      "appPackageName": "com.baidu.homework",
+      "appTag": "中小学生"
+    },
+    {
+      "appName": "网易有道词典",
+      "appId": 82,
+      "appPackageName": "com.youdao.dict",
+      "appTag": "青少年"
+    },
+    {
+      "appName": "安全教育平台",
+      "appId": 83,
+      "appPackageName": "com.jzzs.ParentsHelper",
+      "appTag": "学生家长老师"
+    },
+    {
+      "appName": "今日校园",
+      "appId": 84,
+      "appPackageName": "com.wisedu.cpdaily",
+      "appTag": "大学生"
+    },
+    {
+      "appName": "腾讯课堂",
+      "appId": 85,
+      "appPackageName": "com.tencent.edu",
+      "appTag": "白领"
+    },
+    {
+      "appName": "小猿搜题",
+      "appId": 86,
+      "appPackageName": "com.fenbi.android.solar",
+      "appTag": "中小学生家长"
+    },
+    {
+      "appName": "小猿口算",
+      "appId": 87,
+      "appPackageName": "com.fenbi.android.leo",
+      "appTag": "小学家长"
+    },
+    {
+      "appName": "超级课程表 ",
+      "appId": 88,
+      "appPackageName": "com.xtuone.android.syllabus",
+      "appTag": "大学生"
+    },
+    {
+      "appName": "掌通家园",
+      "appId": 89,
+      "appPackageName": "com.seebaby",
+      "appTag": "幼儿园、老师、家长"
+    },
+    {
+      "appName": "一起作业",
+      "appId": 90,
+      "appPackageName": "com.A17zuoye.mobile.homework",
+      "appTag": "小学生"
+    },
+    {
+      "appName": "百词斩",
+      "appId": 91,
+      "appPackageName": " com.jiongji.andriod.card",
+      "appTag": "小学到大学"
+    },
+    {
+      "appName": "学小易",
+      "appId": 92,
+      "appPackageName": "com.xuexiaoyi.xxy",
+      "appTag": "大学生"
+    },
+    {
+      "appName": "英语趣配音",
+      "appId": 93,
+      "appPackageName": "com.ishowedu.peiyin",
+      "appTag": "中小学生"
+    },
+    {
+      "appName": "中国大学MOOC",
+      "appId": 94,
+      "appPackageName": "com.netease.edu.ucmooc",
+      "appTag": "大学生"
+    },
+    {
+      "appName": "粉笔职教",
+      "appId": 95,
+      "appPackageName": "com.fenbi.android.servant",
+      "appTag": "白领、毕业学生"
+    },
+    {
+      "appName": "斑马",
+      "appId": 96,
+      "appPackageName": "com.fenbi.android.zenglish",
+      "appTag": "少儿"
+    },
+    {
+      "appName": "得到",
+      "appId": 97,
+      "appPackageName": "com.luojilab.player",
+      "appTag": "白领"
+    },
+    {
+      "appName": "出口成章",
+      "appId": 98,
+      "appPackageName": " com.sainti.eduread",
+      "appTag": "中小学生"
+    },
+    {
+      "appName": "小红书",
+      "appId": 99,
+      "appPackageName": "com.xingin.xhs",
+      "appTag": "年轻女性"
+    },
+    {
+      "appName": "陌陌",
+      "appId": 100,
+      "appPackageName": "com.immomo.momo",
+      "appTag": "年轻男性"
+    },
+    {
+      "appName": "Soul",
+      "appId": 101,
+      "appPackageName": " cn.soulapp.android",
+      "appTag": "年轻人"
+    },
+    {
+      "appName": "探探",
+      "appId": 102,
+      "appPackageName": "com.p1.mobile.putong",
+      "appTag": "年轻男性"
+    },
+    {
+      "appName": "知乎",
+      "appId": 103,
+      "appPackageName": "com.zhihu.android",
+      "appTag": "年轻人"
+    },
+    {
+      "appName": "伊对",
+      "appId": 104,
+      "appPackageName": "me.yidui",
+      "appTag": "单身男女"
+    },
+    {
+      "appName": "百度贴吧",
+      "appId": 105,
+      "appPackageName": "com.baidu.tieba",
+      "appTag": "年轻人"
+    },
+    {
+      "appName": "最右",
+      "appId": 106,
+      "appPackageName": "cn.xiaochuankeji.tieba",
+      "appTag": "年轻女性"
+    },
+    {
+      "appName": "珍爱",
+      "appId": 107,
+      "appPackageName": " com.zhenai.android",
+      "appTag": "单身男女"
+    },
+    {
+      "appName": "微光",
+      "appId": 108,
+      "appPackageName": "com.qingqi.dianbo",
+      "appTag": "男性"
+    },
+    {
+      "appName": "玩吧 ",
+      "appId": 109,
+      "appPackageName": "com.wodi.who",
+      "appTag": "年轻人"
+    },
+    {
+      "appName": "美篇",
+      "appId": 110,
+      "appPackageName": "com.lanjingren.ivwen",
+      "appTag": "中老年人"
+    },
+    {
+      "appName": "摩托范",
+      "appId": 111,
+      "appPackageName": "com.jdd.motorfans",
+      "appTag": "男性"
+    },
+    {
+      "appName": "掌上英雄联盟",
+      "appId": 112,
+      "appPackageName": "com.tencent.qt.qtl",
+      "appTag": "年轻女性"
+    },
+    {
+      "appName": "王者荣耀",
+      "appId": 113,
+      "appPackageName": "com.tencent.tmgp.sgame",
+      "appTag": "成年年轻人"
+    },
+    {
+      "appName": "和平精英",
+      "appId": 114,
+      "appPackageName": "com.tencent.tmgp.pubgmhd",
+      "appTag": "年轻人"
+    },
+    {
+      "appName": "老来",
+      "appId": 115,
+      "appPackageName": "com.laolaiwangtech",
+      "appTag": "老年人"
+    },
+    {
+      "appName": "皮皮搞笑",
+      "appId": 116,
+      "appPackageName": " cn.xiaochuankeji.zuiyouLite",
+      "appTag": "年轻人"
+    },
+    {
+      "appName": "个人所得税",
+      "appId": 117,
+      "appPackageName": "cn.gov.tax.its",
+      "appTag": "职场人"
+    },
+    {
+      "appName": "小天才",
+      "appId": 118,
+      "appPackageName": " com.xtc.watch",
+      "appTag": "小孩家长"
+    },
+    {
+      "appName": "企业微信",
+      "appId": 119,
+      "appPackageName": "com.tencent.wework",
+      "appTag": "在职人员"
+    },
+    {
+      "appName": "钉钉",
+      "appId": 120,
+      "appPackageName": "com.alibaba.android.rimet",
+      "appTag": "在职人员"
+    },
+    {
+      "appName": "飞书",
+      "appId": 121,
+      "appPackageName": "com.ss.android.lark",
+      "appTag": "在职人员"
+    },
+    {
+      "appName": "拼多多 ",
+      "appId": 122,
+      "appPackageName": "com.xunmeng.pinduoduo",
+      "appTag": "老年"
+    },
+    {
+      "appName": "QQ",
+      "appId": 123,
+      "appPackageName": "com.tencent.mobileqq",
+      "appTag": "年轻人"
+    },
+    {
+      "appName": "开心消消乐",
+      "appId": 124,
+      "appPackageName": "com.happyelements.AndroidAnimal",
+      "appTag": "女性"
+    },
+    {
+      "appName": "宾果消消消",
+      "appId": 125,
+      "appPackageName": "com.mfp.jelly.huawei",
+      "appTag": "女性"
+    },
+    {
+      "appName": "消除星星乐",
+      "appId": 126,
+      "appPackageName": "com.pfu.xcxxl.huawei",
+      "appTag": "女性"
+    },
+    {
+      "appName": "京东",
+      "appId": 127,
+      "appPackageName": "com.jingdong.app.mall",
+      "appTag": "男性"
+    },
+    {
+      "appName": "蘑菇街",
+      "appId": 128,
+      "appPackageName": "com.mogujie",
+      "appTag": "女性"
+    },
+    {
+      "appName": "优酷视频 ",
+      "appId": 129,
+      "appPackageName": "com.youku.phone",
+      "appTag": "女性"
+    },
+    {
+      "appName": "丝芙兰SEPHORA",
+      "appId": 130,
+      "appPackageName": "com.arvato.sephora.app",
+      "appTag": "女性"
+    },
+    {
+      "appName": "新氧",
+      "appId": 131,
+      "appPackageName": "com.youxiang.soyoungapp.mock",
+      "appTag": "女性"
+    },
+    {
+      "appName": "美妆相机",
+      "appId": 132,
+      "appPackageName": "com.meitu.makeup",
+      "appTag": "女性"
+    },
+    {
+      "appName": "美丽修行",
+      "appId": 133,
+      "appPackageName": "cn.bevol.p",
+      "appTag": "女性"
+    },
+    {
+      "appName": "美图秀秀",
+      "appId": 134,
+      "appPackageName": "com.mt.mtxx.mtxx",
+      "appTag": "女性"
+    },
+    {
+      "appName": "屈臣氏",
+      "appId": 135,
+      "appPackageName": "com.watsons.mobile",
+      "appTag": "女性"
+    },
+    {
+      "appName": "一甜相机",
+      "appId": 136,
+      "appPackageName": "com.kwai.m2u",
+      "appTag": "女性"
+    },
+    {
+      "appName": "轻颜相机",
+      "appId": 137,
+      "appPackageName": "com.gorgeous.lite",
+      "appTag": "女性"
+    },
+    {
+      "appName": "无他相机",
+      "appId": 138,
+      "appPackageName": "com.benqu.wuta",
+      "appTag": "女性"
+    },
+    {
+      "appName": "聚美",
+      "appId": 139,
+      "appPackageName": "com.jm.android.jumei",
+      "appTag": "女性"
+    },
+    {
+      "appName": "美拍",
+      "appId": 140,
+      "appPackageName": "com.meitu.meipaimv",
+      "appTag": "女性"
+    },
+    {
+      "appName": "Faceu激萌",
+      "appId": 141,
+      "appPackageName": "com.lemon.faceu",
+      "appTag": "女性"
+    },
+    {
+      "appName": "凤凰新闻",
+      "appId": 142,
+      "appPackageName": "com.ifeng.news2",
+      "appTag": "男性"
+    },
+    {
+      "appName": "虎扑",
+      "appId": 143,
+      "appPackageName": "com.hupu.games",
+      "appTag": "男性"
+    },
+    {
+      "appName": "穿越火线：枪战王者",
+      "appId": 144,
+      "appPackageName": "com.tencent.tmgp.cf",
+      "appTag": "男性"
+    },
+    {
+      "appName": "花椒直播",
+      "appId": 145,
+      "appPackageName": "com.huajiao",
+      "appTag": "男性"
+    },
+    {
+      "appName": "男衣邦穿衣搭配",
+      "appId": 146,
+      "appPackageName": "com.nanyibang.nomi",
+      "appTag": "男性"
+    },
+    {
+      "appName": "玩物得志",
+      "appId": 147,
+      "appPackageName": "com.zdwh.wwdz",
+      "appTag": "男性"
+    },
+    {
+      "appName": "生死狙击",
+      "appId": 148,
+      "appPackageName": "com.wooduan.ssjj.huawei",
+      "appTag": "男性"
+    },
+    {
+      "appName": "三国志·战略版",
+      "appId": 149,
+      "appPackageName": "com.aligames.sgzzlb.huawei",
+      "appTag": "男性"
+    },
+    {
+      "appName": "奥特曼传奇英雄",
+      "appId": 150,
+      "appPackageName": "com.joym.legendhero.huawei",
+      "appTag": "男性"
+    },
+    {
+      "appName": "腾讯体育",
+      "appId": 151,
+      "appPackageName": "com.tencent.qqsports",
+      "appTag": "男性"
+    },
+    {
+      "appName": "咪咕视频(CBA体育直播)",
+      "appId": 152,
+      "appPackageName": "com.cmcc.cmvideo",
+      "appTag": "男性"
+    },
+    {
+      "appName": "直播吧",
+      "appId": 153,
+      "appPackageName": "android.zhibo8",
+      "appTag": "男性"
+    },
+    {
+      "appName": "哔哩哔哩",
+      "appId": 154,
+      "appPackageName": "tv.danmaku.bili",
+      "appTag": "年轻人"
+    }
+  ]
+}

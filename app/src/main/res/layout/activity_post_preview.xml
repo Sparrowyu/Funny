@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        style="@style/RootLayout"
+        android:background="@color/black"
+        android:paddingBottom="@dimen/dp40">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/iv_video_back"
+            style="@style/ivVideoBack"
+            android:layout_width="56dp"
+            android:layout_height="56dp" />
+
+    </RelativeLayout>
+
+</layout>

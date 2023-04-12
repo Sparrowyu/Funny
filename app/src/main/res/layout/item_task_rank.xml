@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@id/item_view"
+        style="@style/ItemLayout"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp12">
+
+            <TextView
+                android:id="@+id/task_item_rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:minWidth="24dp"
+                android:minHeight="20dp"
+                android:text="1"
+                android:textColor="@color/color_333333" />
+
+            <RelativeLayout
+                android:id="@+id/rl_user_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp35"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_user_icon"
+                    style="@style/my_user_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <ImageView
+                    android:id="@+id/iv_box_user_icon"
+                    style="@style/my_user_icon_box"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/task_item_name"
+                style="@style/StandardTextBlack"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="@dimen/dp5"
+                android:text=""
+                android:textColor="@color/color_333333" />
+
+            <TextView
+                android:id="@+id/task_gold_num"
+                style="@style/LargeTextBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp12"
+                android:drawableLeft="@mipmap/task_gold_rank"
+                android:drawablePadding="@dimen/dp4"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/color_333333"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <View
+            style="@style/HorizontalDividerLine"
+            android:layout_marginLeft="@dimen/dp50" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@id/item_view"
+        style="@style/RootLayout"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp12"
+        android:paddingRight="@dimen/dp16">
+
+        <LinearLayout
+            android:id="@+id/layout_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:minHeight="@dimen/dp48"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_user_icon"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_marginLeft="4dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_user_icon"
+                    style="@style/my_user_icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp" />
+
+                <ImageView
+                    android:id="@+id/iv_box_user_icon"
+                    style="@style/my_user_icon_box"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    style="@style/Base333StandardText"
+                    android:text="提莫队长" />
+
+                <TextView
+                    android:id="@+id/tv_user_time"
+                    style="@style/SmallTextBlack"
+                    android:layout_marginTop="@dimen/dp4"
+                    android:text="2021-08-09"
+                    android:textColor="@color/color_999999" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sure"
+            style="@style/SmallTextBlack"
+            android:layout_width="@dimen/dp72"
+            android:layout_height="@dimen/dp28"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_white_bg_gray_border"
+            android:gravity="center"
+            android:text="关注" />
+    </RelativeLayout>
+
+</layout>

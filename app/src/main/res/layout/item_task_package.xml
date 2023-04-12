@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@id/item_view"
+        style="@style/ItemLayout"
+        android:descendantFocusability="blocksDescendants">
+
+        <com.sortinghat.funny.view.RoundRelativeLayout
+            android:id="@+id/item_rl"
+            style="@style/ItemLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp5">
+
+                <RelativeLayout
+                    android:id="@+id/rl_user_icon"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp">
+
+                    <ImageView
+                        android:id="@+id/iv_user_icon"
+                        style="@style/my_user_icon"
+                        android:src="@mipmap/user_icon_default" />
+
+                    <ImageView
+                        android:id="@+id/iv_box_user_icon"
+                        style="@style/my_user_icon_box"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/StandardTextBlack"
+                    android:layout_marginTop="1dp"
+                    android:gravity="center_horizontal"
+                    android:lines="2"
+                    android:maxLines="2"
+                    android:text="元气满满" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    style="@style/SmallerTextBlack"
+                    android:layout_marginTop="@dimen/dp1"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="@color/color_fe6a37" />
+
+                <TextView
+                    android:id="@+id/tv_bt"
+                    style="@style/StandardTextWhite"
+                    android:layout_width="60dp"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="@drawable/click_can_orange_bt_bg"
+                    android:gravity="center"
+                    android:text="装备" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/delete_rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#66000000"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/delete_img"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/task_pag_del"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+        </com.sortinghat.funny.view.RoundRelativeLayout>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundAngleImageView">
+        <attr name="is_cover_src" format="reference|boolean" />
+        <attr name="is_circle" format="reference|boolean" />
+        <attr name="iv_border_width" format="dimension"></attr>
+        <attr name="inner_border_width" format="dimension"></attr>
+        <attr name="corner_radius" format="dimension"></attr>
+        <attr name="corner_top_left_radius" format="dimension"></attr>
+        <attr name="corner_top_right_radius" format="dimension"></attr>
+        <attr name="corner_bottom_left_radius" format="dimension"></attr>
+        <attr name="corner_bottom_right_radius" format="dimension"></attr>
+        <attr name="mask_color" format="color" />
+        <attr name="inner_border_color" format="color" />
+        <attr name="iv_border_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton">
+        <attr name="borderWidth" format="dimension"></attr>
+        <attr name="offBorderColor" format="reference|color"></attr>
+        <attr name="offColor" format="reference|color"></attr>
+        <attr name="onColor" format="reference|color"></attr>
+        <attr name="spotColor" format="reference|color"></attr>
+        <attr name="animate" format="reference|boolean"></attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="RollingTextView">
+        <attr name="duration" format="reference|integer" />
+        <attr name="android:gravity" ns1:ignore="ResourceName" />
+        <attr name="android:shadowColor" ns1:ignore="ResourceName" />
+        <attr name="android:shadowDx" ns1:ignore="ResourceName" />
+        <attr name="android:shadowDy" ns1:ignore="ResourceName" />
+        <attr name="android:shadowRadius" ns1:ignore="ResourceName" />
+        <attr name="android:text" ns1:ignore="ResourceName" />
+        <attr name="android:textAppearance" ns1:ignore="ResourceName" />
+        <attr name="android:textColor" ns1:ignore="ResourceName" />
+        <attr name="android:textSize" ns1:ignore="ResourceName" />
+        <attr name="android:textStyle" ns1:ignore="ResourceName" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CircleProgressView">
+        <!--画笔宽度-->
+        <attr name="progress_width" format="dimension" />
+        <!--画笔颜色-->
+        <attr name="progress_color" format="color" />
+        <!--加载进度起始位置-->
+        <attr name="location_start" format="enum">
+            <enum name="left" value="1" />
+            <enum name="top" value="2" />
+            <enum name="right" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+    </declare-styleable>
+</resources>

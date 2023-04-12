@@ -1,0 +1,32 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/RootLayout">
+
+        <me.jingbin.library.ByRecyclerView
+            android:id="@+id/rv_one_level_topic"
+            android:layout_width="@dimen/dp100"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_one_level_topic" />
+
+        <me.jingbin.library.ByRecyclerView
+            android:id="@+id/rv_two_level_topic"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/rv_one_level_topic"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_two_level_topic" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

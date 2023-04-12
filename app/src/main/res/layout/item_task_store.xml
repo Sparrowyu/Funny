@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@id/item_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants">
+
+        <com.sortinghat.funny.view.RoundRelativeLayout
+            android:id="@+id/item_rl"
+            style="@style/ItemLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/item_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:minHeight="@dimen/dp65"
+                    android:scaleType="centerCrop"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tv_tag"
+                    style="@style/SmallTextWhite"
+                    android:layout_width="@dimen/dp54"
+                    android:layout_height="@dimen/dp16"
+                    android:background="@drawable/task_tag_corner_bg"
+                    android:gravity="center"
+                    android:text="限时抢购"
+                    android:textSize="10sp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_img"
+                    android:minHeight="@dimen/dp65"
+                    android:paddingLeft="@dimen/dp10"
+                    android:paddingTop="@dimen/dp5"
+                    android:paddingRight="@dimen/dp5"
+                    android:paddingBottom="@dimen/dp5">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        style="@style/MiddleTextBlack"
+                        android:gravity="center"
+                        android:text="星球杯" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_name"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp12"
+                            android:layout_height="@dimen/dp12"
+                            android:src="@mipmap/task_gold" />
+
+                        <TextView
+                            android:id="@+id/tv_gold"
+                            style="@style/LargeTextWhite"
+                            android:layout_marginLeft="@dimen/dp2"
+                            android:layout_marginTop="-2dp"
+                            android:text=""
+                            android:textColor="@color/color_fe6a37"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_bt"
+                        style="@style/StandardTextWhite"
+                        android:layout_width="@dimen/dp60"
+                        android:layout_height="@dimen/dp28"
+                        android:layout_below="@+id/tv_name"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:background="@drawable/click_can_orange_bt_bg"
+                        android:gravity="center"
+                        android:text="兑换" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </com.sortinghat.funny.view.RoundRelativeLayout>
+    </RelativeLayout>
+
+</layout>

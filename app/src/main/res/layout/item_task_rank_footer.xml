@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@id/item_view"
+        style="@style/ItemLayout"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical">
+
+        <TextView
+
+            style="@style/StandardTextWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:gravity="center"
+            android:text="榜单上的数据统计截止到昨天的星币数量"
+            android:textColor="@color/color_999999" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <TextView
+                android:id="@+id/task_item_foot_bt"
+                style="@style/StandardTextWhite"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp44"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/dp25"
+                android:layout_marginRight="@dimen/dp25"
+                android:background="@drawable/click_can_orange_bt_bg"
+                android:gravity="center"
+                android:text="去攒星币，上富豪榜"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

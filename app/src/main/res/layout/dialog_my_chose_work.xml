@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bottom_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp10">
+
+            <TextView
+                style="@style/Base333MiddleText"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp16"
+                android:text="不展示"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <com.sortinghat.funny.view.CustomSwitchButton
+                android:id="@+id/switch_button"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp28"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp72"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sure"
+                style="@style/Base333MiddleText"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp16"
+                android:foreground="?android:selectableItemBackground"
+                android:padding="@dimen/dp5"
+                android:text="确认"
+                android:textColor="@color/light_orange"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:ignore="UnusedAttribute" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_d7d7d7"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/work1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44"
+            android:foreground="?android:selectableItemBackground"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                style="@style/setting_view_tx"
+                android:text="服务业人员（餐饮服务员/司机/售货员等）" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_d7d7d7" />
+
+        <RelativeLayout
+            android:id="@+id/work2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44"
+            android:foreground="?android:selectableItemBackground"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                style="@style/setting_view_tx"
+                android:text="专业人士（教师/医生/律师等）" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_d7d7d7" />
+
+        <RelativeLayout
+            android:id="@+id/work3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44"
+            android:foreground="?android:selectableItemBackground"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                style="@style/setting_view_tx"
+                android:text="事业单位/公务员/政府工作人员" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_d7d7d7" />
+
+        <RelativeLayout
+            android:id="@+id/work4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44"
+            android:foreground="?android:selectableItemBackground"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                style="@style/setting_view_tx"
+                android:text="公司职员/白领" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_d7d7d7" />
+
+        <RelativeLayout
+            android:id="@+id/work5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44"
+            android:foreground="?android:selectableItemBackground"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                style="@style/setting_view_tx"
+                android:text="学生" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_d7d7d7" />
+
+
+        <RelativeLayout
+            android:id="@+id/work6"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44"
+            android:foreground="?android:selectableItemBackground"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                style="@style/setting_view_tx"
+                android:text="个体户" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_d7d7d7" />
+
+
+        <RelativeLayout
+            android:id="@+id/work7"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44"
+            android:foreground="?android:selectableItemBackground"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                style="@style/setting_view_tx"
+                android:text="其他" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

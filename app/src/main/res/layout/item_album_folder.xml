@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/ItemLayout"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp10">
+
+        <ImageView
+            android:id="@+id/iv_album_cover_image"
+            android:layout_width="@dimen/dp90"
+            android:layout_height="@dimen/dp90"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tv_album_name"
+            style="@style/StandardTextBlack"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dp10" />
+
+    </LinearLayout>
+
+</layout>

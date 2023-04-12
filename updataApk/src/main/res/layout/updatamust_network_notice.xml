@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:background="@drawable/cy_plugin_dialog_bg"
+        android:layout_width="284dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+       >
+
+        <TextView
+            android:id="@+id/notice_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:lineSpacingMultiplier="1.3"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="您当前处于移动数据状态，是否消耗xx.xxMB数据流量下载安装包？"
+            android:textColor="#FF3B4149"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="46dp"
+            android:background="#FFE5E5E5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/transparency"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/notice_cancle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/dialog_bookmark_cancel_button_selector"
+                android:text="取消"
+                android:textColor="#9CA0A5"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#FFE5E5E5" />
+
+            <Button
+                android:id="@+id/notice_sure"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/dialog_bookmark_cancel_button_selector"
+                android:text="确定"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

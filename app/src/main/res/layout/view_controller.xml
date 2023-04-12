@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/black">
+
+        <RelativeLayout
+            android:id="@+id/hot_comment_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp65"
+            android:layout_marginLeft="@dimen/dp50"
+            android:layout_marginTop="@dimen/dp60"
+            android:layout_marginRight="@dimen/dp50"
+            android:background="@drawable/shape_white_bg_with_corner"
+            android:visibility="gone">
+
+            <com.sortinghat.funny.view.CircleImageView
+                android:id="@+id/iv_hot_comment_icon"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp15"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/icon" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_toRightOf="@+id/iv_hot_comment_icon">
+
+                <TextView
+                    android:id="@+id/tx_hot_comment_name"
+                    style="@style/BaseText"
+                    android:singleLine="true"
+                    android:text="大白梨"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/small_text_size" />
+
+                <TextView
+                    android:id="@+id/tx_hot_comment_num"
+                    style="@style/BaseText"
+                    android:layout_marginLeft="@dimen/dp5"
+                    android:layout_toRightOf="@+id/tx_hot_comment_name"
+                    android:singleLine="true"
+                    android:text="666赞"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/small_text_size" />
+
+                <TextView
+                    android:id="@+id/tx_hot_comment_content"
+                    style="@style/BaseText"
+                    android:layout_below="@+id/tx_hot_comment_name"
+                    android:singleLine="true"
+                    android:text="长得好看也就算了"
+                    android:textColor="@color/color_666666"
+                    android:textSize="@dimen/standard_text_size" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_comment_hot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp15"
+                android:src="@mipmap/beautiful_comment" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_beautiful_big"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/apply_show"
+            android:background="@drawable/home_fragment_bottom_gradient_shape"
+            android:paddingStart="@dimen/dp12"
+            android:paddingTop="300dp"
+            tools:ignore="RtlSymmetry">
+
+            <LinearLayout
+                android:id="@+id/controllerInfoBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp100"
+                android:layout_marginBottom="@dimen/dp15"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/recycler_view">
+
+                <TextView
+                    android:id="@+id/tvNickname"
+                    style="@style/MiddleTextWhite"
+                    android:text="大致爱高清"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    style="@style/StandardTextWhite"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="落霞与孤鹜齐飞\n秋水共长天一色"
+                    android:textColor="@color/color_home_title" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/controllerInfoRightToll"
+                android:layout_width="@dimen/dp72"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp30"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/recycler_view"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/controllerInfoRight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/dp54"
+                        android:layout_height="@dimen/dp65"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="@dimen/dp54"
+                            android:layout_height="@dimen/dp54"
+                            android:background="@drawable/home_head_white_bg"
+                            android:scaleType="centerCrop" />
+
+                        <com.sortinghat.funny.view.CircleImageView
+                            android:layout_width="@dimen/dp50"
+                            android:layout_height="@dimen/dp50"
+                            android:layout_marginLeft="@dimen/dp2"
+                            android:layout_marginTop="@dimen/dp2"
+                            android:scaleType="centerCrop"
+                            android:src="@mipmap/icon" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dp21"
+                            android:layout_height="@dimen/dp21"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@mipmap/home_focus_on" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_user_icon"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_marginLeft="0dp"
+                        android:visibility="visible">
+
+                        <View
+                            android:id="@+id/ivHeadBg"
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/home_head_white_bg"
+                            android:visibility="visible" />
+
+                        <com.sortinghat.funny.view.CircleImageView
+                            android:id="@+id/iv_user_icon"
+                            style="@style/my_user_icon"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp" />
+
+                        <ImageView
+                            android:id="@+id/iv_box_user_icon"
+                            style="@style/my_user_icon_box"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/ivAdd"
+                            android:layout_width="@dimen/dp21"
+                            android:layout_height="@dimen/dp21"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@mipmap/home_focus_on" />
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/rlLike"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:minWidth="@dimen/dp64"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivLike"
+                            style="@style/home_video_right_img"
+                            android:src="@mipmap/home_like" />
+
+                        <com.sortinghat.funny.view.ShadowTextView
+                            android:id="@+id/likeCount"
+                            style="@style/home_video_right_tx"
+                            android:layout_marginTop="3dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rlDislike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:minWidth="@dimen/dp50"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivDislike"
+                            style="@style/home_video_right_img"
+                            android:src="@mipmap/home_dislike" />
+
+                        <com.sortinghat.funny.view.ShadowTextView
+                            android:id="@+id/dislikeCount"
+                            style="@style/home_video_right_tx"
+                            android:layout_marginTop="3dp"
+                            android:text="踩" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ivReward"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:minWidth="@dimen/dp50"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            style="@style/home_video_right_img"
+                            android:src="@mipmap/home_reward" />
+
+                        <com.sortinghat.funny.view.ShadowTextView
+                            android:id="@+id/rewardCount"
+                            style="@style/home_video_right_tx"
+                            android:layout_marginTop="3dp"
+                            android:text="赏" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rlComment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:minWidth="@dimen/dp50"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivComment"
+                            style="@style/home_video_right_img"
+                            android:src="@mipmap/home_review" />
+
+                        <com.sortinghat.funny.view.ShadowTextView
+                            android:id="@+id/tvCommentcount"
+                            style="@style/home_video_right_tx" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rlShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:minWidth="@dimen/dp50"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivShare"
+                            style="@style/home_video_right_img"
+                            android:layout_width="@dimen/dp32"
+                            android:layout_height="@dimen/dp32"
+                            android:src="@mipmap/home_share" />
+
+                        <com.sortinghat.funny.view.ShadowTextView
+                            android:id="@+id/shareCount"
+                            style="@style/home_video_right_tx"
+                            android:layout_marginTop="3dp"
+                            android:text="分享" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llFull"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:minWidth="@dimen/dp50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/ivFull"
+                        style="@style/home_video_right_img"
+                        android:src="@mipmap/home_to_full" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ivPostReject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:minWidth="@dimen/dp50"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/imgPostReject"
+                        style="@style/home_video_right_img"
+                        android:src="@mipmap/share_apply_del" />
+
+                    <com.sortinghat.funny.view.ShadowTextView
+                        style="@style/home_video_right_tx"
+                        android:layout_marginTop="3dp"
+                        android:text="" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <me.jingbin.library.ByRecyclerView
+                android:id="@id/recycler_view"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp60"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/dp12"
+                android:layout_marginBottom="22dp"
+                android:background="@drawable/home_like_bg"
+                android:paddingStart="@dimen/dp5"
+                android:paddingTop="@dimen/dp10"
+                android:paddingEnd="@dimen/dp15"
+                android:paddingBottom="@dimen/dp10"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layoutManager="LinearLayoutManager"
+                tools:listitem="@layout/item_home_post_like" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/apply_show"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp16"
+            android:paddingRight="@dimen/dp16">
+
+            <TextView
+                style="@style/MiddleTextBlack"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="作品审核不通过"
+                android:textColor="#3a3a3a"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/StandardTextBlack"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="很遗憾，您发布的内容不符合社区规范，建议您修改后再次提交审核，如有异议，可以通过微信申诉：GXXQ818。"
+                android:textColor="@color/color_666666" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/top_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp200"
+            android:background="@drawable/home_fragment_bottom_gradient_shape"
+            android:rotation="180" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tv_one_level_topic_name"
+        style="@style/StandardTextBlack"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:paddingStart="@dimen/dp5"
+        android:paddingTop="@dimen/dp15"
+        android:paddingEnd="@dimen/dp5"
+        android:paddingBottom="@dimen/dp15"
+        android:textColor="@color/color_666666" />
+
+</layout>

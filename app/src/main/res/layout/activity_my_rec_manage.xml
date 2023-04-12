@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_rec_manage"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <TextView
+                style="@style/setting_view_tx"
+                android:text="个性化内容推荐" />
+
+            <com.sortinghat.funny.view.CustomSwitchButton
+                android:id="@+id/switch_button"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp28"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/dp16"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <View style="@style/divider_view_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.sortinghat.funny.view.PageProgressView
+                android:id="@+id/page_progress"
+                android:layout_width="match_parent"
+                android:layout_height="3dp" />
+
+            <WebView
+                android:id="@+id/rec_webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp16">
+
+                <TextView
+                    style="@style/Base333MiddleText"
+                    android:text="1. 个性化内容推荐会使用你的哪些信息？\n" />
+
+                <TextView
+                    style="@style/Base333StandardText"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="为了向您展示、推荐相关性更高的信息，提供更契合您要求的服务，我们会收集、使用您的个人信息并通过计算机算法模型自动计算、预测您的偏好，以匹配您可能感兴趣的信息或服务，以下我们将向您详细说明该个性化推荐服务的运行机制以及您实现控制的方式。\n"
+                    android:textColor="@color/color_666666" />
+
+                <TextView
+                    style="@style/Base333StandardText"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="a) 我们提供个性化推荐服务的范围包括展示图文或视频内容，及服务（广告）等。\n\n
+b) 为了预测您的偏好，我们可能会收集、使用您的设备信息、位置信息以及在使用搞笑星球时的行为信息，行为信息包括您在访问/使用搞笑星球时的点击、关注、收藏、浏览、下载、分享的操作相关记录。\n\n
+c) 我们通过计算机算法对上述信息进行自动分析、计算后提取出您的用户特征，再结合其他相关特征。经过去重、打散等处理后，形成最终的内容推荐列表依次向您展示。\n\n
+d) 请您知悉，个性化推荐算法并不会精准识别特定自然人的真实身份，仅是基于用户行为和特征提供相关性更高的信息。\n\n"
+                    android:textColor="@color/color_666666" />
+
+
+                <TextView
+                    style="@style/Base333MiddleText"
+                    android:text="2. 我不喜欢推荐的内容怎么办？\n" />
+
+                <TextView
+                    style="@style/Base333StandardText"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="当你对具体信息不感兴趣或希望减少某类信息推荐时，你可以长按该内容，选择「不爱看」，我们会基于你的反馈调整策略。同时，我们也提供了「意见反馈」入口，聆听你的意见和建议。如果你不希望被推荐个性化的内容，可通过以上按钮关闭“个性化内容推荐”。当你选择关闭个性化内容推荐后，你所看到的内容的相关性将会降低。\n\n"
+                    android:textColor="@color/color_666666" />
+
+                <TextView
+                    style="@style/Base333MiddleText"
+                    android:text="3.关闭个性化内容推荐的效果是什么？\n" />
+
+                <TextView
+                    style="@style/Base333StandardText"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="当你选择关闭个性化内容推荐后，我们不会基于被关闭的个性化推送的目的处理您的个人信息，而仅会向您推送与您的偏好无关的具有普遍性的内容或广告。 因此你无法享受个性化推荐服务，我们会基于内容热度等非个性化因素向你展示内容，你可能会看到你不感兴趣甚至不喜欢的内容，你的使用体验可能会受到影响。\n\n"
+                    android:textColor="@color/color_666666" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,12 @@
+<resources>
+
+    <item name="content_layout_root_view" type="id" />
+    <item name="content_container" type="id" />
+    <item name="tab_layout" type="id" />
+    <item name="view_pager" type="id" />
+    <item name="item_view" type="id" />
+    <item name="recycler_view" type="id" />
+    <item name="ll_empty_view" type="id" />
+    <item name="v_divider_line" type="id" />
+
+</resources>

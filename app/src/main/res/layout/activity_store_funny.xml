@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@color/color_f5f5f5"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp5">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp100"
+            android:layout_marginTop="@dimen/dp2"
+            android:background="@color/color_f46c35">
+
+            <RelativeLayout
+                android:id="@+id/rl_user_icon"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/iv_user_icon"
+                    style="@style/my_user_icon" />
+
+                <ImageView
+                    android:id="@+id/iv_box_user_icon"
+                    style="@style/my_user_icon_box" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_store_tv1"
+                style="@style/StandardTextWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp90"
+                android:text="我的星币:" />
+
+            <com.sortinghat.funny.view.rollingview.strategy.RollingTextView
+                android:id="@+id/tv_star_count"
+                style="@style/StandardTextWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp2"
+                android:layout_toRightOf="@+id/tv_store_tv1"
+                android:text=""
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_package"
+                style="@style/StandardTextBlack"
+                android:layout_width="76dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp16"
+                android:background="@drawable/common_click_corner50_white_bg"
+                android:gravity="center"
+                android:text="背包"
+                android:textColor="@color/color_f46c35"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp12"
+                android:src="@mipmap/task_store_call1" />
+
+            <com.sortinghat.funny.view.MarqueeTextView
+                android:id="@+id/tv_store_mes"
+                style="@style/StandardTextWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp4"
+                android:layout_marginRight="@dimen/dp10"
+                android:layout_toRightOf="@+id/img1"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="恭喜"
+                android:textColor="@color/color_fe6a37"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <me.jingbin.library.ByRecyclerView
+            android:id="@id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            tools:itemCount="2"
+            tools:layoutManager="GridLayoutManager"
+            tools:listitem="@layout/item_video_or_image"
+            tools:spanCount="2" />
+
+    </LinearLayout>
+
+</layout>

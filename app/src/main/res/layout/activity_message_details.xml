@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <me.jingbin.library.ByRecyclerView
+        android:id="@id/recycler_view"
+        style="@style/RootLayout"
+        android:background="@color/white"
+        tools:itemCount="1"
+        tools:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/item_message_review_and_reply_details" />
+
+</layout>

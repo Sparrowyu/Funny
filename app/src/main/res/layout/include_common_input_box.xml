@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/ItemLayout"
+        android:orientation="vertical">
+
+        <View style="@style/HorizontalDividerLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_input_box"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
+                android:layout_weight="1"
+                android:background="@drawable/shape_gray_bg_with_corner20"
+                android:hint="@string/post_review_hint"
+                android:maxLength="100"
+                android:maxLines="4"
+                android:paddingStart="@dimen/dp15"
+                android:paddingTop="@dimen/dp8"
+                android:paddingEnd="@dimen/dp15"
+                android:paddingBottom="@dimen/dp8"
+                android:textColor="@color/color_333333"
+                android:textColorHint="@color/color_999999"
+                android:textSize="@dimen/standard_text_size" />
+
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/dp15"
+                android:paddingEnd="@dimen/dp15"
+                android:src="@mipmap/review_send" />
+
+            <TextView
+                android:id="@+id/tv_send"
+                style="@style/StandardTextBlack"
+                android:layout_height="match_parent"
+                android:enabled="false"
+                android:gravity="center"
+                android:paddingStart="@dimen/dp15"
+                android:paddingEnd="@dimen/dp15"
+                android:text="@string/publish"
+                android:textColor="@color/color_999999"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/keyboard_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</layout>

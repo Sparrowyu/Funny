@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/dialog_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/common_click_white_bg"
+            android:orientation="vertical"
+            android:padding="@dimen/dp16">
+
+            <TextView
+                android:id="@+id/chose_object_more"
+                style="@style/StandardTextBlack"
+                android:layout_gravity="center_horizontal"
+                android:text="点击查看更多"
+                android:textColor="@color/color_999999" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,176 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--过渡图-->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--<item name="android:windowBackground">@drawable/layer_splash</item>-->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="RootLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/page_bg</item>
+    </style>
+
+    <style name="ItemLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="ContentLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!--TabLayout-->
+    <style name="TabLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp36</item>
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="tabIndicator">@drawable/shape_tab_indicator</item>
+        <item name="tabIndicatorColor">@color/tab_indicator_selected</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabSelectedTextColor">@color/tab_indicator_selected</item>
+        <item name="tabTextColor">@color/color_999999</item>
+        <item name="tabBackground">@null</item>
+        <item name="tabRippleColor">@android:color/transparent</item>
+        <item name="tabTextAppearance">@style/TabLayoutTextStyle</item>
+    </style>
+
+    <style name="StandardTextTabLayoutStyle" parent="TabLayoutStyle">
+        <item name="tabTextAppearance">@style/TabLayoutStandardTextStyle</item>
+    </style>
+
+    <style name="DialogActivityStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="BaseDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!--水平分隔线-->
+    <style name="HorizontalDividerLine">
+        <item name="android:background">@color/divider_line</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="HorizontalDividerLinePageBg">
+        <item name="android:background">@color/page_bg</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <!--垂直分隔线-->
+    <style name="VerticalDividerLine">
+        <item name="android:background">@color/divider_line</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">1px</item>
+    </style>
+
+    <!--文本的字体大小及颜色样式-->
+    <style name="BaseText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="WhiteText" parent="BaseText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="BlackText" parent="BaseText">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="LargeTextWhite" parent="WhiteText">
+        <item name="android:textSize">@dimen/large_text_size</item>
+    </style>
+
+    <style name="MiddleTextWhite" parent="WhiteText">
+        <item name="android:textSize">@dimen/middle_text_size</item>
+    </style>
+
+    <style name="StandardTextWhite" parent="WhiteText">
+        <item name="android:textSize">@dimen/standard_text_size</item>
+    </style>
+
+    <style name="SmallTextWhite" parent="WhiteText">
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+    <style name="SmallerTextWhite" parent="WhiteText">
+        <item name="android:textSize">@dimen/smaller_text_size</item>
+    </style>
+
+    <style name="LargeTextBlack" parent="BlackText">
+        <item name="android:textSize">@dimen/large_text_size</item>
+    </style>
+
+    <style name="MiddleTextBlack" parent="BlackText">
+        <item name="android:textSize">@dimen/middle_text_size</item>
+    </style>
+
+    <style name="StandardTextBlack" parent="BlackText">
+        <item name="android:textSize">@dimen/standard_text_size</item>
+    </style>
+
+    <style name="SmallTextBlack" parent="BlackText">
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+    <style name="SmallerTextBlack" parent="BlackText">
+        <item name="android:textSize">@dimen/smaller_text_size</item>
+    </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/large_text_size</item>
+    </style>
+
+    <style name="TabLayoutStandardTextStyle">
+        <item name="android:textSize">@dimen/standard_text_size</item>
+    </style>
+
+    <!--button的样式-->
+    <style name="ButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/dp45</item>
+        <item name="android:background">@drawable/shape_orange_bg_with_angle</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/middle_text_size</item>
+    </style>
+
+    <style name="AppThemePush" parent="SplashTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="DownloadDialogAnim" parent="android:Animation">
+        <!--//进入时的动画-->
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <!--//退出时的动画-->
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp44"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/SmallTextWhite"
+            android:layout_width="match_parent"
+            android:layout_height="13dp"
+            android:background="@drawable/click_can_orange_corner50_bt_bg"
+            android:gravity="center"
+            android:text="明日可签"
+            android:textSize="8sp" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="@dimen/dp8"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/orange_triangle_bg" />
+
+
+    </RelativeLayout>
+</layout>

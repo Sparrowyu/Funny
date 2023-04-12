@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/csj_ad_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp2"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <com.qq.e.ads.nativ.widget.NativeAdContainer
+            android:id="@+id/gdt_ad_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/custom_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+
+                <!-- 原生广告的视频组件 -->
+                <com.qq.e.ads.nativ.MediaView
+                    android:id="@+id/gdt_media_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true" />
+
+                <!-- 广告的信息描述 -->
+                <RelativeLayout
+                    android:id="@+id/ad_info_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="325dp"
+
+                    android:layout_alignParentBottom="true">
+
+                    <com.sortinghat.funny.view.NativeADUnifiedAdInfoView
+                        android:id="@+id/ad_info_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </com.qq.e.ads.nativ.widget.NativeAdContainer>
+
+    </FrameLayout>
+
+</layout>

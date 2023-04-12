@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp110"
+        android:background="@drawable/home_like_dialog_bg"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Base333StandardText"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp5"
+            android:text="赞出真实感受，让AI系统更懂你的点。"
+            android:textSize="@dimen/small_text_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/like_layout1"
+                style="@style/dialog_like_ll">
+
+                <ImageView
+                    android:id="@+id/like_img1"
+                    style="@style/dialog_like_img" />
+
+                <TextView
+                    android:id="@+id/like_tx1"
+                    style="@style/dialog_like_tx"
+                    android:text="以后看" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/like_layout2"
+                style="@style/dialog_like_ll">
+
+                <ImageView
+                    android:id="@+id/like_img2"
+                    style="@style/dialog_like_img"
+                    android:layout_marginTop="-6dp" />
+
+                <TextView
+                    android:id="@+id/like_tx2"
+                    style="@style/dialog_like_tx"
+                    android:layout_marginTop="14dp"
+                    android:text="触动内心" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/like_layout3"
+                style="@style/dialog_like_ll">
+
+                <ImageView
+                    android:id="@+id/like_img3"
+                    style="@style/dialog_like_img" />
+
+                <TextView
+                    android:id="@+id/like_tx3"
+                    style="@style/dialog_like_tx"
+                    android:text="感动哭了" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/like_layout4"
+                style="@style/dialog_like_ll">
+
+                <ImageView
+                    android:id="@+id/like_img4"
+                    style="@style/dialog_like_img" />
+
+                <TextView
+                    android:id="@+id/like_tx4"
+                    style="@style/dialog_like_tx"
+                    android:text="特别爱看" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/like_layout5"
+                style="@style/dialog_like_ll">
+
+                <ImageView
+                    android:id="@+id/like_img5"
+                    style="@style/dialog_like_img" />
+
+                <TextView
+                    android:id="@+id/like_tx5"
+                    style="@style/dialog_like_tx"
+                    android:text="笑出声" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cy_plugin_layout_enabled"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/cy_plugin_app_bg" >
+
+        <RelativeLayout
+            android:id="@+id/cy_plugin_item_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/cy_plugin_item_logo"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:focusable="false" />
+
+            <RelativeLayout
+                android:id="@+id/cy_plugin_item_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/cy_plugin_item_typeimage"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/cy_plugin_item_typepercent"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cy_plugin_item_typeimage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-4dp"
+                    android:gravity="center_horizontal|top"
+                    android:textColor="#414141"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/cy_plugin_item_logo"
+                android:layout_alignTop="@+id/cy_plugin_item_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/cy_plugin_item_download"
+                android:layout_toRightOf="@+id/cy_plugin_item_logo"
+                android:orientation="vertical"
+                android:weightSum="2" >
+
+                <TextView
+                    android:id="@+id/cy_plugin_item_appname"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:paddingTop="2dp"
+                    android:singleLine="true"
+                    android:textColor="#414141"
+                    android:textSize="16sp" />
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <RelativeLayout
+                        android:id="@+id/cy_plugin_downloading_rl"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical"
+                        android:visibility="invisible" >
+
+                        <RelativeLayout
+                            android:id="@+id/cy_plugin_downloading_subrl"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp" >
+
+                            <TextView
+                                android:id="@+id/cy_plugin_item_finishrate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:textColor="@color/cy_plugin_item_fontcolor"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/cy_plugin_item_speed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:textColor="@color/cy_plugin_item_fontcolor"
+                                android:textSize="14sp" />
+                        </RelativeLayout>
+
+                        <ProgressBar
+                            android:id="@+id/cy_plugin_pb"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@+id/cy_plugin_downloading_subrl"
+                            android:layout_marginBottom="2dp"
+                            android:maxHeight="5dip"
+                            android:minHeight="5dip"
+                            android:progressDrawable="@drawable/cy_plugin_progressbar" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/cy_plugin_appbase_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+
+                        <RelativeLayout
+                            android:id="@+id/cy_plugin_downloading_finishrl"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content" >
+
+                            <!-- <ImageView
+                                android:id="@+id/cy_plugin_item_downicon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/cy_plgin_downicon" />
+                                 -->
+
+                            <TextView
+                                android:id="@+id/cy_plugin_item_downnum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/cy_plugin_item_fontcolor"
+                                android:textSize="14sp" />
+                            <!--android:layout_alignBottom="@+id/cy_plugin_item_downicon"-->
+                            <!--android:layout_alignTop="@+id/cy_plugin_item_downicon"-->
+                            <!--android:layout_toRightOf="@+id/cy_plugin_item_downicon"-->
+
+                            <!-- <ImageView
+                                android:id="@+id/cy_plugin_item_line"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/cy_plugin_item_downicon"
+                                android:layout_alignTop="@+id/cy_plugin_item_downicon"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginRight="3dp"
+                                android:layout_toRightOf="@+id/cy_plugin_item_downnum"
+                                android:src="@drawable/cy_plgin_line" />
+ -->
+                          <TextView
+                                android:id="@+id/cy_plugin_item_appsize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/cy_plugin_item_downnum"
+                                android:layout_alignTop="@+id/cy_plugin_item_downnum"
+                                android:layout_toRightOf="@+id/cy_plugin_item_downnum"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/cy_plugin_item_fontcolor"
+                                android:textSize="14sp" /> 
+                        </RelativeLayout>
+
+                        <ProgressBar
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@+id/cy_plugin_downloading_finishrl"
+                            android:layout_marginBottom="1dp"
+                            android:maxHeight="2dip"
+                            android:minHeight="2dip"
+                            android:progressDrawable="@drawable/cy_plugin_progressbar"
+                            android:visibility="invisible" />
+                    </RelativeLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cy_plugin_item_rl"
+            android:background="@drawable/cy_plugin_app_bg_bottom" >
+
+            <TextView
+                android:id="@+id/cy_plugin_item_description"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                android:lineSpacingMultiplier="1.2"
+                
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:textColor="@color/cy_plugin_item_fontcolor"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

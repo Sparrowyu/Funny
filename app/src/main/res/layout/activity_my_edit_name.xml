@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp16"
+        android:paddingRight="@dimen/dp16">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp45">
+
+            <EditText
+                android:id="@+id/et_name"
+                style="@style/my_editText"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/dp10"
+                android:hint="请输入昵称"
+                android:maxLength="20"
+                android:maxLines="2" />
+
+            <ImageView
+                android:id="@+id/iv_del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/dp5"
+                android:src="@mipmap/my_edit_del"
+                android:visibility="gone" />
+
+            <View
+                style="@style/divider_view_line"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+
+        <TextView
+            style="@style/StandardTextBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="昵称最多10个汉字或者20个字母。"
+            android:textColor="@color/color_d7d7d7" />
+
+        <TextView
+            android:id="@+id/tv_sure"
+            style="@style/my_gray_bt"
+            android:layout_marginTop="@dimen/dp32"
+            android:text="保存" />
+    </LinearLayout>
+
+</layout>

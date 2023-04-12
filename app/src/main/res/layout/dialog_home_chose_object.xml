@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_common_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/dialog_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dp16">
+
+            <TextView
+                style="@style/Base333MiddleText"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingBottom="@dimen/dp2"
+                android:text="选择真心喜欢的话题，才能看\n到更多喜欢的内容。"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/Base333MiddleText"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="喜欢的话题可以在兴趣中修改"
+                android:textColor="@color/red"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                android:paddingLeft="@dimen/dp12"
+                android:paddingRight="@dimen/dp12">
+
+                <me.jingbin.library.ByRecyclerView
+                    android:id="@id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:background="@color/white"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    tools:itemCount="3"
+                    tools:layoutManager="GridLayoutManager"
+                    tools:listitem="@layout/item_video_or_image"
+                    tools:spanCount="3" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp45"
+            android:layout_below="@+id/dialog_content">
+
+            <View style="@style/divider_view_line" />
+
+            <LinearLayout
+                android:id="@+id/dialog_choice_gender_dialog_ll"
+                android:layout_width="match_parent"
+                android:layout_height="44.5dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    style="@style/Base333MiddleText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:foreground="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:text="取消"
+                    android:textColor="@color/color_999999"
+                    android:textStyle="bold"
+                    tools:ignore="UnusedAttribute" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_d7d7d7" />
+
+                <TextView
+                    android:id="@+id/tv_sure"
+                    style="@style/Base333MiddleText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:foreground="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:text="完成"
+                    android:textColor="@color/red"
+                    android:textStyle="bold"
+                    tools:ignore="UnusedAttribute" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

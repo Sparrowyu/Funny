@@ -1,0 +1,10 @@
+rootProject.name = "Funny"
+include ':app', ':bymvvm', ':bottom-navigation-bar', ':shareLibrary', ':updataApk'
+include ':gsyVideoPlayer',
+        ':gsyVideoPlayer-java',
+        ':gsyVideoPlayer-armv7a',
+        ':gsyVideoPlayer-armv64',
+        ':gsyVideoPlayer-ex_so',
+        ':gsyVideoPlayer-exo_player2',
+        ':gsyVideoPlayer-base',
+        ':videocache'

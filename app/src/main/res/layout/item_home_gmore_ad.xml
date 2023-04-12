@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <com.bytedance.msdk.api.format.TTNativeAdView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/custom_express_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"/>
+
+        <RelativeLayout
+            android:id="@+id/custom_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+
+            <com.bytedance.msdk.api.format.TTMediaView
+                android:id="@+id/iv_listitem_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@android:color/background_dark"
+                android:scaleType="centerCrop" />
+            <include
+                android:id="@+id/icon_source_layout"
+                layout="@layout/listitem_ad_icon_source_layout" />
+
+            <!-- title+creativeBtn layout -->
+            <include
+                android:id="@+id/ad_title_btn_layout"
+                layout="@layout/listitem_ad_title_creative_btn_layout"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dp8"
+                android:layout_height="wrap_content"
+                 />
+
+        </RelativeLayout>
+    </com.bytedance.msdk.api.format.TTNativeAdView>
+
+
+</layout>

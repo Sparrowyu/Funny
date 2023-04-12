@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <!--   <HorizontalScrollView
+               android:id="@+id/like_type_scrollView"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingRight="@dimen/dp16"
+               android:scrollbars="none">-->
+
+        <LinearLayout
+            android:id="@+id/like_type_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_like_type0"
+                style="@style/my_like_title_tx"
+                android:text="全部"
+                android:textColor="@color/color_333333"
+                tools:ignore="UnusedAttribute" />
+
+            <TextView
+                android:id="@+id/tv_like_type5"
+                style="@style/my_like_title_tx"
+                android:text="笑出声"
+                tools:ignore="UnusedAttribute" />
+
+            <TextView
+                android:id="@+id/tv_like_type4"
+                style="@style/my_like_title_tx"
+                android:text="特别爱看"
+                tools:ignore="UnusedAttribute" />
+
+            <TextView
+                android:id="@+id/tv_like_type3"
+                style="@style/my_like_title_tx"
+                android:text="感动哭了"
+                tools:ignore="UnusedAttribute" />
+
+            <TextView
+                android:id="@+id/tv_like_type2"
+                style="@style/my_like_title_tx"
+                android:text="触动内心"
+                tools:ignore="UnusedAttribute" />
+
+            <TextView
+                android:id="@+id/tv_like_type1"
+                style="@style/my_like_title_tx"
+                android:text="以后看"
+                tools:ignore="UnusedAttribute" />
+
+        </LinearLayout>
+        <!--  </HorizontalScrollView>-->
+
+        <me.jingbin.library.ByRecyclerView
+            android:id="@id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            tools:itemCount="3"
+            tools:layoutManager="GridLayoutManager"
+            tools:listitem="@layout/item_video_or_image"
+            tools:spanCount="3" />
+    </LinearLayout>
+</layout>

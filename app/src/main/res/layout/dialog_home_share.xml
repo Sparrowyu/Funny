@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/dialog_bottom_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/share_top_tx"
+            style="@style/BaseText"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="快把快乐分享给朋友吧！"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/small_text_size" />
+
+        <LinearLayout
+            android:id="@+id/share_top_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="@dimen/dp90"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/share_wechat"
+                style="@style/dialog_share_tx"
+                android:drawableTop="@mipmap/icon_wechat"
+                android:text="微信"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/share_wechat_circle"
+                style="@style/dialog_share_tx"
+                android:drawableTop="@mipmap/icon_wechat_circle"
+                android:text="朋友圈"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/share_qq"
+                style="@style/dialog_share_tx"
+                android:drawableTop="@mipmap/icon_qq"
+                android:text="QQ" />
+
+            <TextView
+                android:id="@+id/share_qq_zone"
+                style="@style/dialog_share_tx"
+                android:drawableTop="@mipmap/icon_qq_zone"
+                android:text="QQ空间" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/share_report_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="@dimen/dp90"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/share_report"
+                style="@style/dialog_share_tx"
+                android:drawableTop="@mipmap/report_post"
+                android:text="举报"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/share_download"
+                style="@style/dialog_share_tx"
+                android:text="@string/save"
+                android:drawableTop="@mipmap/ic_download"
+                android:visibility="visible" />
+
+            <TextView
+                style="@style/dialog_share_tx"
+                android:drawableTop="@mipmap/icon_wechat"
+                android:text=""
+                android:visibility="invisible" />
+
+            <TextView
+                style="@style/dialog_share_tx"
+                android:drawableTop="@mipmap/icon_wechat"
+                android:text=""
+                android:visibility="invisible" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/share_delete_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="@dimen/dp90"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/share_delete"
+                style="@style/dialog_share_tx"
+                android:drawableTop="@mipmap/share_del"
+                android:text="删除"
+                android:visibility="visible" />
+
+            <TextView
+                style="@style/dialog_share_tx"
+                android:drawableTop="@mipmap/report_post"
+                android:visibility="invisible" />
+
+            <TextView
+                style="@style/dialog_share_tx"
+                android:drawableTop="@mipmap/icon_wechat"
+                android:text=""
+                android:visibility="invisible" />
+
+            <TextView
+                style="@style/dialog_share_tx"
+                android:drawableTop="@mipmap/icon_wechat"
+                android:text=""
+                android:visibility="invisible" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp10"
+            android:background="@color/color_f5f5f5" />
+
+        <TextView
+            android:id="@+id/dialog_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/middle_text_size"
+            tools:ignore="UnusedAttribute" />
+    </LinearLayout>
+
+</layout>

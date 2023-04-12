@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/LargeTextBlack"
+            android:layout_marginTop="@dimen/dp30"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp48"
+            android:gravity="center"
+            android:text="@string/message"
+            android:textColor="@color/color_333333" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_message_fans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp15"
+            android:paddingTop="@dimen/dp12"
+            android:paddingEnd="@dimen/dp15"
+            android:paddingBottom="@dimen/dp12">
+
+            <ImageView
+                android:id="@+id/iv_message_fans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_fans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_fans"
+                style="@style/MiddleTextBlack"
+                android:layout_marginStart="@dimen/dp12"
+                android:text="@string/fans"
+                android:textColor="@color/color_333333"
+                app:layout_constraintBottom_toTopOf="@+id/tv_message_fans_dynamic"
+                app:layout_constraintStart_toEndOf="@id/iv_message_fans"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_fans_dynamic"
+                style="@style/SmallTextBlack"
+                android:layout_marginTop="@dimen/dp5"
+                android:textColor="@color/color_999999"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_message_fans"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message_fans" />
+
+            <ImageView
+                android:id="@+id/iv_fans_message_dynamic_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12"
+                android:src="@mipmap/message_dynamic_mark"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_message_fans_right_arrow"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_message_fans_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_message_review_and_reply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp15"
+            android:paddingTop="@dimen/dp12"
+            android:paddingEnd="@dimen/dp15"
+            android:paddingBottom="@dimen/dp12">
+
+            <ImageView
+                android:id="@+id/iv_message_review_and_reply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_review_and_reply"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_review_and_reply"
+                style="@style/MiddleTextBlack"
+                android:layout_marginStart="@dimen/dp12"
+                android:text="@string/review_and_reply"
+                android:textColor="@color/color_333333"
+                app:layout_constraintBottom_toTopOf="@+id/tv_message_review_and_reply_dynamic"
+                app:layout_constraintStart_toEndOf="@id/iv_message_review_and_reply"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_review_and_reply_dynamic"
+                style="@style/SmallTextBlack"
+                android:layout_marginTop="@dimen/dp5"
+                android:textColor="@color/color_999999"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_message_review_and_reply"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message_review_and_reply" />
+
+            <ImageView
+                android:id="@+id/iv_review_and_reply_message_dynamic_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12"
+                android:src="@mipmap/message_dynamic_mark"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_message_review_and_reply_right_arrow"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_message_review_and_reply_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_message_praise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp15"
+            android:paddingTop="@dimen/dp12"
+            android:paddingEnd="@dimen/dp15"
+            android:paddingBottom="@dimen/dp12">
+
+            <ImageView
+                android:id="@+id/iv_message_praise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_praise"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_praise"
+                style="@style/MiddleTextBlack"
+                android:layout_marginStart="@dimen/dp12"
+                android:text="@string/praise"
+                android:textColor="@color/color_333333"
+                app:layout_constraintBottom_toTopOf="@+id/tv_message_praise_dynamic"
+                app:layout_constraintStart_toEndOf="@id/iv_message_praise"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_praise_dynamic"
+                style="@style/SmallTextBlack"
+                android:layout_marginTop="@dimen/dp5"
+                android:textColor="@color/color_999999"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_message_praise"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message_praise" />
+
+            <ImageView
+                android:id="@+id/iv_praise_message_dynamic_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12"
+                android:src="@mipmap/message_dynamic_mark"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_message_praise_right_arrow"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_message_praise_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_message_system_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp15"
+            android:paddingTop="@dimen/dp12"
+            android:paddingEnd="@dimen/dp15"
+            android:paddingBottom="@dimen/dp12"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_message_system_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_system_notice"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_system_notice"
+                style="@style/MiddleTextBlack"
+                android:layout_marginStart="@dimen/dp12"
+                android:text="@string/system_notice"
+                android:textColor="@color/color_333333"
+                app:layout_constraintBottom_toTopOf="@+id/tv_message_system_notice_dynamic"
+                app:layout_constraintStart_toEndOf="@id/iv_message_system_notice"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_system_notice_dynamic"
+                style="@style/SmallTextBlack"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="通知"
+                android:textColor="@color/color_999999"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_message_system_notice"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message_system_notice" />
+
+            <ImageView
+                android:id="@+id/iv_system_notice_message_dynamic_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12"
+                android:src="@mipmap/message_dynamic_mark"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_message_system_notice_right_arrow"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_message_system_notice_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_message_audit_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp15"
+            android:paddingTop="@dimen/dp12"
+            android:paddingEnd="@dimen/dp15"
+            android:paddingBottom="@dimen/dp12">
+
+            <ImageView
+                android:id="@+id/iv_message_audit_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_audit_notice"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_audit_notice"
+                style="@style/MiddleTextBlack"
+                android:layout_marginStart="@dimen/dp12"
+                android:text="@string/audit_notice"
+                android:textColor="@color/color_333333"
+                app:layout_constraintBottom_toTopOf="@+id/tv_message_audit_notice_dynamic"
+                app:layout_constraintStart_toEndOf="@id/iv_message_audit_notice"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_audit_notice_dynamic"
+                style="@style/SmallTextBlack"
+                android:layout_marginTop="@dimen/dp5"
+                android:textColor="@color/color_999999"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_message_audit_notice"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message_audit_notice" />
+
+            <ImageView
+                android:id="@+id/iv_audit_notice_message_dynamic_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12"
+                android:src="@mipmap/message_dynamic_mark"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_message_audit_notice_right_arrow"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_message_audit_notice_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_message_topic_optimize_remind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp15"
+            android:paddingTop="@dimen/dp12"
+            android:paddingEnd="@dimen/dp15"
+            android:paddingBottom="@dimen/dp12"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_message_topic_optimize_remind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_topic_optimize_remind"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_topic_optimize_remind"
+                style="@style/MiddleTextBlack"
+                android:layout_marginStart="@dimen/dp12"
+                android:text="@string/topic_optimize_remind"
+                android:textColor="@color/color_333333"
+                app:layout_constraintBottom_toTopOf="@+id/tv_message_topic_optimize_remind_dynamic"
+                app:layout_constraintStart_toEndOf="@id/iv_message_topic_optimize_remind"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message_topic_optimize_remind_dynamic"
+                style="@style/SmallTextBlack"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="我们帮你优化了2个作品的话题"
+                android:textColor="@color/color_999999"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_message_topic_optimize_remind"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message_topic_optimize_remind" />
+
+            <ImageView
+                android:id="@+id/iv_topic_optimize_remind_message_dynamic_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12"
+                android:src="@mipmap/message_dynamic_mark"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_message_topic_optimize_remind_right_arrow"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_message_topic_optimize_remind_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/message_right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

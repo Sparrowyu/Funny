@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/dialog_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp25"
+            android:maxHeight="@dimen/dp100"
+            android:src="@mipmap/dialog_publish_animal" />
+
+        <RelativeLayout
+            android:id="@+id/dialog_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_show"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginTop="-20dp"
+            android:layout_marginRight="@dimen/dp5"
+            android:background="@drawable/dialog_common_bg"
+            android:minHeight="75dp"
+            android:padding="@dimen/dp16">
+
+            <TextView
+                android:id="@+id/tv_des"
+                style="@style/Base333MiddleText"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/dp72"
+                android:gravity="center"
+                android:text="把你觉得搞笑的视频或图片\n发布上来吧，逗笑更多人~"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tx_ok"
+                style="@style/Base333MiddleText"
+                android:layout_width="@dimen/dp44"
+                android:layout_height="@dimen/dp44"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:background="@drawable/publish_guide_bt_bg"
+                android:foreground="?android:selectableItemBackground"
+                android:gravity="center"
+                android:text="ok"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                tools:ignore="UnusedAttribute" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/bg_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/publish_guide_triangle_bg" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/dp80"
+                android:layout_marginTop="-30dp"
+                android:background="@color/white" />
+
+            <View
+                android:layout_width="@dimen/dp4"
+                android:layout_height="@dimen/dp4"
+                android:background="@drawable/home_head_white_bg" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_sure"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_below="@+id/bg_line"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp5"
+            android:background="@drawable/shape_white_bg_gray_border">
+
+            <ImageView
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/navigation_ic_publish" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

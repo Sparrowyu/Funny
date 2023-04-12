@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+     >
+     
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/no_connection_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/no_connection_image"
+    	android:layout_marginTop="20dip"
+        />
+    
+    <TextView 
+        android:textSize="20sp"
+        android:textColor="#5f5f5f"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dip"
+        android:layout_below="@+id/no_connection_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_connection_text"
+        />
+    <!-- <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_networl"
+        android:textColor="@color/pulltorefresh_header_text"
+        android:textSize="15sp"
+        android:layout_marginTop="9dip"
+        />
+    
+    <View 
+        android:layout_width="200dip"
+        android:layout_height="0.7dip"
+        android:layout_marginTop="10dip"
+        android:background="#ababab"
+        />
+    
+    
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+    <TextView 
+        android:id="@+id/one"
+        android:layout_marginTop="15dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_connection_des_one"
+        android:textColor="#79797a"
+        android:textSize="12sp"
+        />
+    <TextView 
+        android:layout_below="@+id/one"
+        android:id="@+id/two"
+        android:layout_marginTop="6dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_connection_des_two"
+        android:textColor="#79797a"
+        android:textSize="12sp"
+        />
+    <TextView 
+        android:layout_below="@+id/two"
+        android:layout_marginTop="6dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_connection_des_three"
+        android:textColor="#79797a"
+        android:textSize="12sp"
+        />
+    </RelativeLayout>
+    
+    <TextView 
+        android:id="@+id/new_to_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_net"
+        android:layout_marginTop="30dip"
+        android:paddingTop="15dip"
+        android:paddingBottom="15dip"
+        android:paddingLeft="50dip"
+        android:paddingRight="50dip"
+        android:textColor="@android:color/white"
+        android:background="#ec6838"
+        /> -->
+	    
+
+</RelativeLayout>

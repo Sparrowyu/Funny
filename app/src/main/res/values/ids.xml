@@ -1,0 +1,6 @@
+<resources>
+
+    <item name="keyboard_listener_layout" type="id" />
+    <item name="tag_saved_child_recycler_view" type="id" />
+
+</resources>

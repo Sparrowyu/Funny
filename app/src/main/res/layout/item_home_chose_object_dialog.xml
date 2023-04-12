@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@id/item_view"
+        style="@style/ItemLayout"
+        android:descendantFocusability="blocksDescendants">
+
+        <com.sortinghat.funny.view.RoundRelativeLayout
+            android:id="@+id/item_rl"
+            style="@style/ItemLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/dp5">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/MiddleTextBlack"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:gravity="center"
+                    android:text="二次元" />
+
+                <ImageView
+                    android:id="@+id/check_img"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/report_check_default"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </com.sortinghat.funny.view.RoundRelativeLayout>
+    </RelativeLayout>
+
+</layout>
